@@ -1,8 +1,7 @@
-# Tasks To Do
+# Tasks to do
 
-# Tasks:
-
--- work on login
+AM -- work on login
+AG -- Ctrl panel
 
 # Working
 
