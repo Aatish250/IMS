@@ -1,0 +1,175 @@
+:root {
+  --login-bgcolor: #e0efff;
+  --login-color: #0b1e33;
+  --nav-color: #0b1e33;
+  --text-color: #888888;
+  --logo-bgcolor: #00537a;
+  --bgcolor: #e0efff;
+  --admin-cta-color: #ddb2ff;
+  --price-color: #08b037;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  /* &::-webkit-scrollbar {
+    display: none;
+  } */
+}
+
+/* sideabr css starts */
+aside {
+  width: 14rem; /* changes made for control panel */
+  height: 100%;
+  background-color: var(--nav-color);
+  /* position: relative; */
+  position: fixed;
+  z-index: 99;
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+}
+a,
+.logout {
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+li {
+  list-style: none;
+}
+
+.logo {
+  width: 100%;
+  max-height: 5rem;
+  background-color: var(--logo-bgcolor);
+  padding: 1rem;
+  text-align: center;
+  box-shadow: -0.625rem -0.125rem 1rem 0.125rem rgba(0, 0, 0, 0.685);
+}
+
+.nav-list {
+  /* margin: 0 1rem 0 0; */
+  display: block;
+  height: 100%;
+  font-size: 1rem;
+  margin-top: 10px;
+}
+
+.list-row {
+  display: flex;
+  max-width: 100%;
+  min-width: auto;
+  align-items: center;
+  margin-bottom: 0.1rem;
+}
+
+.list-row a,
+.logout {
+  padding: 0.625rem 0.313rem;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.list-row .icon,
+.logout .icon {
+  margin-right: 0.75rem;
+  width: 30px;
+  margin-left: 20px;
+}
+
+.list-row a:hover,
+.logout:hover {
+  background-color: rgba(0, 83, 122, 0.22);
+  border-radius: 0.313rem;
+  transition: all 0.2s ease;
+  width: 100%;
+}
+
+/* Style active link and its image */
+.active a {
+  color: var(--selected-color);
+  font-weight: 600;
+}
+
+.logout {
+  background-color: transparent;
+  position: absolute;
+  bottom: 5%;
+  font-size: 1rem;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* sideabr css ends */
+
+/*global heading css starts */
+.wrapper {
+  margin: 2vw 4vw;
+  width: 100%;
+  margin-left: 17rem;
+  /* padding-bottom: 2vw; */
+  max-height: 100vh;
+  overflow-y: auto;
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  /* &::-webkit-scrollbar {
+    display: none;
+  } */
+}
+
+header {
+  max-height: 5rem;
+}
+
+.main-heading {
+  display: flex;
+  justify-content: space-between;
+}
+.main-heading-left h1 {
+  color: #a340f3;
+}
+
+.main-heading-left p {
+  color: var(--text-color);
+  font-size: 0.9rem;
+  margin-top: -0.5rem;
+}
+
+.main-heading-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.main-heading-right span {
+  background-color: var(--admin-cta-color);
+  padding: 0.5rem 1.5rem;
+  border-radius: 4.2rem;
+}
+
+.main-heading-right p {
+  color: var(--text-color);
+  font-size: 0.8rem;
+  margin-top: 0.3rem;
+}
+/*global heading ends */
