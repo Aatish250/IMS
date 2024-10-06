@@ -99,9 +99,10 @@
         <h3><img src="../../Images/icons/category.svg" alt="user logo" />Category</h3>
         <table>
           <tr>
-            <th>User - ID</th>
-            <th>User</th>
-            <th>Role</th>
+            <th>CID</th>
+            <th>Category </th>
+            <th>Category Items</th>
+            <th>Category Quantity</th>
             <th>Action</th>
           </tr>
           <?php include 'viewcategory.php' ?>
