@@ -7,20 +7,6 @@
     <th>AG<th>
     <th>AM<th>
 </tr>
-<tr>
-    <td>
-        <ol>
-            <li>Re-Manage Admin Add page</li>
-            <li>Control Panel page not satisfactory</li>
-        </ol>
-    </td>
-    <td>
-        <ol>
-            <li>Solve Login verification</li>
-            <li>manage detail page JScript problem</li>
-        </ol>
-    </td>
-</tr>
 </table>
 
 <table>
