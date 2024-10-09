@@ -25,10 +25,8 @@
 
 <table>
   <tr>
-    <th>FrontEnd</th>
-    <th colspan='2'>Status</th>
-    <th>BackEnd</th>
-    <th colspan='2'>Status</th>
+    <th colspan='2'>FrontEnd</th>
+    <th colspan='2'>BackEnd</th>
   </tr>
   <tr aligh='center'>
   <!-- For Fornt end dev -->
