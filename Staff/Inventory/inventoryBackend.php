@@ -87,4 +87,15 @@ if (isset($_POST["sell-item"])) {
 
 }
 
+if (isset($_POST["add-cart"])) {
+
+    // Get info from the inventory table of the selected item id
+    $inventoryTable = mysqli_query($conn, "SELECT * FROM inventory WHERE item_id=" . $_POST['add-cart']);
+    $inventory = mysqli_fetch_assoc($inventoryTable);
+
+    $sqlForCart = "INSERT INTO cart VALUES ({$inventory['item_id']}, {$_POST['qty']})";
+    $result = mysqli_query($conn, $sqlForCart);
+    if ($result)
+        $message = "Item ID: {$inventory['item_id']}, added to Cart";
+}
 ?>

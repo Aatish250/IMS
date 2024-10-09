@@ -2,9 +2,28 @@
 
 # Working
 
-AM: Cart List ✅
-<br>
-AG: Control Panel admin ✅
+<table>
+<tr>
+    <th>AG<th>
+    <th>AM<th>
+</tr>
+<tr>
+<!-- list for AG -->
+    <td>
+        <ol>
+            <li>Re-Manage Admin Add page</li>
+            <li>Control Panel page not satisfactory</li>
+        </ol>
+    </td>
+<!-- list for am -->
+    <td>
+        <ol>
+            <li>Solve Login verification</li>
+            <li>manage detail page JScript problem</li>
+        </ol>
+    </td>
+</tr>
+</table>
 
 <table>
   <tr>
@@ -14,9 +33,11 @@ AG: Control Panel admin ✅
     <th>Status</th>
   </tr>
   <tr aligh='center'>
+  <!-- For Fornt end dev -->
     <td>AG: Control Panel admin</td>
-    <td>✅</td>
+    <td aligh='center'>✅</td>
+    <!-- for back end dev -->
     <td>AM: Cart List</td>
-    <td>✅</td>
+    <td aligh='center'>✅</td>
   </tr>
 </table>

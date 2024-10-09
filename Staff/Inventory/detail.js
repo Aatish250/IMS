@@ -5,14 +5,14 @@ function qtyCtrl() {
     const maxQty = document.getElementById("maxQty");
   
     qtyCtrlBtns.forEach((btn, idx) => {
-        btn.addEventListener("click", () => {
+        btn.addEventListener("click", (event) => {
+            event.preventDefault();
             const input = btn.parentElement.querySelector('.qty-ctrl-inp');
-            let currentQty = parseInt(input.value);
   
             if (btn.dataset.action === "+") {
-                input.value = currentQty + 1;
+                input.value = Number(input.value) + 1;
             } else if (btn.dataset.action === "-" && currentQty > 1) {
-                input.value = currentQty - 1;
+                input.value = Number(input.value) - 1;
             }
 
             if(maxQty.value > 0){
