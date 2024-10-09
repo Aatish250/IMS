@@ -1,13 +1,14 @@
 # Tasks to do
 <table>
     <tr>
-        <th></th>
-        <th></th>
-    </tr>
-<table>
-    <tr>
-        <th></th>
-        <th></th>
+        <td>
+            <li>Solve Login verification</li>
+            <li>manage detail page JScript problem</li
+        </td>
+        <td>
+            <li>Re-Manage Admin Add page</li>
+            <li>Control Panel page not satisfactory</li>>
+        </td>
     </dr>
 </table>
 
