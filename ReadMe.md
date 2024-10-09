@@ -1,8 +1,6 @@
 # Tasks to do
 
-AM -- work on login
-<br>
-AG -- Ctrl panel
+
 
 # Working
 
@@ -19,8 +17,8 @@ AG: Control Panel admin ✅
   </tr>
   <tr>
     <td>AG: Control Panel admin</td>
-    <td>✅</td>
+    <td><input type="checkbox" checked></td>
     <td>AM: Cart List</td>
-    <td>✅</td>
+    <td><input type="checkbox" checked></td></td>
   </tr>
 </table>
