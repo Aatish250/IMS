@@ -4,7 +4,7 @@ require '../checkStaff.php';
 
 
 // executes item request logics
-include 'updateItem.php';
+include 'sell.php';
 ?>
 
 <!DOCTYPE html>
@@ -13,10 +13,10 @@ include 'updateItem.php';
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Request - Staff</title>
+  <title>Cart Llist</title>
   <link rel="stylesheet" href="../../util.css" />
   <link rel="stylesheet" href="../staffRoot.css" />
-  <link rel="stylesheet" href="request.css" />
+  <link rel="stylesheet" href="cart.css" />
 </head>
 
 
@@ -35,7 +35,7 @@ include 'updateItem.php';
       <!-- heading of main content beside sidebar -->
       <div class="main-heading">
         <div class="main-heading-left">
-          <h1>Request Lists</h1>
+          <h1>Cart Lists</h1>
         </div>
         <div class="main-heading-right">
           <!-- display that it is Staff -->
@@ -57,29 +57,28 @@ include 'updateItem.php';
           <h3>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6 icon">
               <path
-                d="M3.375 3C2.339 3 1.5 3.84 1.5 4.875v.75c0 1.036.84 1.875 1.875 1.875h17.25c1.035 0 1.875-.84 1.875-1.875v-.75C22.5 3.839 21.66 3 20.625 3H3.375Z" />
-              <path fill-rule="evenodd"
-                d="m3.087 9 .54 9.176A3 3 0 0 0 6.62 21h10.757a3 3 0 0 0 2.995-2.824L20.913 9H3.087ZM12 10.5a.75.75 0 0 1 .75.75v4.94l1.72-1.72a.75.75 0 1 1 1.06 1.06l-3 3a.75.75 0 0 1-1.06 0l-3-3a.75.75 0 1 1 1.06-1.06l1.72 1.72v-4.94a.75.75 0 0 1 .75-.75Z"
-                clip-rule="evenodd" />
+                d="M2.25 2.25a.75.75 0 0 0 0 1.5h1.386c.17 0 .318.114.362.278l2.558 9.592a3.752 3.752 0 0 0-2.806 3.63c0 .414.336.75.75.75h15.75a.75.75 0 0 0 0-1.5H5.378A2.25 2.25 0 0 1 7.5 15h11.218a.75.75 0 0 0 .674-.421 60.358 60.358 0 0 0 2.96-7.228.75.75 0 0 0-.525-.965A60.864 60.864 0 0 0 5.68 4.509l-.232-.867A1.875 1.875 0 0 0 3.636 2.25H2.25ZM3.75 20.25a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0ZM16.5 20.25a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0Z" />
             </svg>
-            <span>Item Requests</span>
+            <span>Items</span>
           </h3>
           <table class="request-table">
             <thead>
               <tr>
                 <th>S.N.</th>
                 <th>Name</th>
-                <th>Rate</th>
                 <th>Available Qty.</th>
+                <th>Rate</th>
                 <th>Sell Qty.</th>
                 <th>Total</th>
                 <th>Action</th>
               </tr>
             </thead>
             <tbody>
-              <?php // load item request list
-              include 'requestList.php';
-              ?>
+              <form method='POST' action=''>
+                <?php // load item request list
+                include 'cartList.php';
+                ?>
+              </form>
             </tbody>
           </table>
         </div>
@@ -91,7 +90,7 @@ include 'updateItem.php';
 
   <!-- main content ends -->
 </body>
-<script src="request.js"></script>
+<script src="cart.js"></script>
 <script src="../../Components/UpdateDate.js"></script>
 <script src="../../Components/flash_message.js"></script>
 
