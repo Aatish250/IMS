@@ -3,7 +3,6 @@
 
 <?php include 'controlpanelBackend.php' ?>
 
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,7 +17,6 @@
   <link rel="stylesheet" href="../ControlPanel/controlpanel.css">
 </head>
 
-
 <body>
 
   <!-- Side Bar start -->
@@ -27,7 +25,6 @@
   include '../rootAside-Admin.php';
   ?>
   <!-- Side Bar end -->
-
 
   <!-- main content starts -->
   <main class="wrapper">
@@ -58,79 +55,85 @@
       <button onclick="closeMessage()">&#9932;</button>
     </div>
 
-    <!-- User and Add User section start -->
-    <section class="control-panel-wrapper">
-      <div class="user-category-section" id="user-section">
-        <h3><img src="../../Images/icons/user.svg" alt="user logo" />Users</h3>
-        <table>
-          <tr>
-            <th>User - ID</th>
-            <th>User</th>
-            <th>Role</th>
-            <th>Action</th>
-          </tr>
-          <?php include 'viewusers.php' ?>
-        </table>
-      </div>
-      <div class="add-section" id="add-user-section">
-        <h3><img src="../../Images/icons/adduser.svg" alt="add user logo" />Add User</h3>
-        <!-- form for adding starts-->
-        <form action="" method="POST" class="add-form">
-          <label for="username">
-            <span>Username:</span>
-          </label>
-          <input type="text" name="username" id="username" required placeholder="username" />
-          <label for="password">
-            <span>Password:</span>
-          </label>
-          <input type="password" name="password" id="password" required placeholder="password" />
-          <button type="submit" name="add-user">
-            <img src="../../Images/icons/adduserWhite.svg" alt="add user logo" />Add User
-          </button>
-        </form>
-        <!-- form for adding ends-->
-      </div>
-    </section>
-    <!-- User and Add User section end-->
+    <div class="container">
+      <section class="main-wrapper">  <!-- contain whole main content area -->
+        <!-- user and category check section starts -->
+        <section class="control-panel-wrapper"> 
+          <div class="check-section" id="check-user-section">
+            <h3><img src="../../Images/icons/user.svg" alt="user logo" />Users</h3>
+                <table>
+                  <tr>
+                    <th>User - ID</th>
+                    <th>User</th>
+                    <th>Role</th>
+                    <th>Action</th>
+                  </tr>
+                  <?php include 'viewusers.php' ?>
+                </table>
+          </div>
+          <div class="check-section" id="check-category-section">
+            <h3><img src="../../Images/icons/category.svg" alt="user logo" />Category</h3>
+            <table>
+                  <tr>
+                    <th>CID</th>
+                    <th>Category </th>
+                    <th>Category Items</th>
+                    <th>Category Quantity</th>
+                    <th>Action</th>
+                  </tr>
+                  <?php include 'viewcategory.php' ?>
+                </table>
+          </div>
+        </section>
+        <!-- user and category check section ends -->
 
-    <!-- Category and Add Category section start -->
-    <section class="control-panel-wrapper">
-      <div class="user-category-section" id="category-section">
-        <h3><img src="../../Images/icons/category.svg" alt="user logo" />Category</h3>
-        <table>
-          <tr>
-            <th>CID</th>
-            <th>Category </th>
-            <th>Category Items</th>
-            <th>Category Quantity</th>
-            <th>Action</th>
-          </tr>
-          <?php include 'viewcategory.php' ?>
-        </table>
-      </div>
-      <div class="add-section" id="add-user-section">
-        <h3>
-          <img src="../../Images/icons/Category.svg" alt="add category logo" />Add
-          Category
-        </h3>
-        <!-- form for adding starts-->
-        <form action="" method="POST" class="add-form">
-          <label class="add-category" for="category">
-            <span>Category:</span>
-            <input type="category" name="category" id="category" required placeholder="category" />
-          </label>
-          <button type="submit" name="addCategory">
-            <img src="../../Images/icons/categoryWhite.svg" alt="add category logo" />Add
-            Category
-          </button>
-        </form>
-        <!-- form for adding ends-->
-      </div>
-    </section>
-    <!-- Category and Add Category section end -->
-
+        <!-- add part starts -->
+        <section class="add-wrapper">
+          <!-- To add new user -->
+          <div class="add-section" id="add-user-section">
+            <h3><img src="../../Images/icons/adduser.svg" alt="add user logo" />Add User</h3>
+            <!-- form for adding starts-->
+            <form action="" method="POST" class="add-form">
+              <label for="username">
+                <span>Username:</span>
+              </label>
+              <input type="text" name="username" id="username" required placeholder="username" />
+              <label for="password">
+                <span>Password:</span>
+              </label>
+              <input type="password" name="password" id="password" required placeholder="password" />
+              <button type="submit" name="add-user">
+                <img src="../../Images/icons/adduserWhite.svg" alt="add user logo" />Add User
+              </button>
+            </form>
+            <!-- form for adding ends-->
+          </div>
+          <!-- To add new Category -->
+          <div class="add-section" id="add-category-section">
+            <h3>
+              <img src="../../Images/icons/Category.svg" alt="add category logo" />Add
+              Category
+            </h3>
+            <!-- form for adding starts-->
+            <form action="" method="POST" class="add-form">
+              <label class="add-category" for="category">
+                <span>Category:</span>
+                <input type="category" name="category" id="category" required placeholder="category" />
+              </label>
+              <button type="submit" name="addCategory">
+                <img src="../../Images/icons/categoryWhite.svg" alt="add category logo" />Add
+                Category
+              </button>
+            </form>
+            <!-- form for adding ends-->
+          </div>
+        </section>
+        <!-- add part ends -->
+      </section>
+    </div>
   </main>
   <!-- main content ends -->
+   
 </body>
 <script src="../../Components/UpdateDate.js"></script>
 <script src="../../Components/flash_message.js"></script>
