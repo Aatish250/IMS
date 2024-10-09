@@ -8,14 +8,12 @@
     <th>AM<th>
 </tr>
 <tr>
-<!-- list for AG -->
     <td>
         <ol>
             <li>Re-Manage Admin Add page</li>
             <li>Control Panel page not satisfactory</li>
         </ol>
     </td>
-<!-- list for am -->
     <td>
         <ol>
             <li>Solve Login verification</li>
@@ -28,9 +26,9 @@
 <table>
   <tr>
     <th>FrontEnd</th>
-    <th>Status</th>
+    <th colspan='2'>Status</th>
     <th>BackEnd</th>
-    <th>Status</th>
+    <th colspan='2'>Status</th>
   </tr>
   <tr aligh='center'>
   <!-- For Fornt end dev -->
