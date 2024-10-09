@@ -1,19 +1,15 @@
 # Tasks to do
 <table>
     <tr>
-        <th>AG</th>
-        <th>AM</th>
-    </tr>
-    <tr>
-        </td>
-            <li>Re-Manage Admin Add page</li>
-            <li>Control Panel page not satisfactory</li>>
-        <td>
         <td>
             <li>Solve Login verification</li>
             <li>manage detail page JScript problem</li
         </td>
-    </tr>
+        <td>
+            <li>Re-Manage Admin Add page</li>
+            <li>Control Panel page not satisfactory</li>>
+        </td>
+    </dr>
 </table>
 
 # Working
