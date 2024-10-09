@@ -1,7 +1,5 @@
 # Tasks to do
 
-
-
 # Working
 
 AM: Cart List ✅
