@@ -1,6 +1,11 @@
 # Tasks to do
 <table>
     <tr>
+        <th>AM</th>
+        <th>AG</th>
+    </tr>
+    </tr>
+    <tr>
         <td>
             <li>Solve Login verification</li>
             <li>manage detail page JScript problem</li
