@@ -13,7 +13,7 @@
             <li>Solve Login verification</li>
             <li>manage detail page JScript problem</li
         </td>
-    </dr>
+    </tr>
 </table>
 
 # Working
