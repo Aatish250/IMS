@@ -136,17 +136,23 @@ li {
     display: none;
   } */
   /* height: 110%; */
+  height: fit-content;
+  /* background-color: grey; */
 }
 
 header {
-  max-height: 5rem;
-  position: static;
+  max-height: fit-content;
+  position: sticky;
+  top: 0rem;
+  background-color: var(--bgcolor);
+  z-index: 99;
 }
 
 .main-heading {
   display: flex;
   justify-content: space-between;
 }
+
 .main-heading-left h1 {
   color: #a340f3;
 }
