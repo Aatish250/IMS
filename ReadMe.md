@@ -9,14 +9,14 @@ AG: Control Panel admin ✅
 <table>
   <tr>
     <th>FrontEnd</th>
-    <th>Statis</th>
+    <th>Status</th>
     <th>BackEnd</th>
-    <th>Statis</th>
+    <th>Status</th>
   </tr>
-  <tr>
+  <tr aligh='center'>
     <td>AG: Control Panel admin</td>
-    <td><input type="checkbox" checked></td>
+    <td>✅</td>
     <td>AM: Cart List</td>
-    <td><input type="checkbox" checked></td></td>
+    <td>✅</td>
   </tr>
 </table>
