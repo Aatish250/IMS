@@ -1,14 +1,18 @@
 # Tasks to do
+<table>
+    <tr>
+        <th>AG<th>
+        <th>AM<th>
+    </tr>
+    <tr>
+        <td>a</td>
+        <td>b</td>
+    </tr>
+</table>
 
 # Working
 
-<table>
-<tr>
-    <th>AG<th>
-    <th>AM<th>
-</tr>
-</table>
-
+# Completed
 <table>
   <tr>
     <th colspan='2'>FrontEnd</th>
