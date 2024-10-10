@@ -1,4 +1,4 @@
-# Tasks to do
+#Tasks to do
 <table>
   <tr>
     <th>AG</th>
@@ -10,6 +10,7 @@
       <ol>
         <li>Re-Manage Admin Add page</li>
         <li>Control Panel page not satisfactory</li>
+        <li>See the working table.</li>
       </ol>
     </td>
     <!-- list for am -->
@@ -22,7 +23,7 @@
   </tr>
 </table>
 <br>
-# Working
+#Working
 <table>
     <tr>
         <th>Pages</th>
@@ -116,7 +117,7 @@
       <td aligh="center">➖</td>
   </tr>
 </table>
-# Symbols
+#Symbols
 ☑️ Done
 🔄️ Progress
 ⛔ Error
