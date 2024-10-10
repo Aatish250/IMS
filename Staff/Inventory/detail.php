@@ -49,9 +49,9 @@ if (mysqli_num_rows($result) > 0) {
                             </span>
                         </div>
                         <div>
-                                <span class='qty-ctrl-btn minus-btn' data-action='-'>-</span>
+                                <button class='qty-ctrl-btn minus-btn' data-action='-'>-</button>
                                 <input type='number' name='qty' id='qty' class='qty-ctrl-inp' value=1 readonly>
-                                <span class='qty-ctrl-btn plus-btn' data-action='+'>+</span>
+                                <button class='qty-ctrl-btn plus-btn' data-action='+'>+</button>
                             <button name='req-item' value={$row['item_id']}>Request Item</button>
                         </div>
                         <div>"
@@ -61,7 +61,7 @@ if (mysqli_num_rows($result) > 0) {
                 : "Please Request no stock left") .
             "</div>
                         <div>
-                            <button>Add to cart</button>
+                            <button name='add-cart' value='{$row['item_id']}'>Add to cart</button>
                             <button>Issue Problem</button>
                         </div>
                     </form>
