@@ -23,8 +23,9 @@
   </tr>
 </table>
 <br>
-## Task Overview
-<table>
+
+# Task Overview
+<table aligh="center">
     <tr>
         <th>Pages</th>
         <th>FE</th>
