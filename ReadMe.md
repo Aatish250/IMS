@@ -18,6 +18,7 @@
       <ol>
         <li>Solve Login verification</li>
         <li>manage detail page JScript problem</li>
+        <li>Sold: todays date not match when its 12.21 AM, it shows yesterdays date nut its ok in dashboard</li>
       </ol>
     </td>
   </tr>
@@ -83,7 +84,7 @@
   </tr>
       <td>Staff - Sold</td>
       <td aligh="center">➖</td>
-      <td aligh="center">☑️</td>
+      <td aligh="center">☑⛔</td>
   </tr>
   </tr>
       <td>Staff - Request</td>
@@ -111,7 +112,7 @@
   </tr>
   <tr>
       <td colspan="2">Staff - (Add Cart)</td>
-      <td aligh="center">☑️</td>
+      <td aligh="center">☑⛔</td>
   </tr>
   <tr>
       <td colspan="2">Staff - (Issue)</td>
