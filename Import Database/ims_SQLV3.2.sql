@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 06, 2024 at 12:04 PM
+-- Generation Time: Oct 10, 2024 at 08:19 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.1.25
 
@@ -207,7 +207,22 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`uid`, `role`, `username`, `password`) VALUES
-(1, 'admin', 'admin', '$2y$10$UTb1c72qGHglVqFtpmaSPeL0hfC.Dh0EAhQ64N2PB/QsfamEcw.jK');
+(1, 'admin', 'admin', '$2y$10$UTb1c72qGHglVqFtpmaSPeL0hfC.Dh0EAhQ64N2PB/QsfamEcw.jK'),
+(31, 'staff', 'staff1', '$2y$10$cG03ZJnTQraoNc60K6Uo9ubxWqVeekdScD6LgaFzX65mhYieJ1aru');
+
+-- --------------------------------------------------------
+
+--
+-- Stand-in structure for view `view_cart_items`
+-- (See below for the actual view)
+--
+CREATE TABLE `view_cart_items` (
+`item_id` int(11)
+,`item_title` varchar(200)
+,`price` int(10)
+,`quantity` int(10)
+,`cart_qty` int(11)
+);
 
 -- --------------------------------------------------------
 
@@ -243,6 +258,15 @@ CREATE TABLE `view_requests` (
 DROP TABLE IF EXISTS `full_inventory`;
 
 CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `full_inventory`  AS SELECT `inventory`.`item_id` AS `item_id`, `inventory`.`item_title` AS `item_title`, `inventory`.`item_image` AS `item_image`, `inventory`.`price` AS `price`, `inventory`.`quantity` AS `quantity`, `item_details`.`description` AS `description`, `item_details`.`tag` AS `tag`, `item_details`.`location` AS `location`, `category`.`category_id` AS `category_id`, `category`.`category` AS `category` FROM ((`inventory` join `item_details` on(`inventory`.`item_id` = `item_details`.`item_id`)) left join `category` on(`item_details`.`category_id` = `category`.`category_id`)) ;
+
+-- --------------------------------------------------------
+
+--
+-- Structure for view `view_cart_items`
+--
+DROP TABLE IF EXISTS `view_cart_items`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `view_cart_items`  AS SELECT `inventory`.`item_id` AS `item_id`, `inventory`.`item_title` AS `item_title`, `inventory`.`price` AS `price`, `inventory`.`quantity` AS `quantity`, `cart`.`cart_qty` AS `cart_qty` FROM (`inventory` join `cart` on(`inventory`.`item_id` = `cart`.`item_id`)) ;
 
 -- --------------------------------------------------------
 
@@ -338,7 +362,7 @@ ALTER TABLE `sold`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `uid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `uid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- Constraints for dumped tables
