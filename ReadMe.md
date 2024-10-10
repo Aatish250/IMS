@@ -84,7 +84,7 @@
   </tr>
       <td>Staff - Sold</td>
       <td aligh="center">➖</td>
-      <td aligh="center">☑⛔</td>
+      <td aligh="center">⛔</td>
   </tr>
   </tr>
       <td>Staff - Request</td>
@@ -112,7 +112,7 @@
   </tr>
   <tr>
       <td colspan="2">Staff - (Add Cart)</td>
-      <td aligh="center">☑⛔</td>
+      <td aligh="center">⛔</td>
   </tr>
   <tr>
       <td colspan="2">Staff - (Issue)</td>
