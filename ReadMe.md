@@ -1,44 +1,3 @@
-<<<<<<< HEAD
-# Tasks to do
-
-# Working
-
-<table>
-<tr>
-    <th>AG<th>
-    <th>AM<th>
-</tr>
-<tr>
-<!-- list for AG -->
-    <td>
-        <ol>
-            <li>Re-Manage Admin Add page</li>
-            <li>Control Panel page not satisfactory</li>
-        </ol>
-    </td>
-<!-- list for am -->
-    <td>
-        <ol>
-            <li>Solve Login verification</li>
-            <li>manage detail page JScript problem</li>
-        </ol>
-    </td>
-</tr>
-</table>
-
-<table>
-  <tr>
-    <th colspan='2'>FrontEnd</th>
-    <th colspan='2'>BackEnd</th>
-  </tr>
-  <tr aligh='center'>
-  <!-- For Fornt end dev -->
-    <td>AG: Control Panel admin</td>
-    <td aligh='center'>✅</td>
-    <!-- for back end dev -->
-    <td>AM: Cart List</td>
-    <td aligh='center'>✅</td>
-=======
 ## Tasks to do
 <table>
   <tr>
@@ -61,7 +20,6 @@
         <li>manage detail page JScript problem</li>
       </ol>
     </td>
->>>>>>> 2613e1cb9c65d6b5dd071f3c7e02fb27d0e2fb9e
   </tr>
 </table>
 <br>
