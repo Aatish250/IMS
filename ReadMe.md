@@ -94,7 +94,7 @@
   <tr>
       <td>Staff - Cart</td>
       <td aligh="center">➖</td>
-      <td aligh="center">⛔</td>
+      <td aligh="center">☑️</td>
   </tr>
   <tr>
       <td>Staff - Detail</td>
