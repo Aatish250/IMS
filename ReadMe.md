@@ -23,7 +23,7 @@
   </tr>
 </table>
 <br>
-# Tasks to do
+## Task Overview
 <table>
     <tr>
         <th>Pages</th>
@@ -117,7 +117,8 @@
       <td aligh="center">➖</td>
   </tr>
 </table>
-## Tasks to do
+
+## Symbols
 ☑️ Done
 🔄️ Progress
 ⛔ Error
