@@ -18,8 +18,7 @@
       <ol>
         <li>⚠️ - Solve Login verification</li>
         <li>✔️ - Sold: todays date not match when its 12.21 AM, it shows yesterdays date nut its ok in dashboard</li>
-        <li>⛔ - Error in details: when + is clicked the inrement is incresed to max number</li>
-        <li>❔ - missing X button in Admin Edit</li>
+        <li>➖ - add issue btn on staff detail</li>
       </ol>
     </td>
   </tr>
@@ -41,41 +40,41 @@
   <tr>
       <th colspan="3">Admin</th>
   </tr>
+  <tr>
+      <td>Admin - Dashboard</td>
+      <td aligh="center">⚠️</td>
+      <td aligh="center">☑️</td>
+  <tr>
   <tr aligh="center">
       <td>Admin - Add</td>
       <td aligh="center">⚠️</td>
       <td aligh="center">☑️</td>
   </tr>  
   <tr>
-      <td>Admin - Control Panel</td>
-      <td aligh="center">⚠️</td>
-      <td aligh="center">☑️</td>
-  </tr>
-  <tr>
-      <td>Admin - Dashboard</td>
-      <td aligh="center">⚠️</td>
-      <td aligh="center">☑️</td>
-  <tr>
-</tr>
-<tr>
-  <td>Admin - Sold</td>
-  <td aligh="center">➖</td>
-  <td aligh="center">☑️</td>
-</tr>
-  </tr>
       <td>Admin - Inventory</td>
       <td aligh="center">➖</td>
       <td aligh="center">☑️</td>
   </tr> 
-<tr>
-    <td colspan="2">Admin - Edit</td>
+  <tr>
+      <td>Admin - Edit</td>
+      <td aligh="center">➖</td>
+      <td aligh="center">☑️</td>
+  <tr>
+  <tr>
+      <td colspan="2">Admin - Edit (Drag Drop)</td>
+      <td aligh="center">❔</td>
+  <tr>
+  <tr>
+    <td>Admin - Sold</td>
     <td aligh="center">➖</td>
-    <td aligh="center">❔</td>
-<tr>
-<tr>
-    <td colspan="2">Admin - (Drag Drop)</td>
-    <td aligh="center">➖</td>
-<tr>
+    <td aligh="center">☑️</td>
+  </tr>
+  <tr>
+      <td>Admin - Control Panel</td>
+      <td aligh="center">⚠️</td>
+      <td aligh="center">☑️</td>
+  </tr>
+  </tr>
   <tr>
       <th colspan="3">Staff</th>
   </tr>
@@ -83,6 +82,27 @@
       <td aligh="center">➖</td>
       <td aligh="center">☑️</td>
   <tr>
+  <tr>
+      <td>Staff - (Inventory) Detail</td>
+      <td aligh="center">➖</td>
+      <td aligh="center">🔄️</td>
+  </tr>
+  <tr>
+      <td colspan="2">Staff - Detail [Request]</td>
+      <td aligh="center">☑️</td>
+  </tr>
+  <tr>
+      <td colspan="2">Staff - Detail [Sell Direct]</td>
+      <td aligh="center">☑️</td>
+  </tr>
+  <tr>
+      <td colspan="2">Staff - Detail [Add Cart]</td>
+      <td aligh="center">☑️</td>
+  </tr>
+  <tr>
+      <td colspan="2">Staff - Detail [Issue]</td>
+      <td aligh="center">➖</td>
+  </tr>
   </tr>
       <td>Staff - Sold</td>
       <td aligh="center">➖</td>
@@ -100,24 +120,8 @@
       <td aligh="center">☑️</td>
   </tr>
   <tr>
-      <td>Staff - Detail</td>
+      <td>Staff - Issues</td>
       <td aligh="center">➖</td>
-      <td aligh="center">🔄️</td>
-  </tr>
-  <tr>
-      <td colspan="2">Staff - [Request]</td>
-      <td aligh="center">☑️</td>
-  </tr>
-  <tr>
-      <td colspan="2">Staff - [Sell Direct]</td>
-      <td aligh="center">☑️</td>
-  </tr>
-  <tr>
-      <td colspan="2">Staff - [Add Cart]</td>
-      <td aligh="center">⛔</td>
-  </tr>
-  <tr>
-      <td colspan="2">Staff - [Issue]</td>
       <td aligh="center">➖</td>
   </tr>
 </table>
