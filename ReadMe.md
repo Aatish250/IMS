@@ -17,7 +17,7 @@
     <td>
       <ol>
         <li>⚠️ - Solve Login verification</li>
-        <li>Sold: todays date not match when its 12.21 AM, it shows yesterdays date nut its ok in dashboard</li>
+        <li>✔️ - Sold: todays date not match when its 12.21 AM, it shows yesterdays date nut its ok in dashboard</li>
         <li>⛔ - Error in details: when + is clicked the inrement is incresed to max number</li>
         <li>❔ - missing X button in Admin Edit</li>
       </ol>
