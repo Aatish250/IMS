@@ -38,11 +38,11 @@ if (mysqli_num_rows($result) > 0) {
                 </div>
                 <div>
                     <form action='{$_SERVER['HTTP_REFERER']}' method='POST'>
-                        <input type='number' id='price' readonly value='{$row['price']}'>
+                        <input type='number' id='price' value='{$row['price']}'>
                         <div class='info'>
                             <span>
                                 <img src='' alt='Stock'> 
-                                <input type='number' id='maxQty' value={$row['quantity']} readonly>
+                                <input type='number' id='stock' value={$row['quantity']} readonly>
                             </span>
                             <span>
                                 <img src='' alt='Location'> {$row['location']} 
