@@ -102,7 +102,7 @@
   <tr>
       <td>Staff - Detail</td>
       <td aligh="center">➖</td>
-      <td aligh="center">✔️</td>
+      <td aligh="center">🔄️</td>
   </tr>
   <tr>
       <td colspan="2">Staff - [Request]</td>
