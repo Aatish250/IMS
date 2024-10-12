@@ -18,8 +18,7 @@
       <ol>
         <li>⚠️ - Solve Login verification</li>
         <li>✔️ - Sold: todays date not match when its 12.21 AM, it shows yesterdays date nut its ok in dashboard</li>
-        <li>⛔ - Error in details: when + is clicked the inrement is incresed to max number</li>
-        <li>❔ - missing X button in Admin Edit</li>
+        <li>➖ - add issue btn on staff detail</li>
       </ol>
     </td>
   </tr>
@@ -68,9 +67,9 @@
       <td aligh="center">☑️</td>
   </tr> 
 <tr>
-    <td colspan="2">Admin - Edit</td>
+    <td>Admin - Edit</td>
     <td aligh="center">➖</td>
-    <td aligh="center">❔</td>
+    <td aligh="center">☑️</td>
 <tr>
 <tr>
     <td colspan="2">Admin - (Drag Drop)</td>
@@ -114,7 +113,7 @@
   </tr>
   <tr>
       <td colspan="2">Staff - [Add Cart]</td>
-      <td aligh="center">⛔</td>
+      <td aligh="center">☑️</td>
   </tr>
   <tr>
       <td colspan="2">Staff - [Issue]</td>
