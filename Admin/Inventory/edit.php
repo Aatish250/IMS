@@ -4,13 +4,14 @@
         color: white;
     }
 </style>
+<link rel="stylesheet" href="edit.css">
 
 <?php
 require "../../dbConn.php";
 // require "inventoryBackend.php";
 
 if (isset($_GET['item-edit'])) {
-    echo $_SERVER['HTTP_REFERER'];
+    echo "<a href='" . $_SERVER['HTTP_REFERER'] . "' class='close-btn'>&#x2715;</a>";
 
     $sql = "SELECT * FROM full_inventory WHERE item_id = {$_GET['item-edit']}";
     $result = mysqli_query($conn, $sql);
@@ -26,7 +27,6 @@ if (isset($_GET['item-edit'])) {
     $location = $row['location'];
     $description = $row['description'];
 
-    echo $item_id . "<br>";
 }
 
 if (isset($_POST['new-edit'])) {
@@ -101,7 +101,9 @@ if (isset($_POST['new-edit'])) {
         <input type="number" name="new-price" id="" value="<?php echo $price ?>">
         <br>
         Quantity:
-        <input type="number" name="new-quantity" id="" value="<?php echo $quantity = $quantity ?>">
+        <button class='qty-ctrl-btn' data-action='-'>-</button>
+        <input type="number" name="new-quantity" id='qty' class='qty-ctrl-inp' value="<?php echo $quantity ?>">
+        <button class='qty-ctrl-btn plus-btn' data-action='+'>+</button>
         <br>
         Tag:
         <select name="new-tag" id="">
@@ -133,3 +135,4 @@ if (isset($_POST['new-edit'])) {
     </form>
 
 </body>
+<script src="edit.js"></script>
