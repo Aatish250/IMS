@@ -62,7 +62,7 @@
   <tr>
   <tr>
       <td colspan="2">Admin - Edit (Drag Drop)</td>
-      <td aligh="center">➖</td>
+      <td aligh="center">❔</td>
   <tr>
   <tr>
     <td>Admin - Sold</td>
