@@ -61,8 +61,9 @@
       <td aligh="center">☑️</td>
   <tr>
   <tr>
-      <td colspan="2">Admin - Edit (Drag Drop)</td>
+      <td>Admin - Edit (Drag Drop)</td>
       <td aligh="center">❔</td>
+      <td aligh="center">☑️</td>
   <tr>
   <tr>
     <td>Admin - Sold</td>
@@ -85,7 +86,7 @@
   <tr>
       <td>Staff - (Inventory) Detail</td>
       <td aligh="center">➖</td>
-      <td aligh="center">🔄️</td>
+      <td aligh="center">▶️</td>
   </tr>
   <tr>
       <td colspan="2">Staff - Detail [Request]</td>
@@ -128,10 +129,9 @@
 
 ## Symbols
 ☑️ Done
-🔄️ Progress
+▶️ Progress / Remaining
 ⛔ Error
 ⚠️ Mistake
 ✔️ Partial Complete
 ➖ UnDone
-❕ Remaining
 ❔ Missing
