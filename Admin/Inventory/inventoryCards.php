@@ -2,13 +2,14 @@
 include("inventoryBackend.php");
 ?>
 
-
 <!-- <link rel="stylesheet" href="card.css"> -->
 
 <div class="card-wrapper">
 
     <div class="card">
-        <img src="../../Images/testimg/585-KB.png" alt="">
+        <a href="edit.php">
+            <img src="../../Images/testimg/585-KB.png" alt="">
+        </a>
         <div class="tag">Top Selling</div>
         <div class="card-content">
             <h3>Type C Earphone</h3>
