@@ -41,10 +41,15 @@
 }
 
 .additem-left-heading p {
-  font-size: 1.3rem;
+  font-size: 1.8rem;
   text-transform: uppercase;
   color: var(--primary-color);
   font-weight: 900;
+}
+
+.additem-left-heading svg {
+  width: 2rem;
+  color: var(--primary-color);
 }
 
 .upload-wrapper {

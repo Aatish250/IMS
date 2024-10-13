@@ -47,6 +47,7 @@ nav {
   display: flex;
   flex-direction: column;
 }
+
 a,
 .logout {
   text-decoration: none;
@@ -90,11 +91,20 @@ li {
   width: 100%;
 }
 
-.list-row .icon,
-.logout .icon {
+.logout {
+  padding: 0.625rem 1.2rem;
+}
+
+.list-row .icon {
   margin-right: 0.75rem;
   width: 30px;
-  margin-left: 20px;
+  margin-left: 1.2rem;
+}
+
+.logout .icon {
+  width: 30px;
+  margin-left: 1.2rem;
+  margin-right: 0.4rem;
 }
 
 .list-row a:hover,

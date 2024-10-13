@@ -25,7 +25,7 @@ body {
 }
 
 main {
-  min-width: 25vw;
+  min-width: 24vw;
   min-height: 32vw;
   background-color: white;
   position: absolute;
@@ -44,10 +44,8 @@ main {
   color: var(--login-color);
 }
 
-.logo-section img {
-  width: 60px;
-  height: 47px;
-  margin-bottom: 30px;
+.logo-section svg {
+  margin-bottom: 40px;
 }
 
 .form-container {
@@ -80,74 +78,26 @@ input[type="password"] {
   right: 0;
 }
 
-.custom-select {
-  position: relative;
-  width: fit-content;
-  margin-top: 27px;
-  color: var(--login-color);
-}
-
-.select-box {
-  display: flex;
-  position: relative;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #f0f0f0;
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 7px;
-  cursor: pointer;
-  font-family: Arial, sans-serif;
-}
-
-.select-box span {
-  font-size: 1rem;
-  padding-right: 10px;
-}
-
-.select-box svg {
-  width: 20px;
-  height: 20px;
-  fill: #333;
-  pointer-events: none;
-}
-
-.select-options {
-  position: absolute;
-  top: 100%;
-  left: 0;
+select {
   width: 100%;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  background-color: #fff;
-  border: 1px solid #ccc;
-  border-radius: 7px;
-  opacity: 0;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.5s ease, opacity 0.5s ease;
-  z-index: 5;
+  margin-top: 2rem;
+  padding: 10px 4px;
+  border: 2px solid #888;
+  border-radius: 5px;
+  font-size: 1rem;
 }
 
-.option {
-  padding: 8px;
-  cursor: pointer;
-  font-family: Arial, sans-serif;
+select option {
+  padding: 20px 5px;
 }
 
-.option:hover {
-  background-color: #f0f0f0;
-}
-
-.show {
-  max-height: 150px;
-  opacity: 1;
+select:focus {
+  border: 2px solid #7c7c7c;
 }
 
 .login-btn {
   position: relative;
-  margin-top: 2rem;
+  margin-top: 2.3rem;
 }
 
 .login-btn button {
