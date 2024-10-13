@@ -57,12 +57,26 @@ if (mysqli_num_rows($result) > 0) {
                         <div>"
             . ($row['quantity'] > 0 ?
                 "Rs. <input type='number' id='total' name='total' value='{$row['price']}'>
-                            <button name='sell-item' value={$row['item_id']}>Sell Directly</button>"
+                                        <button name='sell-item' value={$row['item_id']}>Sell Directly</button>"
                 : "Please Request no stock left") .
             "</div>
                         <div>
                             <button name='add-cart' value='{$row['item_id']}'>Add to cart</button>
-                            <button>Issue Problem</button>
+                            <button id='isuBtn'>Issue Problem</button>
+                        </div>
+                        <div class='isu-div' id='isuDiv'>
+                            Problem:
+                            <select name='isu-type' id='isuSel'>
+                                <option value='' hidden>Problem</option>
+                                <option>Damage</option>
+                                <option>Lost</option>
+                                <option>Naming Error</option>
+                                <option>Pricing Error</option>
+                                <option>other</option>
+                            </select>
+                            <button name='isu-btn' value='{$row['item_id']}'>Report</button>
+                            <br>
+                            <input type='text' placeholder='Other Issues' id='isuTxt' name='isu-text'>
                         </div>
                     </form>
                 </div>
