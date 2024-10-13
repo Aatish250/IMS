@@ -70,11 +70,12 @@ require '../checkAdmin.php';
 <script src="inventory.js"></script>
 <script src="../../Components/UpdateDate.js"></script>
 <script src="../../Components/flash_message.js"></script>
-<script>
-    flashMessage("It's a test message", 3);
-</script>
 <!-- <script>
-    flashMessage("<?php //if (isset($message)) echo $message; ?>", 30);
+    flashMessage("It's a test message", 3);
 </script> -->
+<script>
+    flashMessage("<?php if (isset($message))
+        echo $message; ?>", 3);
+</script>
 
 </html>

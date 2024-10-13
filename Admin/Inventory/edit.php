@@ -29,66 +29,13 @@ if (isset($_GET['item-edit'])) {
 
 }
 
-if (isset($_POST['new-edit'])) {
 
-    // Variables used inside program
-    $item_id = $_POST['new-edit']; // get item id
-    $relative_img_path = $_POST['relative_img_path']; // image data from fomr post
-    $new_name = $_POST['new-name']; // if other data from form post
-    $new_price = $_POST['new-price'];
-    $new_quantity = $_POST['new-quantity'];
-    $new_tag = $_POST['new-tag'];
-    $new_category = $_POST['new-category'];
-    $new_location = $_POST['new-location'];
-    $new_description = $_POST['new-description'];
-
-    // if image is changed
-    if ($_FILES['new-file']['size'] > 0) {
-        $parentDir = dirname(dirname(__DIR__));
-        $new_actual_path = str_replace("../..", $parentDir, $relative_img_path);
-        $new_img_name = $_FILES['new-file']['name'];
-        $img_tmp = $_FILES['new-file']['tmp_name'];
-
-        $old_actual_path = $new_actual_path; // copy previous full path to delte previous image
-        $new_actual_path = "{$parentDir}/Images/item/{$item_id}_{$new_img_name}"; // set full path of image to upload
-
-        // delete old image
-        if (file_exists($old_actual_path))
-            unlink($old_actual_path);
-
-        // set image relative path and update it in database
-        $relative_img_path = "../../Images/item/{$item_id}_{$new_img_name}";
-        mysqli_query($conn, "UPDATE inventory SET item_image = '{$relative_img_path}' WHERE item_id = {$item_id}");
-        move_uploaded_file($img_tmp, $new_actual_path);
-    }
-
-    // variables used to represent values in form
-    $img_src = $relative_img_path;
-    $title = $new_name;
-    $price = $new_price;
-    $quantity = $new_quantity;
-    $tag = $new_tag;
-    $category_id = $new_category;
-    $location = $new_location;
-    $description = $new_description;
-
-
-    // update the changes
-    $sql = "UPDATE inventory SET item_title = '{$title}', price = {$price}, quantity= {$quantity} WHERE item_id = {$item_id}";
-    $result = mysqli_query($conn, $sql);
-    $sql = "UPDATE item_details SET tag= '{$tag}', category_id= {$category_id}, location= '{$location}', description= '{$description}' WHERE item_id = {$item_id}";
-    $result = mysqli_query($conn, $sql);
-
-
-    // this redirects to invneotry page
-    header('location: inventory.php');
-}
 
 
 ?>
 
 <body>
-    <form action="" method="POST" enctype="multipart/form-data">
+    <form action="<?php echo $_SERVER['HTTP_REFERER'] ?>" method="POST" enctype="multipart/form-data">
         <img src="<?php echo $img_src ?>" alt="Image" height="300px">
         <input type="text" name="relative_img_path" value="<?php echo $img_src ?>">
         <br>
