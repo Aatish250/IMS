@@ -1,3 +1,4 @@
+// ---------------- [ + - ] buttons js V1 ---------------
 
 // const qtyCtrlBtns = document.querySelectorAll(".qty-ctrl-btn");
 // const total = document.getElementById("total");
@@ -23,6 +24,8 @@
 
 // })
 
+
+// ---------------- [ + - ] buttons js V2 ---------------
 
 const total = document.getElementById("total");
 const price = document.getElementById("price");
@@ -93,3 +96,24 @@ function qtyChng(){
         }
     }
 }
+
+// ----------------- issue button click --------------
+
+const isuBtn = document.getElementById("isuBtn");
+const isuDiv = document.getElementById("isuDiv");
+const isuTxt = document.getElementById("isuTxt");
+const isuSel = document.getElementById("isuSel");
+isuDiv.style.display = 'none';
+
+isuTxt.style.display = 'none';
+isuClicked = false;
+
+isuBtn.addEventListener("click", (e)=>{
+    e.preventDefault();
+    isuDiv.style.display = (isuClicked) ? 'block' : 'none';
+    isuClicked = (isuClicked) ? false : true; 
+})
+
+isuSel.addEventListener("change", ()=>{
+    isuTxt.style.display = (isuSel.value == 'other') ? 'block' : 'none';
+})

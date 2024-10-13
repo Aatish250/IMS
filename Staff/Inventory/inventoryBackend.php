@@ -3,6 +3,8 @@
 $message = isset($_GET['message']) ? $_GET['message'] : '';
 
 
+// ----------------------- on database & page load --------------------------
+
 // function to set the sql query for searching
 function show_full_inventory_filter_sql()
 {
@@ -24,13 +26,26 @@ function show_full_inventory_filter_sql()
     return $sql;
 }
 
-// for search query on page load
-$sql = show_full_inventory_filter_sql();
+$sql = show_full_inventory_filter_sql(); // for search query on page load
 
 if (isset($_GET["title"]) || isset($_GET["category-list"]) || isset($_GET["tag-list"]) || isset($_GET["sort-by-list"]) || isset($_GET["sort"])) {
-    // filter according to given inputs
-    $sql = show_full_inventory_filter_sql();
+    $sql = show_full_inventory_filter_sql(); // filter according to given inputs
 }
+
+
+// ----------------------- on issue btn click --------------------------
+if (isset($_POST['isu-btn']) && $_POST['isu-type'] != '') {
+    $isuType = $_POST['isu-type'];
+    $isuTxt = $_POST['isu-text'];
+    $id = $_POST['isu-btn'];
+
+    $isuSql = "INSERT INTO `issue` (`item_id`, `issue`, `text`) VALUES ('{$id}', '{$isuType}', '{$isuTxt}')";
+    if (mysqli_query($conn, $isuSql))
+        $message = "item: {$id} is issued with {$isuType} Issue and text: {$isuTxt}";
+}
+
+
+// ----------------------- on request btn click --------------------------
 
 if (isset($_POST["req-item"])) {
     $sqlForReq = "SELECT * FROM request WHERE item_id=" . $_POST['req-item'];
@@ -46,6 +61,10 @@ if (isset($_POST["req-item"])) {
     if (mysqli_query($conn, $sqlForReq))
         $message = "items id: {$_POST['req-item']} Requested";
 }
+
+
+
+// ----------------------- on sell btn click --------------------------
 
 if (isset($_POST["sell-item"])) {
 
@@ -86,6 +105,8 @@ if (isset($_POST["sell-item"])) {
     }
 
 }
+
+// ----------------------- on add btn click --------------------------
 
 if (isset($_POST["add-cart"])) {
 
