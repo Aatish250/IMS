@@ -62,7 +62,7 @@
   <tr>
   <tr>
       <td>Admin - Edit (Drag Drop)</td>
-      <td aligh="center">❔</td>
+      <td aligh="center">➖</td>
       <td aligh="center">☑️</td>
   <tr>
   <tr>
@@ -75,6 +75,11 @@
       <td aligh="center">⚠️</td>
       <td aligh="center">☑️</td>
   </tr>
+  <tr>
+      <td>Admin - Issue List</td>
+      <td aligh="center">➖</td>
+      <td aligh="center">➖</td>
+  </tr>
   </tr>
   <tr>
       <th colspan="3">Staff</th>
@@ -86,7 +91,7 @@
   <tr>
       <td>Staff - (Inventory) Detail</td>
       <td aligh="center">➖</td>
-      <td aligh="center">▶️</td>
+      <td aligh="center">☑️</td>
   </tr>
   <tr>
       <td colspan="2">Staff - Detail [Request]</td>
@@ -102,7 +107,7 @@
   </tr>
   <tr>
       <td colspan="2">Staff - Detail [Issue]</td>
-      <td aligh="center">➖</td>
+      <td aligh="center">☑️</td>
   </tr>
   </tr>
       <td>Staff - Sold</td>
@@ -123,7 +128,7 @@
   <tr>
       <td>Staff - Issues</td>
       <td aligh="center">➖</td>
-      <td aligh="center">➖</td>
+      <td aligh="center">▶️</td>
   </tr>
 </table>
 
