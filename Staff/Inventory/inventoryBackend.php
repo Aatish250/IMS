@@ -38,10 +38,11 @@ if (isset($_POST['isu-btn']) && $_POST['isu-type'] != '') {
     $isuType = $_POST['isu-type'];
     $isuTxt = $_POST['isu-text'];
     $id = $_POST['isu-btn'];
+    $qty = $_POST['qty'];
 
-    $isuSql = "INSERT INTO `issue` (`item_id`, `issue`, `text`) VALUES ('{$id}', '{$isuType}', '{$isuTxt}')";
+    $isuSql = "INSERT INTO `issue` (`item_id`, `qty`, `issue`, `text`) VALUES ('{$id}', '{$qty}', '{$isuType}', '{$isuTxt}')";
     if (mysqli_query($conn, $isuSql))
-        $message = "item: {$id} is issued with {$isuType} Issue and text: {$isuTxt}";
+        $message = "{$qty} items of id: {$id} is issued with {$isuType} Issue and text: {$isuTxt}";
 }
 
 
