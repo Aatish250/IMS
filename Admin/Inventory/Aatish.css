@@ -53,9 +53,12 @@ select {
 
 .card-wrapper {
   display: grid; /* Set the display to grid */
-  grid-template-columns: repeat(4, 1fr); /* Create four equal columns */
+  grid-template-columns: repeat(
+    4,
+    minmax(200px, 1fr)
+  ); /* Create four equal columns */
   gap: 0px; /* Reduced space between the cards */
-  padding: 5px 15px 5px 30px;
+  padding-top: 15px;
 }
 
 .card {
@@ -120,6 +123,7 @@ select {
   color: white;
   padding: 10px 17px;
   border-bottom-left-radius: 20px;
+  border-top-right-radius: 10px;
   font-size: 14px;
 }
 
