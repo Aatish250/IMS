@@ -54,7 +54,7 @@
   </tr>  
   <tr>
       <td>Admin - Inventory</td>
-      <td aligh="center">▶️</td>
+      <td aligh="center">☑️</td>
       <!-- <td aligh="center">❔</td> -->
       <td aligh="center">☑️</td>
   </tr> 

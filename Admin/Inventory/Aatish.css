@@ -22,6 +22,7 @@ input[type="text"] {
 .query-box {
   background-color: white;
   padding: 10px;
+  margin-top: 10px;
   display: flex;
   align-items: center;
   gap: 10px;
@@ -58,7 +59,7 @@ select {
 }
 
 .card {
-  width: 250px;
+  width: 280px;
   height: max-content;
   background-color: white;
   border-radius: 10px;
@@ -66,7 +67,7 @@ select {
   /* overflow: hidden; */
   position: relative;
   margin: 1rem;
-  padding: 15px;
+  padding: 15px 15px 23px 15px;
 }
 
 .card img {
@@ -81,16 +82,21 @@ select {
 }
 
 .card h3 {
-  margin: 0 0 10px;
+  margin: 0 0 15px;
   font-size: 18px;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
 }
 
+.card-pc-section {
+  display: flex;
+  justify-content: space-between;
+}
+
 .card .price {
   font-weight: bold;
-  color: #333;
+  color: #a340f3;
   margin-bottom: 5px;
 }
 
@@ -98,6 +104,12 @@ select {
 .card .category {
   color: #666;
   font-size: 14px;
+}
+
+.card-bottom-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .card .tag {
@@ -111,7 +123,21 @@ select {
   font-size: 14px;
 }
 
-.card .menu {
+.card-wrapper form button {
+  background: #ff4329;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 10px;
+  cursor: pointer;
+  gap: 5px;
+  color: white;
+  font-size: 14px;
+}
+
+/* .card .menu {
   position: absolute;
   bottom: 10px;
   right: 10px;
@@ -125,7 +151,6 @@ select {
 }
 
 .card .menu div {
-  /* display: flex; */
   display: none;
   z-index: 1;
   position: absolute;
@@ -134,10 +159,11 @@ select {
   bottom: 0;
   right: 0;
 }
+
 .menu div button {
   position: relative;
   padding: 5px;
   cursor: pointer;
-}
+} */
 
 /* card css ends */
