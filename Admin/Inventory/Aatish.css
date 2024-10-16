@@ -55,10 +55,11 @@ select {
   display: grid; /* Set the display to grid */
   grid-template-columns: repeat(
     4,
-    minmax(200px, 1fr)
+    minmax(300px, 1fr)
   ); /* Create four equal columns */
-  gap: 0px; /* Reduced space between the cards */
   padding-top: 15px;
+  justify-items: center;
+  gap: 0;
 }
 
 .card {
