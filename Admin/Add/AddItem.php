@@ -62,7 +62,7 @@
               </svg>
               <p>Add</p>
           </div>
-          <div class="upload-wrapper">
+          
             <div class="upload-container">
               <input name="img" type="file" id="fileInput" class="file-input" accept="image/*" hidden />
               <div class="upload-box" id="uploadBox">
@@ -70,7 +70,7 @@
                 <p>Choose Image or Drag and Drop Image</p>
               </div>
             </div>
-          </div>
+          
         </div>
         <d class="additem-right">
           <label class="additem-title" for="title" id="title">

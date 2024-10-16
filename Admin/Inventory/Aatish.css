@@ -59,7 +59,6 @@ select {
   ); /* Create four equal columns */
   padding-top: 15px;
   justify-items: center;
-  gap: 0;
 }
 
 .card {

@@ -37,9 +37,11 @@ body {
 aside {
   width: 14rem; /* changes made for control panel */
   height: 100%;
+  max-height: 100dvh;
   background-color: var(--nav-color);
   /* position: relative; */
   position: fixed;
+  /* top: 0; */
   z-index: 99;
 }
 
@@ -86,6 +88,7 @@ li {
 }
 
 .list-row a {
+  cursor: pointer !important;
   padding: 0.625rem 0.313rem;
   display: flex;
   align-items: center;
@@ -104,10 +107,17 @@ li {
   padding: 0.625rem 1.2rem;
   width: 90%;
   justify-content: center;
+  position: absolute;
+  bottom: 5%;
+  font-size: 1rem;
+  outline: none;
+  border: none;
+  background: transparent;
 }
 
 .logout:hover {
   color: whitesmoke;
+  cursor: pointer;
 }
 
 .logout .icon {
@@ -120,22 +130,13 @@ li {
   border-radius: 0.313rem;
   transition: all 0.2s ease;
   width: 100%;
+  cursor: pointer !important;
 }
 
 /* Style active link and its image */
 .active a {
   color: var(--selected-color);
   font-weight: 600;
-}
-
-.logout {
-  background-color: transparent;
-  position: absolute;
-  bottom: 5%;
-  font-size: 1rem;
-  outline: none;
-  border: none;
-  cursor: pointer;
 }
 
 /* sideabr css ends */
@@ -154,7 +155,7 @@ li {
   } */
   /* height: 110%; */
   height: fit-content;
-  /* background-color: grey; */
+  background: transparent;
 }
 
 header {
