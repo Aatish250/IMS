@@ -67,10 +67,11 @@ select {
   ); /* Create four equal columns */
   padding-top: 15px;
   justify-items: center;
+  background-color: red;
 }
 
 .card {
-  min-width: 232px;
+  max-width: 280px;
   height: max-content;
   background-color: white;
   border-radius: 10px;
