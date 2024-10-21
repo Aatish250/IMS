@@ -24,8 +24,6 @@ function show_full_inventory_filter_sql()
     return $sql;
 }
 
-// ser serch query on page load
-$sql = show_full_inventory_filter_sql();
 
 
 
@@ -34,6 +32,8 @@ if (isset($_GET["title"]) || isset($_GET["category-list"]) || isset($_GET["tag-l
     $sql = show_full_inventory_filter_sql();
 }
 
+// ser serch query on page load
+$sql = show_full_inventory_filter_sql();
 
 // --------------------- on edit click ------------------
 
@@ -89,4 +89,12 @@ if (isset($_POST['new-edit'])) {
 
     if ($result1 && $result2)
         $message = "Updateditem ID: {$item_id}";
+}
+
+
+// --------------------- on message session set ------------------
+
+if (isset($_SESSION['message'])) {
+    $message = $_SESSION['message'];
+    unset($_SESSION['message']);
 }

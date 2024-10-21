@@ -59,8 +59,8 @@ require '../checkAdmin.php';
         </div>
         <section>
             <?php
+            include("inventoryBackend.php");
             include 'inventoryCards.php';
-            // include 'inventoryBackend.php';
             ?>
         </section>
     </main>
@@ -71,11 +71,11 @@ require '../checkAdmin.php';
 <script src="../../Components/UpdateDate.js"></script>
 <script src="../../Components/flash_message.js"></script>
 <!-- <script>
-    flashMessage("It's a test message", 3);
+    flashMessage("It's a test message", 3); // (text, seconds)
 </script> -->
 <script>
     flashMessage("<?php if (isset($message))
-        echo $message; ?>", 3);
+        echo $message; ?>", 5);
 </script>
 
 </html>
