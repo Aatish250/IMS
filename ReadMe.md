@@ -8,7 +8,7 @@
     <!-- list for AG -->
     <td>
       <ol>
-        <li>✔️ -  Re-Designe login page</li>
+        <li>✔️ -  Re-Designe Inventory Page Admin</li>
         <li>❔ - Consider Re-Desigining</li>
         <li>⚠️ - Re-Manage Admin Add page</li>
         <li>⚠️ - Control Panel page not satisfactory</li>
@@ -54,7 +54,7 @@
   </tr>  
   <tr>
       <td>Admin - Inventory</td>
-      <td aligh="center">☑️</td>
+      <td aligh="center">✔️</td>
       <!-- <td aligh="center">❔</td> -->
       <td aligh="center">☑️</td>
   </tr> 

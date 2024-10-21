@@ -78,7 +78,7 @@ input[type="password"] {
   right: 0;
 }
 
-select {
+/* select {
   width: 100%;
   margin-top: 2rem;
   padding: 10px 4px;
@@ -93,22 +93,49 @@ select option {
 
 select:focus {
   border: 2px solid #7c7c7c;
+} */
+.submit-buttons {
+  display: flex;
+  position: relative;
+  /* background-color: red; */
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.role-btn {
+  display: block;
+  min-width: 8rem;
+  padding: .5rem 2rem;
+  border: 1px solid #88888840;
+  border-radius: 5px 0 0 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+  transition: .3s;
+  font-weight: 500;
+}
+
+.role-btn:hover {
+  box-shadow: inset -2px 0px 10px #00000030;
 }
 
 .login-btn {
   position: relative;
-  margin-top: 2.3rem;
+  /* margin-top: 2.3rem; */
 }
 
 .login-btn button {
-  padding: 6px 41px;
+  padding: .5rem 2rem;
   background: transparent;
-  border: 2px solid var(--login-color);
+  border: 1px solid var(--login-color);
   outline: none;
-  font-size: 18px;
+  font-size: 1rem;
   color: var(--login-color);
   cursor: pointer;
-  border-radius: 7px;
+  border-radius: 0 5px 5px 0;
   font-weight: 500;
   position: relative;
   transition: all 0.35s;
@@ -178,10 +205,6 @@ select:focus {
   .select-box {
     padding: 10px;
     font-size: 0.9rem;
-  }
-
-  .login-btn {
-    margin-top: 25px;
   }
 
   .login-btn button {
