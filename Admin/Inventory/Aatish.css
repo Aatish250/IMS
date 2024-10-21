@@ -82,7 +82,7 @@ select {
 
 .card a > img {
   width: 250px;
-  height: 210px;
+  height: 250px;
   object-fit: cover;
   border-radius: 5px;
   cursor: pointer;
