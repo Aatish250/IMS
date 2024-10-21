@@ -20,11 +20,11 @@ input[type="text"] {
 }
 
 input[type="text"]:focus {
-  border: 1px solid #8a2be2;
+  border: 1px solid var(--accent-clr);
 }
 
 #searchTitle:focus {
-  border: 1px solid #8a2be2;
+  border: 1px solid var(--accent-clr);
 }
 
 .query-box {
@@ -67,7 +67,6 @@ select {
   ); /* Create four equal columns */
   padding-top: 15px;
   justify-items: center;
-  background-color: red;
 }
 
 .card {
@@ -78,7 +77,7 @@ select {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   position: relative;
   margin: 1rem;
-  padding: 15px 15px 23px 15px;
+  padding: 15px;
 }
 
 .card a > img {
@@ -104,12 +103,13 @@ select {
 .inv-details {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  /* align-items: center; */
+  /* background-color: red; */
 }
 
 .card .price {
   font-weight: bold;
-  color: #a340f3;
+  color: var(--accent-clr);
   margin-bottom: 5px;
   font-size: 1.1rem;
 }
@@ -129,7 +129,7 @@ select {
 }
 
 .card .quantity svg path {
-  fill: #8a2be2;
+  fill: var(--accent-clr);
 }
 
 .card .category {
@@ -147,7 +147,7 @@ select {
   position: absolute;
   top: 0px;
   right: 0px;
-  background-color: #8a2be2;
+  background-color: var(--accent-clr);
   color: white;
   padding: 10px 17px;
   border-bottom-left-radius: 20px;
