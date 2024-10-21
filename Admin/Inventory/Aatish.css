@@ -62,7 +62,7 @@ select {
 .card-wrapper {
   display: grid; /* Set the display to grid */
   grid-template-columns: repeat(
-    4,
+    auto-fill,
     minmax(300px, 1fr)
   ); /* Create four equal columns */
   padding-top: 15px;
@@ -70,12 +70,11 @@ select {
 }
 
 .card {
-  min-width: 280px;
+  min-width: 232px;
   height: max-content;
   background-color: white;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  /* overflow: hidden; */
   position: relative;
   margin: 1rem;
   padding: 15px 15px 23px 15px;
