@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 22, 2024 at 06:52 AM
+-- Generation Time: Oct 22, 2024 at 03:08 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.1.25
 
@@ -31,6 +31,13 @@ CREATE TABLE `cart` (
   `item_id` int(11) DEFAULT NULL,
   `cart_qty` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `cart`
+--
+
+INSERT INTO `cart` (`item_id`, `cart_qty`) VALUES
+(24, 3);
 
 -- --------------------------------------------------------
 
@@ -99,9 +106,9 @@ INSERT INTO `inventory` (`item_id`, `item_title`, `item_image`, `price`, `quanti
 (14, 'Pen', '../../Images/item/14_17277727712225528279271975671867.jpg', 10, 6),
 (19, 'Item C', '../../Images/item/19_SampleJPGImage_500kbmb.jpg', 5, 36),
 (21, 'Gsbd', '../../Images/item/21_17282007154332362715880198400839.jpg', 8, 90),
-(22, 'JBL P PRO 7', '../../Images/item/22_IMG_20241003_135626.jpg', 2600, 1),
+(22, 'JBL P PRO 7', '../../Images/item/22_IMG_20241003_135626.jpg', 2600, 4),
 (23, 'First dbms structure', '../../Images/item/23_Messenger_creation_BDDA1FF8-9359-4A0F-8DF3-F91953A89A64.jpeg', 60, 20),
-(24, 'My Power Type C Earphone e450c, compatible earphone', '../../Images/item/24_mypowear.png', 499, 5);
+(24, 'My Power Type C Earphone e450c, compatible earphone', '../../Images/item/24_mypowear.png', 499, 1);
 
 -- --------------------------------------------------------
 
@@ -172,8 +179,7 @@ CREATE TABLE `request` (
 --
 
 INSERT INTO `request` (`item_id`, `request_qty`) VALUES
-(6, 7),
-(22, 7);
+(6, 7);
 
 -- --------------------------------------------------------
 
@@ -208,7 +214,8 @@ INSERT INTO `sold` (`transaction_id`, `item_id`, `sold_date`, `sold_item_title`,
 (10, 14, '2024-10-13', 'Pen', 10.00, 8, 85.00),
 (11, 21, '2024-10-13', 'Gsbd', 8.00, 4, 32.00),
 (12, 10, '2024-10-13', 'dfgh', 3.00, 2, 6.00),
-(13, 22, '2024-10-21', 'JBL P PRO 7', 2600.00, 1, 2600.00);
+(13, 22, '2024-10-21', 'JBL P PRO 7', 2600.00, 1, 2600.00),
+(14, 24, '2024-10-22', 'My Power Type C Earphone e450c, compatible earphone', 499.00, 4, 1996.00);
 
 -- --------------------------------------------------------
 
@@ -263,6 +270,21 @@ CREATE TABLE `view_category_details_on_inventory` (
 -- --------------------------------------------------------
 
 --
+-- Stand-in structure for view `view_issue_items`
+-- (See below for the actual view)
+--
+CREATE TABLE `view_issue_items` (
+`issue_id` int(11)
+,`item_id` int(11)
+,`item_title` varchar(200)
+,`quantity` int(10)
+,`issue` varchar(50)
+,`text` varchar(100)
+);
+
+-- --------------------------------------------------------
+
+--
 -- Stand-in structure for view `view_requests`
 -- (See below for the actual view)
 --
@@ -299,6 +321,15 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 DROP TABLE IF EXISTS `view_category_details_on_inventory`;
 
 CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `view_category_details_on_inventory`  AS SELECT `c`.`category_id` AS `category_id`, sum(`i`.`quantity`) AS `total_category_quantity`, count(`id`.`category_id`) AS `total_category_item`, `c`.`category` AS `category` FROM (`category` `c` left join (`inventory` `i` join `item_details` `id` on(`i`.`item_id` = `id`.`item_id`)) on(`id`.`category_id` = `c`.`category_id`)) GROUP BY `c`.`category_id` ;
+
+-- --------------------------------------------------------
+
+--
+-- Structure for view `view_issue_items`
+--
+DROP TABLE IF EXISTS `view_issue_items`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `view_issue_items`  AS SELECT `issue`.`issue_id` AS `issue_id`, `inventory`.`item_id` AS `item_id`, `inventory`.`item_title` AS `item_title`, `inventory`.`quantity` AS `quantity`, `issue`.`issue` AS `issue`, `issue`.`text` AS `text` FROM (`inventory` join `issue` on(`inventory`.`item_id` = `issue`.`item_id`)) ;
 
 -- --------------------------------------------------------
 
@@ -392,7 +423,7 @@ ALTER TABLE `issue`
 -- AUTO_INCREMENT for table `sold`
 --
 ALTER TABLE `sold`
-  MODIFY `transaction_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `transaction_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `users`
