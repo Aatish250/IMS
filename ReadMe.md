@@ -8,11 +8,11 @@
     <!-- list for AG -->
     <td>
       <ol>
-        <li>✔️ -  Re-Designe Inventory Page Admin</li>
         <li>❔ - Consider Re-Desigining</li>
         <li>⚠️ - Re-Manage Admin Add page</li>
         <li>⚠️ - Control Panel page not satisfactory</li>
         <li>➖ - See the working table.</li>
+        <li>▶️ - Doing -- ?? -- </li>
       </ol>
     </td>
     <!-- list for am -->
@@ -20,7 +20,7 @@
       <ol>
         <li>⚠️ - Solve Login verification</li>
         <li>✔️ - Sold: todays date not match when its 12.21 AM, it shows yesterdays date nut its ok in dashboard</li>
-        <li>▶️ - doing staff issue page</li>
+        <li>▶️ - doing admin issue page</li>
       </ol>
     </td>
   </tr>
@@ -81,7 +81,7 @@
   <tr>
       <td>Admin - Issue List</td>
       <td aligh="center">➖</td>
-      <td aligh="center">➖</td>
+      <td aligh="center">▶️</td>
   </tr>
   </tr>
   <tr>
@@ -130,8 +130,8 @@
   </tr>
   <tr>
       <td>Staff - Issue List</td>
-      <td aligh="center">➖</td>
-      <td aligh="center">▶️</td>
+      <td aligh="center">❔</td>
+      <td aligh="center">☑️</td>
   </tr>
 </table>
 
