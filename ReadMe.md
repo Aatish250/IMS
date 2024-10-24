@@ -20,6 +20,8 @@
         <li>⛔ - Solve Login verification</li>
         <li>⚠️ - Sold: todays date not match when its 12.21 AM, it shows yesterdays date nut its ok in dashboard</li>
         <li>▶️ - doing admin issue page</li>
+        <li>⚠️ - Issue page if 0 delete teh lisy</li>
+        <li>⛔ - if added error found in staff sold</li>
       </ol>
     </td>
   </tr>
@@ -70,7 +72,7 @@
   <tr>
     <td>Admin - Sold</td>
     <td aligh="center">❔</td>
-    <td aligh="center">☑️</td>
+    <td aligh="center">⛔</td>
   </tr>
   <tr>
       <td>Admin - Control Panel</td>
@@ -130,7 +132,7 @@
   <tr>
       <td>Staff - Issue List</td>
       <td aligh="center">❔</td>
-      <td aligh="center">☑️</td>
+      <td aligh="center">⚠️</td>
   </tr>
 </table>
 
