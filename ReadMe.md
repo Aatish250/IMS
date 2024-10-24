@@ -116,7 +116,7 @@
   </tr>
       <td>Staff - Sold</td>
       <td aligh="center">❔</td>
-      <td aligh="center">⚠️</td>
+      <td aligh="center">⛔</td>
   </tr>
   </tr>
       <td>Staff - Request</td>
