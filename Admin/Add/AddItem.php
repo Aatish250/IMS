@@ -83,13 +83,13 @@
           <div class="additem-pq">
             <div class="additem-field">
               <label for="" class="price">Price:
-                </label>
-                <input required type="number" placeholder="Price..." name="price" id="" />
+              </label>
+              <input required type="number" placeholder="Price..." name="price" id="" inputmode="numeric" min="1" onkeydown="preventNegative(event)" oninput="removeNegative(this)"/>
             </div>
             <div class="additem-field">
               <label for="" class="quantity">Quantity:
-                </label>
-                <input required type="number" placeholder="Quantity..." name="quantity" id="" />
+              </label>
+              <input required type="number" placeholder="Quantity..." name="quantity" id="" min="1" onkeydown="preventNegative(event)" oninput="removeNegative(this)"/>
             </div>
           </div>
 

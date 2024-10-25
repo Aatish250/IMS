@@ -57,4 +57,19 @@ function DragDrop() {
     }
   }
 }
+
+function preventNegative(event) {
+  // Prevent typing the "-" key
+  if (event.key === "-" || event.key === "e") {
+    event.preventDefault();
+  }
+}
+
+function removeNegative(input) {
+  // If the user somehow enters a negative number, remove it
+  if (input.value < 1) {
+    input.value = "";
+  }
+}
+
 DragDrop();
