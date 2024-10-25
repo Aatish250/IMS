@@ -4,7 +4,6 @@ radioAdmin = document.getElementById("radioAdmin");
 radios = document.querySelectorAll(".roleRadio");
 
 roleBtn.addEventListener("click", () => {
-  console.log("--- Clicked ---");
   roleButtonText();
 });
 
