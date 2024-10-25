@@ -267,4 +267,19 @@ textarea {
   min-width: 80px;
   margin-right: 20px;
 }
+
+/* For Chrome, Safari, Edge, and other WebKit browsers */
+input[type="number"] {
+  -webkit-appearance: none;
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+/* Remove the spin buttons specifically for WebKit browsers */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+}
 /* Add item right section ends */
