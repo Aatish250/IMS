@@ -72,19 +72,25 @@
             </div>
           
         </div>
-        <d class="additem-right">
-          <label class="additem-title" for="title" id="title">
-            Title:
+        <div class="additem-right">
+          <div class="additem-field">
+            <label class="additem-title" for="title" id="title">
+                Title:
+            </label>
             <input type="text" name="item-title" id="title" placeholder="Title..." required />
-          </label>
+          </div>
 
           <div class="additem-pq">
-            <label for="" class="price">Price:
-              <input required type="number" placeholder="Price..." name="price" id="" />
-            </label>
-            <label for="" class="quantity">Quantity:
-              <input required type="number" placeholder="Quantity..." name="quantity" id="" />
-            </label>
+            <div class="additem-field">
+              <label for="" class="price">Price:
+                </label>
+                <input required type="number" placeholder="Price..." name="price" id="" />
+            </div>
+            <div class="additem-field">
+              <label for="" class="quantity">Quantity:
+                </label>
+                <input required type="number" placeholder="Quantity..." name="quantity" id="" />
+            </div>
           </div>
 
           <div class="dropdown-container">
@@ -106,13 +112,17 @@
             </select>
           </div>
 
-          <label class="additem-location" for="location">Location:
-            <input type="text" name="location" id="location" placeholder="Location..." required />
-          </label>
+          <div class="additem-field">
+            <label class="additem-location" for="location">Location:
+              </label>
+              <input type="text" name="location" id="location" placeholder="Location..." required />
+          </div>
 
-          <label for="description" class="additem-description">Description:
-            <textarea type="text" name="description" id="description" placeholder="Description..." required></textarea>
-          </label>
+          <div class="additem-field">
+            <label for="description" class="additem-description">Description:
+              </label>
+              <textarea type="text" name="description" id="description" placeholder="Description..." required ></textarea>
+          </div>
 
           <div class="additem-cta">
             <button class="add-btn" name="item-submit">
@@ -125,7 +135,7 @@
             </button>
             <button class="cancel" type="reset">Cancel</button>
           </div>
-        </d>
+        </div>
       </form>
     </section>
   </div>
