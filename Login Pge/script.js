@@ -19,11 +19,27 @@ function roleButtonText() {
       roleBtn.innerText = radio.value == "admin" ? "ADMIN" : "STAFF";
       roleBtn.style.backgroundColor =
         radio.value == "admin"
-          ? "rgba(132, 0, 255, 0.19)"
-          : "rgba(0, 255, 0, 0.188)";
+          ? "rgba(132, 0, 255, 0.425)"
+          : "rgba(0, 255, 0, .425)";
+      roleBtn.style.border =
+        radio.value == "admin"
+          ? "2px solid rgba(132, 0, 255, .425)"
+          : "2px solid rgba(0, 255, 0, 0.425)";
       roleBtn.style.borderRadius = "5px";
     }
   });
+}
+
+function togglePassword() {
+  const passwordField = document.getElementById("password");
+  const eyeIcon = document.querySelector("#eyeIcon");
+  if (passwordField.type === "password") {
+    passwordField.type = "text";
+    eyeIcon.className = "fa fa-eye-slash";
+  } else {
+    passwordField.type = "password";
+    eyeIcon.className = `fa fa-eye`;
+  }
 }
 
 roleButtonText();

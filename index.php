@@ -94,7 +94,7 @@ if (isset($_SESSION['username']) && isset($_SESSION["role"])) {
         </select> -->
         <div class="submit-buttons">
           <div>
-            <span class="role-btn" id="roleBtn">[ Toggle Button ]</span>
+            <span class="role-btn" id="roleBtn"></span>
             <input type="radio" name="role" value="staff" id="radioStaff" class="roleRadio" hidden>
             <input type="radio" name="role" value="admin" id="radioAdmin" class="roleRadio" hidden checked>
           </div>

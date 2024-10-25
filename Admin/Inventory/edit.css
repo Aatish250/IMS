@@ -1,8 +1,18 @@
+body {
+  background-color: white;
+  color: black;
+  overflow: hidden;
+}
+
 .close-btn {
-    width: 30px;
-    height: 30px;
-    background-color: #955;
-    padding: 5px;
-    text-decoration: none;
-    color: #fff;
+  width: 30px;
+  height: 30px;
+  background-color: #955;
+  padding: 5px;
+  text-decoration: none;
+  color: #fff;
+}
+
+form {
+  background-color: red;
 }
