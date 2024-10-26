@@ -22,7 +22,7 @@
   <!-- Side Bar end -->
 
   <!-- main content starts -->
-  <div class="wrapper">
+  <main class="wrapper">
     <header>
       <!-- heading of main content beside sidebar -->
       <div class="main-heading">
@@ -49,9 +49,13 @@
       <button onclick="closeMessage()">&#9932;</button>
     </div>
 
+    <!-- START: White container -->
     <section class="additem-container">
+      <!-- START: Form container -->
       <form action="" method="POST" enctype="multipart/form-data" class="add-form">
+        <!-- START: Additem container left section -->
         <div class="additem-left">
+          <!-- START: Left Section heading and logo -->
           <div class="additem-left-heading">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6 icon">
                 <path
@@ -62,16 +66,22 @@
               </svg>
               <p>Add</p>
           </div>
+          <!-- END: Left Section heading and logo -->
           
-            <div class="upload-container">
-              <input name="img" type="file" id="fileInput" class="file-input" accept="image/*" hidden />
-              <div class="upload-box" id="uploadBox">
-                <img src="../../Images/icons/dragdrop.svg" alt="upload icon" class="upload-icon" />
-                <p>Choose Image or Drag and Drop Image</p>
-              </div>
+          <!-- START: Upload Image container -->
+          <div class="upload-container">
+            <input name="img" type="file" id="fileInput" class="file-input" accept="image/*" hidden />
+            <div class="upload-box" id="uploadBox">
+              <img src="../../Images/icons/dragdrop.svg" alt="upload icon" class="upload-icon" />
+              <p>Choose Image or Drag and <br> Drop Image</p>
             </div>
+          </div>
+          <!-- END: Upload Image container -->
           
         </div>
+        <!-- END: Additem container left section -->
+
+        <!-- START: Additem container Right Section -->
         <div class="additem-right">
           <div class="additem-field">
             <label class="additem-title" for="title" id="title">
@@ -81,15 +91,15 @@
           </div>
 
           <div class="additem-pq">
-            <div class="additem-field">
+            <div class="additem-field" id="priceField">
               <label for="" class="price">Price:
               </label>
-              <input required type="number" placeholder="Price..." name="price" id="" inputmode="numeric" min="1" onkeydown="preventNegative(event)" oninput="removeNegative(this)"/>
+              <input required type="number" placeholder="Price..." name="price" id="priceInput" inputmode="numeric" min="1" onkeydown="preventNegative(event)" oninput="removeNegative(this)"/>
             </div>
-            <div class="additem-field">
+            <div class="additem-field" id="quantityField">
               <label for="" class="quantity">Quantity:
               </label>
-              <input required type="number" placeholder="Quantity..." name="quantity" id="" min="1" onkeydown="preventNegative(event)" oninput="removeNegative(this)"/>
+              <input required type="number" placeholder="Quantity..." name="quantity" id="quantityInput" min="1" onkeydown="preventNegative(event)" oninput="removeNegative(this)"/>
             </div>
           </div>
 
@@ -136,9 +146,12 @@
             <button class="cancel" type="reset">Cancel</button>
           </div>
         </div>
+        <!-- END: Additem container Right Section -->
       </form>
+      <!-- END: Form container -->
     </section>
-  </div>
+    <!-- END: White container -->
+  </main>
   <!-- main content ends -->
 
 
@@ -153,3 +166,75 @@
 </body>
 
 </html>
+
+<!-- Form Validation -->
+<?php
+
+  if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['item-submit'])) {
+
+    $title = $_POST['item-title'];
+    $description = $_POST['description'];
+    $price = $_POST['price'];
+    $quantity = $_POST['quantity'];
+
+    if (empty($title)) {
+      $error = "Title is required";
+    } elseif (empty($description)) {
+      $error = "Description is required";
+    } elseif (empty($price)) {
+      $error = "Price is required";
+    } elseif (empty($quantity)) {
+      $error = "Quantity is required";
+    } elseif ($price <= 0) {
+      $error = "Price should be greater than 0";
+    } elseif ($quantity <= 0) {
+      $error = "Quantity should be greater than 0";
+    } else {
+
+      $target_dir = "../../Images/item/";
+      $target_file = $target_dir . basename($_FILES["img"]["name"]);
+      $uploadOk = 1;
+      $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
+
+      // Check if image file is a actual image or fake image
+      $check = getimagesize($_FILES["img"]["tmp_name"]);
+      if ($check !== false) {
+        $uploadOk = 1;
+      } else {
+        $error = "File is not an image.";
+        $uploadOk = 0;
+      }
+
+      // Check if file already exists
+      if (file_exists($target_file)) {
+        $error = "Sorry, file already exists.";
+        $uploadOk = 0;
+      }
+
+      // Check file size
+      if ($_FILES["img"]["size"] > 500000) {
+        $error = "Sorry, your file is too large.";
+        $uploadOk = 0;
+      }
+
+      // Allow certain file formats
+      if ($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif") {
+        $error = "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+        $uploadOk = 0;
+      }
+
+      // Check if $uploadOk is set to 0 by an error
+      if ($uploadOk == 0) {
+        $error = "Sorry, your file was not uploaded.";
+      // if everything is ok, try to upload file
+      } else {
+        if (move_uploaded_file($_FILES["img"]["tmp_name"], $target_file)) {
+          $success = "The file " . htmlspecialchars(basename($_FILES["img"]["name"])) . " has been uploaded.";
+          include("addBackend.php");
+        } else {
+          $error = "Sorry, there was an error uploading your file.";
+        }
+      }
+    }
+  }
+?>

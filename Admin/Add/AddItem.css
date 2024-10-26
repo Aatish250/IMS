@@ -5,7 +5,7 @@
 }
 
 .additem-container {
-  max-width: 100%;
+  min-width: 100%;
   background-color: rgb(255, 255, 255);
   height: fit-content;
   margin-top: 3rem;
@@ -16,20 +16,19 @@
   display: flex;
   flex-direction: column;
   flex-wrap: wrap; /* Ensures wrapping in case of overflow */
-  padding: 2rem 2rem; /* added new*/
 }
 
 .add-form {
   width: 100%;
 
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, auto);
 
-  padding-inline: 8px;
+  padding: 0 2.8rem 0 2rem;
 }
 
 .additem-left {
-  width: 30rem;
+  max-width: 35rem;
 }
 
 .additem-left-heading {
@@ -61,6 +60,10 @@
   justify-content: center;
   align-items: center;
   height: 400px;
+  object-fit: contain;
+  width: 450px;
+
+  padding-bottom: 1rem;
 }
 
 .upload-box {
@@ -82,7 +85,7 @@
 .upload-box img {
   max-width: 100%;
   max-height: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .upload-box:hover {
@@ -117,11 +120,9 @@
   margin-top: 2.8rem;
 
   position: relative;
-}
-
-.additem-right label {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  gap: 8px;
 }
 
 input,
@@ -135,10 +136,8 @@ textarea {
   width: 100%; /*addded new */
 }
 
-.additem-title input:focus,
-.additem-pq input:focus,
-.additem-location input:focus,
-.additem-description textarea:focus {
+input:focus,
+textarea:focus {
   border: 2px solid var(--primary-color);
   outline: none;
 }
@@ -156,7 +155,16 @@ textarea {
 .additem-pq {
   display: flex;
 
-  justify-content: space-between;
+  /* justify-content: space-between; */
+  gap: 30px;
+}
+
+#priceField {
+  width: 50%;
+}
+
+#quantityField {
+  width: 50%;
 }
 
 .price {
@@ -166,19 +174,9 @@ textarea {
   width: 50%;
 }
 
-.price input {
-  margin-left: 0.6rem;
-  padding: 0.4rem;
-}
-
 .quantity {
   flex: 1;
   display: flex;
-}
-
-.quantity input {
-  margin-left: 0.6rem;
-  padding: 0.4rem;
 }
 
 .additem-location {
@@ -220,7 +218,6 @@ textarea {
   justify-content: space-between;
   position: relative;
   margin-left: 7rem;
-  margin-top: 1rem; /* added new*/
 
   gap: 20px;
 }
