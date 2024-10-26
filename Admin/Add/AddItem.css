@@ -22,7 +22,8 @@
   width: 100%;
 
   display: grid;
-  grid-template-columns: repeat(2, auto);
+  grid-template-columns: repeat(2, minmax(auto, 1fr));
+  /* column-gap: 1rem; */
 
   padding: 0 2.8rem 0 2rem;
 }

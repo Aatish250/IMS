@@ -167,7 +167,7 @@
 
 </html>
 
-<!-- Form Validation -->
+<!-- Add item Form Validation -->
 <?php
 
   if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['item-submit'])) {
