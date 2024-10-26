@@ -32,16 +32,54 @@ main {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+
+  position: relative;
+}
+
+/* Flash Message */
+
+.flash-box {
+  position: absolute;
+
+  top: 7%;
+  left: 45%;
+
+  transform: translateY(-55%);
+
+  background-color: var(--battleship-gray);
+  border-radius: 5px;
+
+  padding: 1rem 1.5rem;
+
+  font-size: 16px;
+  font-weight: 600;
+  font-family: "Poppins";
+
+  color: var(--prussian-blue);
+}
+
+.flash-box button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+
+  padding-left: 10px;
+
+  cursor: pointer;
+
+  font-weight: 600;
+
+  color: whitesmoke;
 }
 
 /* Login box */
 
 .login-container {
-  width: min(700px, 100% - 2rem);
-  min-height: 380px;
+  width: min(750px, 100% - 2rem);
+  min-height: 415px;
   background: #fff;
   border-radius: 20px;
-  padding: 0 25px;
+  padding: 0 20px;
 
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -99,6 +137,8 @@ main {
 
   h2 {
     margin-bottom: 10px;
+
+    font-size: 1.8rem;
     color: var(--prussian-blue);
   }
 }
@@ -182,12 +222,12 @@ form {
 .login-btn button {
   text-transform: uppercase;
 
-  padding: 0.6rem 1.7rem;
+  padding: 0.5rem 1.7rem;
   border: 2px solid var(--prussian-blue);
   border-radius: 8px;
   background: transparent;
   font-size: 0.8rem;
-  font-weight: 700;
+  font-weight: 900;
 
   cursor: pointer;
   transition: 0.2s;

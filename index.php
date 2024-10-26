@@ -16,6 +16,11 @@ include("login.php");
 <body>
   <!-- wrapper -->
   <main>
+    <!-- Flash Message -->
+    <div id="flashBox" class="flash-box">
+          <span id="flashMessage" class="flashMessage"></span>
+          <button onclick="closeMessage()">&#9932;</button>
+    </div>
     <!-- STARTS: login box -->
     <div class="login-container">
       <h2 class="login-heading">Welcome</h2>
@@ -29,12 +34,6 @@ include("login.php");
       <!-- STARTS: form and heading here -->
       <div class="login-content">
         <h2>Login</h2>
-
-        <!-- Flash Message -->
-        <div id="flashBox" class="flash-box">
-          <span id="flashMessage" class="flashMessage"></span>
-          <button onclick="closeMessage()">&#9932;</button>
-        </div>
 
         <!-- STARTS: Form here -->
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST">
