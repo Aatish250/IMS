@@ -15,6 +15,7 @@
   position: relative;
   display: flex;
   flex-direction: column;
+
   flex-wrap: wrap; /* Ensures wrapping in case of overflow */
 }
 

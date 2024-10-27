@@ -146,14 +146,6 @@ li {
   margin: 2vw 4vw;
   width: 100%;
   margin-left: 17rem;
-  /* padding-bottom: 2vw; */
-  /* max-height: 100vh; */
-  /* overflow-y: auto; */
-  /* Hide scrollbar for Chrome, Safari and Opera */
-  /* &::-webkit-scrollbar {
-    display: none;
-  } */
-  /* height: 110%; */
   height: fit-content;
   background: transparent;
 
@@ -166,6 +158,8 @@ header {
   top: 0rem;
   background-color: var(--bgcolor);
   z-index: 99;
+
+  margin-bottom: 15px;
 }
 
 .main-heading {

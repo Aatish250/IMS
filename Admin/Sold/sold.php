@@ -52,21 +52,21 @@ include '../../dbConn.php';
 
         <section>
             <form action="soldBackend.php" class="sell-form">
-                <div>
+                <div >
                     Item:
-                    <input type="text" name="title" id="" placeholder="Item Name...">
+                    <input type="text" name="title" id="" placeholder="Item Name..." >
                 </div>
                 <div>
                     Price:
-                    <input type="number" name="price" id="price" placeholder="Price...">
+                    <input type="number" name="price" id="price" placeholder="Price..." >
                     <span class='qty-ctrl-btn minus-btn' data-action='-'>-</span>
                     <input type='number' name='qty' id='qty' class='qty-ctrl-inp' value=1 readonly>
                     <span class='qty-ctrl-btn plus-btn' data-action='+'>+</span>
-                    <input type="number" name="total" id="total" placeholder="Total">
+                    <input type="number" name="total" id="total" placeholder="Total(&#x20B9;)" readonly>
                 </div>
                 <div>
                     <input type="date" name="date" value="<?php echo DATE("Y-m-d") ?>">
-                    <input type="submit" value="Add" name="add-to-sold">
+                    <input type="submit" value="Add" name="add-to-sold" class="add-btn">
                 </div>
             </form>
         </section>
