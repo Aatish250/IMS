@@ -172,8 +172,8 @@ tr:nth-child(even) {
 }
 
 .minus-btn {
-  background-color: #e9ecef;
-  color: #495057;
+  background-color: #7950f2;
+  color: #fff;
 }
 
 .minus-btn:hover {
