@@ -176,16 +176,12 @@ tr:nth-child(even) {
   color: #fff;
 }
 
-.minus-btn:hover {
-  background-color: #ced4da;
-}
-
 .plus-btn {
   background-color: #7950f2;
   color: white;
 }
 
-.plus-btn:hover {
+.qty-ctrl-btn:hover {
   background-color: #6741d9;
 }
 
