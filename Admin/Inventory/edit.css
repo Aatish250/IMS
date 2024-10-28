@@ -129,6 +129,11 @@ input[type="file"] {
   text-align: center;
 }
 
+.custom-file-upload:hover {
+  background-color: #800080;
+  transition: 0.1s all ease-in;
+}
+
 /* Edit item right section */
 .edititem-right {
   height: fit-content;
@@ -222,9 +227,15 @@ textarea:focus {
 .quantity {
   flex: 1;
   display: flex;
+
+  justify-content: flex-end;
 }
 
 .qty-ctrl-inp {
+  max-width: 40px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
   text-align: center;
 }
 
