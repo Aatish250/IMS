@@ -13,6 +13,316 @@ body {
   color: #fff;
 }
 
-form {
-  background-color: red;
+.edititem-container {
+  min-width: 100%;
+  background-color: rgb(255, 255, 255);
+  height: fit-content;
+  margin-top: 3rem;
+  border-radius: 0.5rem;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  padding: 2rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  flex-wrap: wrap; /* Ensures wrapping in case of overflow */
 }
+
+.edit-form {
+  width: 100%;
+
+  display: grid;
+  grid-template-columns: repeat(2, minmax(auto, 1fr));
+  /* column-gap: 1rem; */
+
+  padding: 0 2.8rem 0 2rem;
+}
+
+.edititem-left {
+  max-width: 35rem;
+}
+
+.edititem-left-heading {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+
+  /* background-color: red; */
+}
+
+.edititem-left-heading svg {
+  width: 1.8rem;
+  color: var(--primary-color);
+}
+
+.edititem-left-heading p {
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  color: var(--primary-color);
+  font-weight: 900;
+}
+
+/* upload container */
+
+.upload-container {
+  padding-top: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+  object-fit: contain;
+  width: 450px;
+
+  padding-bottom: 1rem;
+}
+
+.upload-box {
+  width: 100%;
+  height: 100%;
+  border: 2px dashed #d3d3d3;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #faf8ff;
+  cursor: pointer;
+  transition: border 0.3s ease;
+  text-align: center;
+  overflow: hidden; /* Prevents image overflow */
+
+  object-fit: contain;
+}
+
+.upload-box img {
+  max-width: 100%;
+  /* max-height: 100%; */
+  object-fit: contain;
+}
+
+.upload-box:hover {
+  border-color: #800080;
+}
+
+.upload-box.dragging {
+  border-color: #800080;
+  background-color: #f0e8ff;
+}
+
+.edititem-left input[type="file"] {
+  cursor: pointer;
+}
+
+/* Hide the file input */
+input[type="file"] {
+  display: none;
+}
+
+/* Style the label as a button */
+.custom-file-upload {
+  padding: 10px 25px;
+  border-radius: 5px;
+  background-color: var(--primary-color);
+  color: white;
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
+}
+
+/* Edit item right section */
+.edititem-right {
+  height: fit-content;
+  margin-top: 2.8rem;
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  /* background-color: red; */
+}
+
+.edititem-field {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+input,
+textarea {
+  outline: none;
+  border: 2px solid var(--text-color);
+  border-radius: 5px;
+  padding: 8px;
+
+  resize: none;
+  width: 100%; /*addded new */
+}
+
+input:focus,
+textarea:focus {
+  border: 2px solid var(--primary-color);
+  outline: none;
+}
+
+.edititem-title {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+
+  /* background-color: blue; */
+}
+
+.edititem-title input {
+  padding: 0.8rem;
+}
+
+.edititem-pq {
+  display: flex;
+
+  /* justify-content: space-between; */
+  gap: 30px;
+}
+
+#priceField {
+  width: 50%;
+}
+
+#quantityField {
+  width: 50%;
+}
+
+#quantityField .qty-ctrl-btn {
+  padding: 5px 13px;
+
+  font-weight: 600;
+  font-size: 16px;
+
+  border: none;
+  outline: none;
+  background-color: var(--primary-color);
+
+  cursor: pointer;
+  color: #fff;
+
+  border-radius: 5px;
+}
+
+#quantityField .qty-ctrl-btn:hover {
+  background-color: var(--secondary-color);
+}
+
+.price {
+  display: flex;
+  flex: 1;
+
+  width: 50%;
+}
+
+.quantity {
+  flex: 1;
+  display: flex;
+}
+
+.qty-ctrl-inp {
+  text-align: center;
+}
+
+.edititem-location {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.dropdown-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+
+  padding-left: 40px;
+  margin-bottom: 15px;
+}
+
+.styled-select {
+  width: 25%; /* Ensure dropdowns are side-by-side */
+  padding: 8px;
+  border-radius: 5px;
+  border: 2px solid var(--text-color);
+
+  cursor: pointer;
+}
+
+.styled-select:focus {
+  border: 2px solid var(--primary-color);
+}
+
+.edititem-description {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.7rem;
+}
+
+.edititem-cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  margin-left: 7.1rem;
+
+  gap: 20px;
+}
+
+.edititem-cta button {
+  width: 50%;
+  padding: 0.9rem 1.5rem;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+
+  cursor: pointer;
+}
+
+.edititem-cta .add-btn {
+  background-color: var(--primary-color);
+  color: white;
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+
+  padding-block: 1.02rem !important;
+}
+
+.edititem-cta .cancel {
+  letter-spacing: 0.5px;
+  border: 2px solid var(--secondary-color);
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--primary-color);
+}
+
+.edititem-field {
+  display: flex;
+  margin-bottom: 15px;
+}
+
+.edititem-field label {
+  min-width: 80px;
+  margin-right: 20px;
+}
+
+/* For Chrome, Safari, Edge, and other WebKit browsers */
+input[type="number"] {
+  -webkit-appearance: none;
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+/* Remove the spin buttons specifically for WebKit browsers */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+/* Add item right section ends */
