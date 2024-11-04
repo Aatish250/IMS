@@ -1,0 +1,208 @@
+main {
+  width: 80%;
+  margin: 5vh;
+  margin-right: 10vw;
+}
+
+/* flash message start */
+.flash-box {
+  display: none;
+}
+/* flash message end */
+
+/* nav function bar start */
+
+input[type="text"] {
+  flex-grow: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+
+  outline: none;
+  border-radius: 4px;
+}
+
+input[type="text"]:focus {
+  border: 1px solid var(--accent-clr);
+}
+
+#searchTitle:focus {
+  border: 1px solid var(--accent-clr);
+}
+
+.query-box {
+  background-color: rgb(255, 255, 255);
+  padding: 10px;
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.query-box button,
+.query-box select {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: white;
+  cursor: pointer;
+}
+
+input[type="radio"] {
+  margin-right: 5px;
+}
+
+select {
+  background-position: right 8px center;
+  background-size: 12px;
+  padding-right: 28px;
+}
+
+input[type="radio"]#sortAsc,
+input[type="radio"]#sortDesc {
+  display: none;
+}
+
+label.sorts {
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+}
+
+.sorts svg {
+  font-weight: 200;
+}
+
+.sorting {
+  padding-inline: 10px;
+  display: flex;
+  gap: 10px;
+}
+
+input[type="radio"].sort-radio:checked {
+  label.sorts svg path {
+    fill: #007bff !important;
+    stroke: #007bff !important;
+  }
+}
+
+/* nav function bar end */
+
+/* card css starts */
+
+.card-wrapper {
+  display: grid; /* Set the display to grid */
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(300px, 1fr)
+  ); /* Create four equal columns */
+  padding-top: 15px;
+  justify-items: center;
+}
+
+.card {
+  max-width: 280px;
+  height: max-content;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+  margin: 1rem;
+  padding: 15px;
+}
+
+.card a > img {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.card-content {
+  padding: 15px 0;
+}
+
+.card h3 {
+  margin: 0 0 15px;
+  font-size: 18px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.inv-details {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card .price {
+  font-weight: bold;
+  color: var(--accent-clr);
+  margin-bottom: 5px;
+  font-size: 1.1rem;
+}
+
+.card .quantity {
+  font-weight: bold;
+  font-size: 16px;
+  color: #666;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.card .quantity svg {
+  width: 22px;
+  aspect-ratio: 1;
+}
+
+.card .quantity svg path {
+  fill: var(--accent-clr);
+}
+
+.card .category {
+  color: #666;
+  font-size: 14px;
+}
+
+.card-bottom-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card .tag {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  background-color: var(--accent-clr);
+  color: white;
+  padding: 10px 17px;
+  border-bottom-left-radius: 20px;
+  border-top-right-radius: 10px;
+  font-size: 14px;
+}
+
+.card-wrapper form button {
+  background: #ff4329;
+  display: flex;
+  align-items: center;
+  border: none;
+  border-radius: 5px;
+  padding-inline: 1vw;
+  padding-block: 0.4vw;
+  cursor: pointer;
+  gap: 5px;
+  color: white;
+  font-size: 14px;
+}
+
+.card-wrapper form button > img {
+  width: 16px;
+  aspect-ratio: 1;
+}
+
+/* card css ends */

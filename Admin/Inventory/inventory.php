@@ -16,7 +16,7 @@ require '../checkAdmin.php';
     <title>Inventory</title>
     <link rel="stylesheet" href="../../util.css" />
     <link rel="stylesheet" href="../adminRoot.css" />
-    <link rel="stylesheet" href="Aatish.css">
+    <link rel="stylesheet" href="Inventory.css">
 </head>
 
 <body>
