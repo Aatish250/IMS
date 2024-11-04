@@ -76,7 +76,6 @@
         const ascSvg = document.querySelector("label[for='sortAsc'] svg path");
         const descSvg = document.querySelector("label[for='sortDesc'] svg path");
 
-        // Check which radio button is selected
         const isCheckedAsc = document.getElementById("sortAsc").checked;
         const isCheckedDesc = document.getElementById("sortDesc").checked;
 
@@ -92,7 +91,6 @@
             ascSvg.style.stroke = "black";
         }
     }
-
     // Run the function on page load and when radio button state changes
     document.addEventListener("DOMContentLoaded", setSvgColor);
     document.getElementById("sortAsc").addEventListener("change", setSvgColor);
