@@ -78,88 +78,110 @@ label.sorts {
 
 /* card css starts */
 .card-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  /* gap: 20px; */
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  padding-top: 15px;
+  justify-items: center;
+  row-gap: 20px;
 }
 
 .card {
-  width: 200px;
+  max-width: 280px;
   height: max-content;
   background-color: white;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  /* overflow: hidden; */
   position: relative;
   margin: 1rem;
-}
-
-.card img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-}
-
-.card-content {
   padding: 15px;
 }
 
+.card a > img {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.card-content {
+  padding: 15px 0;
+}
+
 .card h3 {
-  margin: 0 0 10px;
+  margin-bottom: 6px;
   font-size: 18px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.inv-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .card .price {
   font-weight: bold;
-  color: #333;
+  color: var(--primary-color);
   margin-bottom: 5px;
+  font-size: 1.1rem;
 }
 
-.card .quantity,
+.inv-details .quantity {
+  font-weight: bold;
+  font-size: 16px;
+  color: #666;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.28rem;
+}
+
+.inv-details .quantity svg {
+  width: 22px;
+  aspect-ratio: 1;
+}
+
+.quantity span {
+  font-weight: 400;
+  font-size: 15px;
+}
+
 .card .category {
   color: #666;
   font-size: 14px;
 }
 
+.card-bottom-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .card .tag {
   position: absolute;
-  top: 10px;
-  right: 10px;
-  background-color: #8a2be2;
+  top: 0px;
+  right: 0px;
+  background-color: var(--selected-color);
   color: white;
-  padding: 5px 10px;
-  border-radius: 20px;
-  font-size: 12px;
+  padding: 10px 17px;
+  border-bottom-left-radius: 20px;
+  border-top-right-radius: 10px;
+  font-size: 14px;
 }
 
-.card .menu {
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
-  cursor: pointer;
-  background-color: green;
-  padding: 3px;
-}
-
-.card .menu:hover div {
+.card-wrapper form button {
+  background: var(--det-btn-color);
   display: flex;
-}
-
-.card .menu div {
-  /* display: flex; */
-  display: none;
-  z-index: 1;
-  position: absolute;
-  background-color: red;
-  padding: 3px;
-  bottom: 0;
-  right: 0;
-}
-
-.menu div button {
-  position: relative;
-  padding: 5px;
+  align-items: center;
+  border: none;
+  border-radius: 5px;
+  padding: 0.4vw 1.5vw;
   cursor: pointer;
+  gap: 5px;
+  color: white;
+  font-size: 14px;
 }
 /* card css ends */
