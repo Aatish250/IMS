@@ -1,6 +1,14 @@
 :root {
-  --selected-color: #2BE73E;
-  --primary-color: #a340f3;
-  --secondary-color: #663399;
+  --selected-color: #2be73e;
+  --primary-color: #009329;
   --delete-color: #ff4329;
+}
+
+.heading-text {
+  color: var(--primary-color) !important;
+}
+
+.staff {
+  background-color: var(--selected-color) !important;
+  color: #fff;
 }
