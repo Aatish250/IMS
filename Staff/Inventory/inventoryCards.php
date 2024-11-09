@@ -39,7 +39,6 @@ include("inventoryBackend.php");
                     <button type='submit' name='item-detail' value='{$row['item_id']}'>Detail</button>
             </form>
             </div>
-           
         </div>";
     }
     // $message = "check";
