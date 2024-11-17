@@ -144,6 +144,11 @@ label.sorts {
   aspect-ratio: 1;
 }
 
+.inv-details form button {
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
 .quantity span {
   font-weight: 400;
   font-size: 15px;
