@@ -156,6 +156,11 @@ label.sorts {
   fill: var(--accent-clr);
 }
 
+.card .quantity span {
+  font-weight: 400;
+  font-size: 0.95rem;
+}
+
 .card .category {
   color: #666;
   font-size: 14px;

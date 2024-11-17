@@ -70,4 +70,30 @@
     </div>
 </form>
 
-<script src="../../Components/setSvgColor.js"></script>
+<script>
+    // Function to set the SVG color based on the selected radio button
+function setSvgColor() {
+  const ascSvg = document.querySelector("label[for='sortAsc'] svg path");
+  const descSvg = document.querySelector("label[for='sortDesc'] svg path");
+
+  const isCheckedAsc = document.getElementById("sortAsc").checked;
+  const isCheckedDesc = document.getElementById("sortDesc").checked;
+
+  if (isCheckedAsc) {
+    ascSvg.style.fill = "var(--accent-clr)";
+    ascSvg.style.stroke = "var(--accent-clr)";
+    descSvg.style.fill = "black";
+    descSvg.style.stroke = "black";
+  } else if (isCheckedDesc) {
+    descSvg.style.fill = "var(--accent-clr)";
+    descSvg.style.stroke = "var(--accent-clr)";
+    ascSvg.style.fill = "black";
+    ascSvg.style.stroke = "black";
+  }
+}
+// Run the function on page load and when radio button state changes
+document.addEventListener("DOMContentLoaded", setSvgColor);
+document.getElementById("sortAsc").addEventListener("change", setSvgColor);
+document.getElementById("sortDesc").addEventListener("change", setSvgColor);
+
+</script>
