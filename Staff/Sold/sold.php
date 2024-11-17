@@ -53,27 +53,28 @@ include '../../dbConn.php';
         <section>
             <form action="soldBackend.php" class="sell-form">
                 <div>
-                    Item:
-                    <input type="text" name="title" id="" placeholder="Item Name...">
+                    <span>Item:</span>
+                    <input type="text" name="title" placeholder="Item Name..." id="item-input">
                 </div>
                 <div>
-                    Price:
+                    <span>Price:</span>
                     <input type="number" name="price" id="price" placeholder="Price...">
-                    <span class='qty-ctrl-btn minus-btn' data-action='-'>-</span>
-                    <input type='number' name='qty' id='qty' class='qty-ctrl-inp' value=1 readonly>
-                    <span class='qty-ctrl-btn plus-btn' data-action='+'>+</span>
+                    <div class="qty-ctrl">
+                        <span class='qty-ctrl-btn minus-btn' data-action='-'>-</span>
+                        <input type='number' name='qty' id='qty' class='qty-ctrl-inp' value=1 readonly>
+                        <span class='qty-ctrl-btn plus-btn' data-action='+'>+</span>
+                    </div>
                     <input type="number" name="total" id="total" placeholder="Total">
                 </div>
                 <div>
                     <input type="date" name="date" value="<?php echo DATE("Y-m-d") ?>">
-                    <input type="submit" value="Add" name="add-to-sold">
+                    <input type="submit" value="Add" name="add-to-sold" id="add-btn">
                 </div>
             </form>
         </section>
 
         <!-- soldTable of dtabase starts -->
         <section>
-
             <div class="caption">
                 <span class="title">
                     Sales
