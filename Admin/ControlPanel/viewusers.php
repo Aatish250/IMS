@@ -5,8 +5,8 @@ while ($user = mysqli_fetch_assoc($users)) {
         echo "
                 <tr>
                     <td>" . $user['uid'] . "</td>
-                    <td>" . $user['role'] . "</td>
                     <td>" . $user['username'] . "</td>
+                    <td>" . $user['role'] . "</td>
                     <td>
                         <form method='POST' action=''>
                             <button type='submit' name='delete-uid' class='delete-btn' value=" . $user['uid'] . ">

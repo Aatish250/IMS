@@ -64,7 +64,7 @@
                 <table>
                   <tr>
                     <th>User - ID</th>
-                    <th>User</th>
+                    <th>Username</th>
                     <th>Role</th>
                     <th>Action</th>
                   </tr>
