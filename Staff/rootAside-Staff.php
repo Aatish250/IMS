@@ -6,7 +6,7 @@
 <aside>
   <nav>
     <div class="logo">
-      <a href="#"><img src="../../Images/icons/mainlogo.svg" alt="main logo" loading="lazy" /></a>
+      <a href="../Inventory/inventory.php"><img src="../../Images/icons/mainlogo.svg" alt="main logo" loading="lazy" /></a>
     </div>
     <!-- side Bar navigation list -->
     <div class="nav-list">

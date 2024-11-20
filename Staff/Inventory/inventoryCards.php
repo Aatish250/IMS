@@ -15,7 +15,7 @@ include("inventoryBackend.php");
     $result = mysqli_query($conn, $sql);
     while ($row = mysqli_fetch_assoc($result)) {
         echo "<div class='card' id='{$row['item_id']}'>
-            <a href='detail.php?id={$row['item_id']}'>
+            <a href='#'>
                 <img src='" . ($row['item_image'] ? $row['item_image'] : "../../Images/testimg/585-KB.png") . "' alt=''>
             </a>
             " . (($row['tag']) ? "<div class='tag'>{$row['tag']}</div>" : "") . "
@@ -36,7 +36,9 @@ include("inventoryBackend.php");
                     </svg>{$row['quantity']} <span>in stocks</span>
                 </div>
                 <form action='detail.php'>
-                    <button type='submit' name='item-detail' value='{$row['item_id']}'>Detail</button>
+                    <button type='submit' name='item-detail' value='{$row['item_id']}'>
+                        <a href='detail.php?id={$row['item_id']}'>Detail</a>
+                    </button>
             </form>
             </div>
         </div>";
