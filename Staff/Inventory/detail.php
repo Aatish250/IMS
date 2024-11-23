@@ -77,31 +77,35 @@ require "../../dbConn.php";
                                             <input type='number' id='price' value='{$row['price']}' readonly hidden>
                                             <span class='price'>Rs. {$row['price']}</span>
                                             <div class='info'>
-                                                <span>
+                                                <span class='stock'>
                                                     <img src='../../Images/icons/inventory.svg' alt='Stock'> 
                                                     <input type='number' id='stock' value={$row['quantity']} readonly hidden>
                                                     <span class='quantity'>{$row['quantity']} in stock</span>
                                                 </span>
-                                                <span>
-                                                    <img src='' alt='Location'> {$row['location']} 
+                                                <span class='location'>
+                                                    <img src='../../Images/icons/cart.svg' alt='Location'> {$row['location']}
                                                 </span>
                                             </div>
                                             <div class='buttons-info'>
-                                                <button class='qty-ctrl-btn minus-btn' data-action='-'>-</button>
-                                                <input type='number' name='qty' id='qty' class='qty-ctrl-inp' value=1 readonly>
-                                                <button class='qty-ctrl-btn plus-btn' data-action='+'>+</button>
-                                                <button name='req-item' value={$row['item_id']}>Request Item</button>
+                                                <div class='qty-controls'>
+                                                    <button class='qty-ctrl-btn minus-btn' data-action='-'>-</button>
+                                                    <input type='number' name='qty' id='qty' class='qty-ctrl-inp' value=1 readonly>
+                                                    <button class='qty-ctrl-btn plus-btn' data-action='+'>+</button>
+                                                </div>
+                                                <button class='request' name='req-item' value={$row['item_id']}>Request Item</button>
                                             </div>
-                                            <div>
+                                            <div class='sell-info'>
+                                                <div class='qty-info'>
                                                 "
-                                                    . ($row['quantity'] > 0 ?
-                                                    "Rs. <input type='number' id='total' name='total' value='{$row['price']}'>
-                                                        <button name='sell-item' value={$row['item_id']}>Sell Directly</button>"
+                                                        . ($row['quantity'] > 0 ?
+                                                        "Rs. <input type='number' id='total' name='total' value='{$row['price']}' readonly>
+                                                </div>
+                                                    <button name='sell-item' value={$row['item_id']}>Sell Directly</button>"
                                                     : "Please Request no stock left") .
                                                 "
                                             </div>
-                                            <div>
-                                                <button name='add-cart' value='{$row['item_id']}'>Add to cart</button>
+                                            <div class='cart-info'>
+                                                <button class='add-cart' name='add-cart' value='{$row['item_id']}'>Add to cart</button>
                                                 <button id='isuBtn'>Issue Problem</button>
                                             </div>
                                             <div class='isu-div' id='isuDiv'>

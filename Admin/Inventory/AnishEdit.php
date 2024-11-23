@@ -148,7 +148,7 @@ if (isset($_GET['item-edit'])) {
                         <button class="add-btn" name="new-edit" value="<?php echo $item_id; ?>">
                             Edit
                         </button>
-                        <button class="cancel" type="reset">Cancel</button>
+                        <button class="cancel" type="reset" name='cancel-id'>Cancel</button>
                     </div>
                 </div>
                 <!-- END: Edit item right -->
