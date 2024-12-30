@@ -154,7 +154,6 @@ body {
       .location {
         display: inline-flex; /* Ensures the elements are aligned in one line */
         align-items: center; /* Centers the icon vertically */
-        max-width: 200px; /* Set a maximum width for the container */
         overflow: hidden; /* Hides overflowing content */
         white-space: nowrap; /* Prevents text from wrapping to the next line */
       }
@@ -203,8 +202,8 @@ body {
         border-radius: 5px;
         outline: none;
         border: 1px solid black;
-
-        width: 100px;
+        text-align: center;
+        width: 80px;
       }
 
       .request {
@@ -214,9 +213,10 @@ body {
 
         flex: 1;
         padding: 12px 30px;
-        font-weight: 600;
+        font-weight: 400;
         color: #fff;
         border-radius: 5px;
+        font-size: 16px;
 
         cursor: pointer;
       }
@@ -257,7 +257,8 @@ body {
 
         cursor: pointer;
 
-        font-weight: 600;
+        font-weight: 400;
+        font-size: 16px;
       }
     }
   }

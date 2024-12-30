@@ -108,22 +108,9 @@ require "../../dbConn.php";
                                             </div>
                                             <div class='cart-info'>
                                                 <button class='add-cart' name='add-cart' value='{$row['item_id']}'>Add to cart</button>
-                                                <button id='isuBtn'>Issue Problem</button>
+                                                
                                             </div>
-                                            <div class='isu-div' id='isuDiv'>
-                                                Problem:
-                                                    <select name='isu-type' id='isuSel'>
-                                                        <option value='' hidden>Problem</option>
-                                                        <option>Damage</option>
-                                                        <option>Lost</option>
-                                                        <option>Naming Error</option>
-                                                        <option>Pricing Error</option>
-                                                        <option>other</option>
-                                                    </select>
-                                                    <button name='isu-btn' value='{$row['item_id']}'>Report</button>
-                                                    <br>
-                                                <input type='text' placeholder='Other Issues' id='isuTxt' name='isu-text'>
-                                            </div>
+                                            
                                         </form>
                                     </div>
                                 </div>
