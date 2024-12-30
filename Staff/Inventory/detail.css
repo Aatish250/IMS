@@ -9,8 +9,6 @@ body {
 }
 
 .detail-cont {
-  /* background-color: red; */
-
   margin-top: 1.3rem;
 
   width: 88%;
@@ -20,7 +18,6 @@ body {
 }
 
 .detail-box {
-  /* border: 2px solid grey; */
   background-color: #fff;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
@@ -78,29 +75,25 @@ body {
 }
 
 .detail-box-right {
-  /* background-color: blue; */
-  /* width: 30rem; */
   padding: 3.5rem 2rem 3.5rem 0rem;
 }
 
 .details {
-  /* background-color: rgba(245, 241, 241, 1); */
-  padding: 1rem;
   border-radius: 8px;
 
   h1 {
     font-size: 32px;
-
+    width: fit-content;
     text-transform: capitalize;
   }
 
   .description {
-    min-height: 50px;
-
-    /* overflow: auto; */
     color: #1c1c1c;
 
-    padding: 5px 0;
+    width: 100%; /* Set a fixed width for the description */
+    overflow-wrap: break-word; /* Allows long words to break and wrap onto the next line */
+    word-break: break-all; /* Breaks words at any character to prevent overflow */
+    margin-bottom: 8px;
   }
 
   .sub-title {
@@ -126,8 +119,6 @@ body {
   }
 
   .form-container {
-    /* background-color: yellow; */
-
     padding: 5px 0;
 
     .price {
@@ -137,7 +128,6 @@ body {
     }
 
     .info {
-      /* background-color: red; */
       padding-block: 10px;
 
       display: flex;
@@ -182,7 +172,6 @@ body {
     }
 
     .buttons-info {
-      /* background-color: blue; */
       display: flex;
       align-items: center;
       justify-content: center;
@@ -234,7 +223,6 @@ body {
     }
 
     .sell-info {
-      /* background-color: red; */
       padding-block: 0.7rem;
 
       display: flex;
@@ -255,8 +243,6 @@ body {
 
         margin-left: 5px;
         font-weight: 600;
-
-        /* width: 100px; */
       }
 
       button {
