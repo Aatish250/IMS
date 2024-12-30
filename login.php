@@ -1,60 +1,60 @@
 <?php
 
 include 'dbConn.php';
+session_start(); // Start the session at the beginning
+
+// Initialize message variable
 $message = "";
 
-// ------ login logics in this php ----------
-if (isset($_POST['login']) && $_SERVER['REQUEST_METHOD'] == "POST") {
-    session_start();
+// ------ Login logic ----------
+if (isset($_POST['login']) && $_SERVER['REQUEST_METHOD'] === "POST") {
     $username = $_POST['username'];
     $password = $_POST['password'];
     $role = $_POST['role'];
 
-    // --- set session value ---
+    // Use prepared statements to prevent SQL injection
+    $stmt = $conn->prepare("SELECT * FROM users WHERE username = ? AND role = ?");
+    $stmt->bind_param("ss", $username, $role);
+    $stmt->execute();
+    $result = $stmt->get_result();
 
-
-    $sql = "SELECT * FROM users WHERE username = '$username' AND role = '$role'";
-    $result = $conn->query($sql);
-
-    if (mysqli_num_rows($result) > 0) {
-
-        $_SESSION['username'] = $_POST['username'];
+    // Check if user exists
+    if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
 
+        // Verify password
         if (password_verify($password, $row['password'])) {
-            $_SESSION['password'] = $_POST['password'];
+            // Set session variables
+            $_SESSION['username'] = $username;
+            $_SESSION['role'] = $role;
 
-            if ($role == "admin") {
-                $_SESSION['role'] = $_POST['role'];
+            // Redirect based on role
+            if ($role === "admin") {
                 header('Location: Admin/Dashboard/dashboard.php');
-            }
-            if ($role = "staff") {
-                $_SESSION['role'] = $_POST['role'];
+                exit();
+            } elseif ($role === "staff") {
                 header('Location: Staff/Inventory/inventory.php');
+                exit();
             }
         } else {
+            // Only set this message if the user exists but password is incorrect
             $message = "Invalid password";
         }
     } else {
-        $message = "Invalid username";
+        // This message indicates that either the username or role is incorrect
+        $message = "Invalid username or role";
     }
-    header($_SERVER['HTTP_REFERER']);
 }
 
-// -- check if session is complete or not
+// -- Check if session is complete or not
 if (isset($_SESSION['username']) && isset($_SESSION["role"])) {
-    if ($_SESSION['role'] == 'admin') {
-        $message = "GO TO ADMIN";
-        header("location: Admin/Dashboard/dashboard.php");
-        // echo "GO TO ADMIN";
-    }
-    if ($_SESSION['role'] == 'staff') {
-        $message = "GO TO STAFF";
-        // echo "GO TO STAFF";
+    if ($_SESSION['role'] === 'admin') {
+        header("Location: Admin/Dashboard/dashboard.php");
+        exit();
+    } elseif ($_SESSION['role'] === 'staff') {
         header("Location: Staff/Inventory/inventory.php");
+        exit();
     }
-
 }
-
 
 ?>
