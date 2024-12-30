@@ -55,27 +55,25 @@ body {
 }
 
 .detail-box-left {
-  /* grid-column: 1; */
-
-  /* background-color: red; */
   padding-left: 2rem;
 
   display: flex;
   align-items: center;
 
   .img-container {
-    width: fit-content;
+    width: 450px;
+    height: 420px;
     object-fit: contain;
 
     overflow: hidden;
-  }
-
-  img {
-    width: 480px;
-    height: 480px;
 
     border-radius: 8px;
     border: 1px solid rgb(95, 91, 91);
+  }
+
+  img {
+    width: inherit;
+    height: inherit;
   }
 }
 
@@ -164,10 +162,22 @@ body {
       }
 
       .location {
-        flex: 1;
-        /* overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis; */
+        display: inline-flex; /* Ensures the elements are aligned in one line */
+        align-items: center; /* Centers the icon vertically */
+        max-width: 200px; /* Set a maximum width for the container */
+        overflow: hidden; /* Hides overflowing content */
+        white-space: nowrap; /* Prevents text from wrapping to the next line */
+      }
+
+      .location img {
+        margin-right: 5px; /* Optional: adds space between the icon and the text */
+      }
+
+      .location-text {
+        overflow: hidden; /* Hides any content that overflows */
+        text-overflow: ellipsis; /* Adds the ellipsis (...) when content overflows */
+        white-space: nowrap; /* Prevents the text from wrapping to a new line */
+        max-width: 100%; /* Ensures the text occupies the full available width */
       }
     }
 

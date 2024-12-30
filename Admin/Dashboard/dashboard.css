@@ -53,10 +53,12 @@ main {
 
 .overview-label {
   color: #6c757d;
+  font-weight: 500;
 }
 
 .overview-value {
   color: var(--primary-color);
+  font-weight: 500;
 }
 
 .itemrequest-wrapper {
@@ -73,11 +75,11 @@ main {
   width: 100%;
   max-height: 300px;
   position: relative;
-  /* overflow-y: auto; */
+  overflow-y: auto;
   /* Hide scrollbar for Chrome, Safari and Opera */
-  /* &::-webkit-scrollbar {
+  &::-webkit-scrollbar {
     display: none;
-  } */
+  }
 }
 
 .itemrequest h3 {
@@ -100,6 +102,20 @@ h3 span {
   color: #7950f2;
 }
 
+.sales h3 {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  align-items: center;
+  height: fit-content;
+  width: 100%;
+}
+
+/* .sales h3 img {
+  width: 2.7rem;
+  height: 2.7rem;
+} */
+
 table {
   width: 100%;
   border-collapse: collapse;
@@ -116,16 +132,23 @@ td {
   text-align: center;
 }
 
+th {
+  /* font-weight: 900; */
+  font-size: 16px;
+}
+
 thead,
 tfoot {
   background-color: #f8f9fa;
   font-weight: bold;
   text-align: center;
 }
+
 thead {
   border-bottom: 2px solid #63636360;
   border-top: 1px solid #63636350;
 }
+
 tfoot {
   border-bottom: 1px solid #63636350;
   border-top: 2px solid #63636360;
@@ -146,22 +169,27 @@ tr:nth-child(even) {
   border-bottom: 2px solid #dee2e6;
 }
 
-.request-table.request-table td:nth-child(1) {
+.request-table td:nth-child(1) {
   width: 10px;
 }
-.request-table.request-table td:nth-child(2) {
-  min-width: 200px;
+
+.request-table td:nth-child(2) {
+  min-width: 100px;
 }
+
 .request-table td:nth-child(3) {
-  width: 20px;
+  width: 120px;
 }
+
 .request-table td:nth-child(4) {
   width: 125px;
   min-width: 125px;
 }
+
 .request-table td:nth-child(5) {
   width: 80px;
 }
+
 .qty-ctrl-btn {
   width: 30px;
   height: 30px;
@@ -206,12 +234,11 @@ form {
   justify-content: center;
 }
 
-.add-btn,
-.delete-btn {
+.add-btn {
   background-color: #7950f2;
   color: white;
   border: none;
-  padding: 5px 10px;
+  padding: 7px 15px;
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.3s;
@@ -221,8 +248,20 @@ form {
   gap: 0.5rem;
   margin: 0 5px;
 }
+
 .delete-btn {
   background-color: #f25050;
+  color: white;
+  border: none;
+  padding: 7px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 0 5px;
 }
 
 .add-btn .icon,
@@ -236,6 +275,10 @@ form {
   background-color: #6741d9;
 }
 
+.delete-btn:hover {
+  background-color: #d32f2fe5;
+}
+
 .sales-wrapper {
   background-color: #f8f9fa;
   width: 100%;
@@ -246,36 +289,6 @@ form {
   position: relative;
   min-height: 300px;
   /* margin-bottom: 2rem; */
-}
-
-.itemrequest {
-  width: 100%;
-  max-height: 300px;
-  position: relative;
-  overflow-y: auto;
-  /* Hide scrollbar for Chrome, Safari and Opera */
-  &::-webkit-scrollbar {
-    display: none;
-  }
-}
-
-.sales h3 {
-  display: flex;
-  gap: 0.5rem;
-  margin-bottom: 0.5rem;
-  align-items: center;
-  height: fit-content;
-  width: 100%;
-}
-
-h3 span {
-  color: var(--primary-color);
-  font-size: 1.7rem;
-}
-
-.sales h3 img {
-  width: 2.7rem;
-  height: 2.7rem;
 }
 
 /* flash message css */

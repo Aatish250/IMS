@@ -62,6 +62,7 @@ require "../../dbConn.php";
                                     <div class='description'>
                                         {$row['description']}
                                     </div>
+                                    <hr/>
                                     <div class='sub-title'>
                                         <div class='category'>
                                             <h3>Category:</h3>
@@ -83,7 +84,8 @@ require "../../dbConn.php";
                                                     <span class='quantity'>{$row['quantity']} in stock</span>
                                                 </span>
                                                 <span class='location'>
-                                                    <img src='../../Images/icons/cart.svg' alt='Location'> {$row['location']}
+                                                    <img src='../../Images/icons/cart.svg' alt='Location'> 
+                                                    <span class='location-text'>{$row['location']}</span>
                                                 </span>
                                             </div>
                                             <div class='buttons-info'>
