@@ -13,8 +13,8 @@
 
 // flashMessage("Flash Message Test");
 
-box = document.getElementById("flashBox");
-box.style.display = "none";
+// box = document.getElementById("flashBox");
+// box.style.display = "none";
 function flashMessage(message, second) {
   let msg = document.getElementById("flashMessage");
   let box = document.getElementById("flashBox");

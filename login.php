@@ -21,28 +21,24 @@ if (isset($_POST['login']) && $_SERVER['REQUEST_METHOD'] === "POST") {
     // Check if user exists
     if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
-
-        // Verify password
         if (password_verify($password, $row['password'])) {
-            // Set session variables
             $_SESSION['username'] = $username;
             $_SESSION['role'] = $role;
-
-            // Redirect based on role
+            
             if ($role === "admin") {
                 header('Location: Admin/Dashboard/dashboard.php');
-                exit();
+                $message = "Admin login successful";
             } elseif ($role === "staff") {
                 header('Location: Staff/Inventory/inventory.php');
-                exit();
-            }
+                $message = "Staff login successful";
+            }   
+            exit();
         } else {
-            // Only set this message if the user exists but password is incorrect
             $message = "Invalid password";
         }
     } else {
-        // This message indicates that either the username or role is incorrect
         $message = "Invalid username or role";
+       
     }
 }
 

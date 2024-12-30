@@ -37,7 +37,6 @@ main {
 }
 
 /* Flash Message */
-
 .flash-box {
   position: absolute;
 
@@ -54,8 +53,6 @@ main {
   font-size: 16px;
   font-weight: 600;
   font-family: "Poppins";
-
-  color: var(--prussian-blue);
 }
 
 .flash-box button {
