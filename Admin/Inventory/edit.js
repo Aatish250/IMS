@@ -1,9 +1,9 @@
 const qtyCtrlBtns = document.querySelectorAll(".qty-ctrl-btn");
 const qty = document.getElementById("qty");
 
-isIncreasing = false;
-isDecreasing = false;
-inBtn = false;
+let isIncreasing = false;
+let isDecreasing = false;
+let inBtn = false;
 
 qtyCtrlBtns.forEach((btn) => {
   btn.addEventListener("click", (e) => {

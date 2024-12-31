@@ -139,11 +139,7 @@
 <script src="../../Components/flash_message.js"></script>
 <script>
   //send php value here inside the function
-  flashMessage("<?php if (isset($_GET['message']))
-    echo $_GET['message']; ?>", 3);
+  flashMessage("<?php if (isset($_GET['message'])) echo $_GET['message']; ?>", 3);
 </script>
-<!-- <script>
-  flashMessage("Check", 5);
-</script> -->
 
 </html>

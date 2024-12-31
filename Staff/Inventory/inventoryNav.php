@@ -15,8 +15,6 @@
 - edit button
 - delete button -->
 
-<style>
-</style>
 
 <form action="" method="GET" id="filterForm" class="query-box">
     <input type="text" name="title" placeholder="Search..." value="<?php if (isset($_GET['title']))
@@ -68,7 +66,7 @@
             </svg>
         </label>
         <!-- END: descending sort -->
-        <button style="font-size: 20px; font-weight: 800;padding: 0 5px;margin-left: 5px" >&#x21bb;</button>
+        <button type="button" onclick="window.location.href='inventory.php'" style="font-size: 20px; font-weight: 800;padding: 0 5px;margin-left: 5px">&#x21bb;</button>
     </div>
     <!-- END: sort -->
 </form>

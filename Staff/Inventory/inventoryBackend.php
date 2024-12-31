@@ -34,16 +34,16 @@ if (isset($_GET["title"]) || isset($_GET["category-list"]) || isset($_GET["tag-l
 
 
 // ----------------------- on issue btn click --------------------------
-if (isset($_POST['isu-btn']) && $_POST['isu-type'] != '') {
-    $isuType = $_POST['isu-type'];
-    $isuTxt = $_POST['isu-text'];
-    $id = $_POST['isu-btn'];
-    $qty = $_POST['qty'];
+// if (isset($_POST['isu-btn']) && $_POST['isu-type'] != '') {
+//     $isuType = $_POST['isu-type'];
+//     $isuTxt = $_POST['isu-text'];
+//     $id = $_POST['isu-btn'];
+//     $qty = $_POST['qty'];
 
-    $isuSql = "INSERT INTO `issue` (`item_id`, `qty`, `issue`, `text`) VALUES ('{$id}', '{$qty}', '{$isuType}', '{$isuTxt}')";
-    if (mysqli_query($conn, $isuSql))
-        $message = "{$qty} items of id: {$id} is issued with {$isuType} Issue and text: {$isuTxt}";
-}
+//     $isuSql = "INSERT INTO `issue` (`item_id`, `qty`, `issue`, `text`) VALUES ('{$id}', '{$qty}', '{$isuType}', '{$isuTxt}')";
+//     if (mysqli_query($conn, $isuSql))
+//         $message = "{$qty} items of id: {$id} is issued with {$isuType} Issue and text: {$isuTxt}";
+// }
 
 
 // ----------------------- on request btn click --------------------------

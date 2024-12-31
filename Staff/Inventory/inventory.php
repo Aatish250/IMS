@@ -3,9 +3,6 @@ require '../../dbConn.php';
 require '../checkStaff.php';
 ?>
 
-<?php
-
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -74,9 +71,7 @@ require '../checkStaff.php';
 <script src="../../Components/flash_message.js"></script>
 <script src="../../Components/UpdateDate.js"></script>
 <script>
-    flashMessage("<?php if (isset($message))
-        echo $message; ?>", 20);
-    // flashMessage("TEst emssage", 10)
+    flashMessage("<?php if (isset($message)) echo $message; ?>", 3);
 </script>
 
 </html>
