@@ -83,10 +83,8 @@ include("login.php");
     <script src="login.js"></script>
     <script src="Components/flash_message.js"></script>
     <script>
-    // send php value here inside the function
-    flashMessage("<?php if (isset($message))
-      echo $message; ?>", 3);
-  </script>
+    flashMessage("<?php if (isset($message)) echo $message; ?>", 3);
+    </script>
 
 
 </body>

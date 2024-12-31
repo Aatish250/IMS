@@ -32,7 +32,7 @@ if (isset($_GET["title"]) || isset($_GET["category-list"]) || isset($_GET["tag-l
     $sql = show_full_inventory_filter_sql();
 }
 
-// ser serch query on page load
+// search query on page load
 $sql = show_full_inventory_filter_sql();
 
 // --------------------- on edit click ------------------
