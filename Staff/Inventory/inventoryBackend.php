@@ -109,15 +109,15 @@ if (isset($_POST["sell-item"])) {
 
 // ----------------------- on add btn click --------------------------
 
-if (isset($_POST["add-cart"])) {
+if (isset($_POST["add-collection"])) {
 
     // Get info from the inventory table of the selected item id
-    $inventoryTable = mysqli_query($conn, "SELECT * FROM inventory WHERE item_id=" . $_POST['add-cart']);
+    $inventoryTable = mysqli_query($conn, "SELECT * FROM inventory WHERE item_id=" . $_POST['add-collection']);
     $inventory = mysqli_fetch_assoc($inventoryTable);
 
-    $sqlForCart = "INSERT INTO cart VALUES ({$inventory['item_id']}, {$_POST['qty']})";
-    $result = mysqli_query($conn, $sqlForCart);
+    $sqlForCollection = "INSERT INTO collection VALUES ({$inventory['item_id']}, {$_POST['qty']})";
+    $result = mysqli_query($conn, $sqlForCollection);
     if ($result)
-        $message = "Item ID: {$inventory['item_id']}, added to Cart";
+        $message = "Item ID: {$inventory['item_id']}, added to Collection";
 }
 ?>

@@ -106,8 +106,8 @@ require "../../dbConn.php";
                                                     : "Please Request no stock left") .
                                                 "
                                             </div>
-                                            <div class='cart-info'>
-                                                <button class='add-cart' name='add-cart' value='{$row['item_id']}'>Add to cart</button>
+                                            <div class='collection-info'>
+                                                <button class='add-collection' name='add-collection' value='{$row['item_id']}'>Add to collection</button>
                                                 
                                             </div>
                                             

@@ -6,13 +6,13 @@
 <aside>
   <nav>
     <div class="logo">
-      <a href="../Inventory/inventory.php"><img src="../../Images/icons/mainlogo.svg" alt="main logo" loading="lazy" /></a>
+      <a href="../Inventory"><img src="../../Images/icons/mainlogo.svg" alt="main logo" loading="lazy" /></a>
     </div>
     <!-- side Bar navigation list -->
     <div class="nav-list">
       <ul>
         <li class="list-row">
-          <a href="../Inventory/inventory.php">
+          <a href="../Inventory">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6 icon">
               <path
                 d="M3.375 3C2.339 3 1.5 3.84 1.5 4.875v.75c0 1.036.84 1.875 1.875 1.875h17.25c1.035 0 1.875-.84 1.875-1.875v-.75C22.5 3.839 21.66 3 20.625 3H3.375Z" />
