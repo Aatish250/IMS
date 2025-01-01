@@ -2,10 +2,10 @@
 
 function delete($conn, $id)
 {
-    $sql = "DELETE FROM `cart` WHERE `item_id` = " . $id;
+    $sql = "DELETE FROM `collection` WHERE `item_id` = " . $id;
     $result = mysqli_query($conn, $sql);
     if ($result)
-        $message = "Remove item ID: {$id} from cart list";
+        $message = "Remove item ID: {$id} from collection list";
 }
 
 if (isset($_POST['delete-id'])) {
@@ -58,3 +58,9 @@ if (isset($_POST['sell-item'])) {
 }
 
 
+
+// item_id
+// item_title
+// price
+// quantity
+// cart_qty
