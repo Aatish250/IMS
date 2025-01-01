@@ -70,7 +70,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['item-submit'])) {
 
             if (insert_item_sub_detail($conn, $last_id)) {
                 $message = "Item {$_POST['item-title']} Added Successfully!";
-                header("location: AddItem.php?message=" . $message);
+                header("location: index.php?message=" . $message);
             }
         }
     }

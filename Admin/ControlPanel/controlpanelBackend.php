@@ -9,7 +9,7 @@ require '../checkAdmin.php';
 <?php // to send message as get and refresh previous data
 function send_message_as_GET($message)
 {
-    header("location: controlpanel.php?message=$message");
+    header("location: index.php?message=$message");
 }
 ?>
 
