@@ -1,7 +1,7 @@
 <!-- Setting up al the form action on top of page to make the data changed first then display on html -->
 <!-- Going from bottom to top because top section have mreo displays then bottom section -->
 
-<?php // create database connection and check users role
+<?php // create database connection and check Staffs role
 include '../../dbConn.php';
 require '../checkAdmin.php';
 ?>
@@ -26,17 +26,17 @@ if (isset($_POST['addCategory']) && $_SERVER['REQUEST_METHOD'] == "POST") {
 ?>
 
 <?php // Createing staff account
-if (isset($_POST['add-user']) && $_SERVER['REQUEST_METHOD'] == "POST") {
+if (isset($_POST['add-staff']) && $_SERVER['REQUEST_METHOD'] == "POST") {
     echo "Running here-------------------------------------------------------------------";
     $username = $_POST['username'];
     $password = $_POST['password'];
     $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
-    $result = mysqli_query($conn, "insert into `users`(`role`, `username`, `password`) values('staff', '$username', '$hashedPassword')");
+    $result = mysqli_query($conn, "insert into `staffs`(`role`, `username`, `password`) values('staff', '$username', '$hashedPassword')");
     if ($result)
         $message = "Staff: $username created successfully!";
     else
-        $message = "Error creating user";
+        $message = "Error creating staff account";
 
     send_message_as_GET($message);
 }
@@ -52,12 +52,12 @@ if (isset($_POST['delete-cid']) && $_SERVER['REQUEST_METHOD'] == "POST") {
 }
 ?>
 
-<?php // to delete user
+<?php // to delete staff
 if (isset($_POST['delete-uid']) && $_SERVER['REQUEST_METHOD'] == "POST") {
     // echo "Deleted: " . $_POST['delete-uid'];
 
-    $delete = mysqli_query($conn, "DELETE FROM users WHERE uid = " . $_POST['delete-uid']);
-    $message = "Deleted User: " . $_POST['delete-uid'];
+    $delete = mysqli_query($conn, "DELETE FROM staffs WHERE uid = " . $_POST['delete-uid']);
+    $message = "Deleted Staff: " . $_POST['delete-uid'];
     send_message_as_GET($message);
 }
 ?>
