@@ -1,4 +1,6 @@
 <?php
+// all of these are optonal feature currently not visible
+
 require '../checkStaff.php';
 include '../../dbConn.php';
 
