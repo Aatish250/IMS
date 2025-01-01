@@ -36,7 +36,7 @@ include("inventoryBackend.php");
                     </svg>{$row['quantity']} <span>in stocks</span>
                 </div>
                 <form action='detail.php'>
-                    <button type='submit' name='item-detail' value='{$row['item_id']}'>
+                    <button type='submit' name='id' value='{$row['item_id']}'>
                         <a href='detail.php?id={$row['item_id']}'>Detail</a>
                     </button>
             </form>
