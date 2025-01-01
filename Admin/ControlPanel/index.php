@@ -57,13 +57,13 @@
 
     <div class="container">
       <section class="main-wrapper">  <!-- contain whole main content area -->
-        <!-- user and category check section starts -->
+        <!-- Staff and category check section starts -->
         <section class="control-panel-wrapper"> 
-          <div class="check-section" id="check-user-section">
-            <h3><img src="../../Images/icons/user.svg" alt="user logo" />Users</h3>
+          <div class="check-section" id="check-staff-section">
+            <h3><img src="../../Images/icons/user.svg" alt="user logo" />Staffs</h3>
                 <table>
                   <tr>
-                    <th>User - ID</th>
+                    <th>Staff - ID</th>
                     <th>Username</th>
                     <th>Role</th>
                     <th>Action</th>
@@ -85,13 +85,13 @@
                 </table>
           </div>
         </section>
-        <!-- user and category check section ends -->
+        <!-- staff and category check section ends -->
 
         <!-- add part starts -->
         <section class="add-wrapper">
-          <!-- To add new user -->
-          <div class="add-section" id="add-user-section">
-            <h3><img src="../../Images/icons/adduser.svg" alt="add user logo" />Add User</h3>
+          <!-- To add new staff -->
+          <div class="add-section" id="add-staff-section">
+            <h3><img src="../../Images/icons/adduser.svg" alt="add user logo" />Add Staff</h3>
             <!-- form for adding starts-->
             <form action="" method="POST" class="add-form">
               <label for="username">
@@ -102,8 +102,8 @@
                 <span>Password:</span>
               </label>
               <input type="password" name="password" id="password" required placeholder="password" />
-              <button type="submit" name="add-user">
-                <img src="../../Images/icons/adduserWhite.svg" alt="add user logo" />Add User
+              <button type="submit" name="add-staff">
+                <img src="../../Images/icons/adduserWhite.svg" alt="add user logo" />Add Staff
               </button>
             </form>
             <!-- form for adding ends-->

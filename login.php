@@ -26,10 +26,10 @@ if (isset($_POST['login']) && $_SERVER['REQUEST_METHOD'] === "POST") {
             $_SESSION['role'] = $role;
             
             if ($role === "admin") {
-                header('Location: Admin/Dashboard/dashboard.php');
+                header('Location: Admin/Dashboard/');
                 $message = "Admin login successful";
             } elseif ($role === "staff") {
-                header('Location: Staff/Inventory/inventory.php');
+                header('Location: Staff/Inventory/');
                 $message = "Staff login successful";
             }   
             exit();
@@ -45,10 +45,10 @@ if (isset($_POST['login']) && $_SERVER['REQUEST_METHOD'] === "POST") {
 // -- Check if session is complete or not
 if (isset($_SESSION['username']) && isset($_SESSION["role"])) {
     if ($_SESSION['role'] === 'admin') {
-        header("Location: Admin/Dashboard/dashboard.php");
+        header("Location: Admin/Dashboard/");
         exit();
     } elseif ($_SESSION['role'] === 'staff') {
-        header("Location: Staff/Inventory/inventory.php");
+        header("Location: Staff/Inventory/");
         exit();
     }
 }
