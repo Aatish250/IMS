@@ -13,12 +13,12 @@ if (isset($_POST['login']) && $_SERVER['REQUEST_METHOD'] === "POST") {
     $role = $_POST['role'];
 
     // Use prepared statements to prevent SQL injection
-    $stmt = $conn->prepare("SELECT * FROM staffs WHERE username = ? AND role = ?");
+    $stmt = $conn->prepare("SELECT * FROM users WHERE username = ? AND role = ?");
     $stmt->bind_param("ss", $username, $role);
     $stmt->execute();
     $result = $stmt->get_result();
 
-    // Check if staff exists
+    // Check if user exists
     if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
         if (password_verify($password, $row['password'])) {
@@ -45,10 +45,10 @@ if (isset($_POST['login']) && $_SERVER['REQUEST_METHOD'] === "POST") {
 // -- Check if session is complete or not
 if (isset($_SESSION['username']) && isset($_SESSION["role"])) {
     if ($_SESSION['role'] === 'admin') {
-        header("Location: Admin/Dashboard/");
+        header("Location: Admin/Dashboard/dashboard.php");
         exit();
     } elseif ($_SESSION['role'] === 'staff') {
-        header("Location: Staff/Inventory/");
+        header("Location: Staff/Inventory/inventory.php");
         exit();
     }
 }
