@@ -26,7 +26,7 @@ if (isset($_POST['addCategory']) && $_SERVER['REQUEST_METHOD'] == "POST") {
 ?>
 
 <?php // Createing staff account
-if (isset($_POST['add-user']) && $_SERVER['REQUEST_METHOD'] == "POST") {
+if (isset($_POST['add-staff']) && $_SERVER['REQUEST_METHOD'] == "POST") {
     echo "Running here-------------------------------------------------------------------";
     $username = $_POST['username'];
     $password = $_POST['password'];
