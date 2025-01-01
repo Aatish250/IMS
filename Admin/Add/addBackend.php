@@ -10,7 +10,6 @@ function insert_item_main_detail($conn)
     if (mysqli_query($conn, $sql)) {
         return true;
     }
-    return true;
     return false;
 }
 

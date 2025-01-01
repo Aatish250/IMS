@@ -1,6 +1,6 @@
 <?php
 
-function delete($conn, $id)
+function deleteID($conn, $id)
 {
     $sql = "DELETE FROM `collection` WHERE `item_id` = " . $id;
     $result = mysqli_query($conn, $sql);
@@ -9,7 +9,7 @@ function delete($conn, $id)
 }
 
 if (isset($_POST['delete-id'])) {
-    delete($conn, $_POST['delete-id']);
+    deleteID($conn, $_POST['delete-id']);
 }
 
 if (isset($_POST['sell-item'])) {
@@ -37,7 +37,7 @@ if (isset($_POST['sell-item'])) {
             $newQty = $inventory['quantity'] - $_POST['qty'];
             $result = mysqli_query($conn, "UPDATE inventory SET quantity=$newQty WHERE item_id=" . $_POST['sell-item']);
             if ($result) {
-                delete($conn, $_POST['sell-item']);
+                deleteID($conn, $_POST['sell-item']);
                 $message = "Sold {$_POST['qty']} items of {$inventory['item_title']} for Rs.{$_POST['total']}";
             }
         }
@@ -50,7 +50,7 @@ if (isset($_POST['sell-item'])) {
             $newQty = $inventory['quantity'] - $_POST['qty'];
             $result = mysqli_query($conn, "UPDATE inventory SET quantity=$newQty WHERE item_id=" . $_POST['sell-item']);
             if ($result) {
-                delete($conn, $_POST['sell-item']);
+                deleteID($conn, $_POST['sell-item']);
                 $message = "Sold {$_POST['qty']} items of {$inventory['item_title']} for Rs.{$_POST['total']}";
             }
         }
