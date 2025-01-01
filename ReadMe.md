@@ -8,7 +8,6 @@
     <!-- list for AG -->
     <td>
       <ol>
-        <li>❔ - Consider Re-Desigining</li>
         <li>✔️ - Design Compilation</li>
         <li>➖ - See the working table.</li>
         <li>▶️ - Doing -- ?? -- </li>
@@ -17,11 +16,7 @@
     <!-- list for am -->
     <td>
       <ol>
-        <li>⛔ - Solve Login verification</li>
-        <li>⚠️ - Sold: todays date not match when its 12.21 AM, it shows yesterdays date nut its ok in dashboard</li>
-        <li>▶️ - doing admin issue page</li>
-        <li>⚠️ - Issue page if 0 delete teh lisy</li>
-        <li>⛔ - if added error found in staff sold</li>
+        <li>⚠️ - Add Pagination for inventory</li>
       </ol>
     </td>
   </tr>
@@ -38,7 +33,7 @@
   </tr>
   <td>Login Page</td>
     <td aligh="center">✔️</td>
-    <td aligh="center">⛔</td>
+    <td aligh="center">☑️</td>
   <tr>
   <tr>
       <th colspan="3">Admin</th>
@@ -57,11 +52,11 @@
       <td>Admin - Inventory</td>
       <td aligh="center">✔️</td>
       <!-- <td aligh="center">❔</td> -->
-      <td aligh="center">☑️</td>
+      <td aligh="center">⚠️</td>
   </tr> 
   <tr>
       <td>Admin - Edit</td>
-      <td aligh="center">➖</td>
+      <td aligh="center">✔️</td>
       <td aligh="center">☑️</td>
   <tr>
   <tr>
@@ -71,8 +66,8 @@
   <tr>
   <tr>
     <td>Admin - Sold</td>
-    <td aligh="center">❔</td>
-    <td aligh="center">⛔</td>
+    <td aligh="center">✔️</td>
+    <td aligh="center">☑️</td>
   </tr>
   <tr>
       <td>Admin - Control Panel</td>
@@ -80,21 +75,15 @@
       <td aligh="center">☑️</td>
   </tr>
   <tr>
-      <td>Admin - Issue List</td>
-      <td aligh="center">➖</td>
-      <td aligh="center">▶️</td>
-  </tr>
-  </tr>
-  <tr>
       <th colspan="3">Staff</th>
   </tr>
       <td>Staff - Inventory</td>
-      <td aligh="center">❔</td>
-      <td aligh="center">☑️</td>
+      <td aligh="center">✔️</td>
+      <td aligh="center">⚠️</td>
   <tr>
   <tr>
       <td>Staff - (Inventory) Detail</td>
-      <td aligh="center">➖</td>
+      <td aligh="center">✔️</td>
       <td aligh="center">☑️</td>
   </tr>
   <tr>
@@ -116,23 +105,18 @@
   </tr>
       <td>Staff - Sold</td>
       <td aligh="center">❔</td>
-      <td aligh="center">⛔</td>
+      <td aligh="center">☑️</td>
   </tr>
   </tr>
       <td>Staff - Request</td>
-      <td aligh="center">❔</td>
+      <td aligh="center">✔️</td>
       <td aligh="center">☑️</td>
       </tr>
   </tr>
   <tr>
-      <td>Staff - Cart</td>
-      <td aligh="center">❔</td>
+      <td>Staff - Collection</td>
+      <td aligh="center">✔️</td>
       <td aligh="center">☑️</td>
-  </tr>
-  <tr>
-      <td>Staff - Issue List</td>
-      <td aligh="center">❔</td>
-      <td aligh="center">⚠️</td>
   </tr>
 </table>
 
