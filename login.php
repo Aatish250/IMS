@@ -26,10 +26,10 @@ if (isset($_POST['login']) && $_SERVER['REQUEST_METHOD'] === "POST") {
             $_SESSION['role'] = $role;
             
             if ($role === "admin") {
-                header('Location: Admin/Dashboard');
+                header('Location: Admin/Dashboard/dashboard.php');
                 $message = "Admin login successful";
             } elseif ($role === "staff") {
-                header('Location: Staff/Inventory');
+                header('Location: Staff/Inventory/inventory.php');
                 $message = "Staff login successful";
             }   
             exit();
