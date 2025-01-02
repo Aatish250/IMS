@@ -88,7 +88,7 @@ include 'updateItem.php';
             </svg>
 
             <span class="overview-label">Sales:</span>
-            <span class="overview-value">Rs. <?php echo $sales ?></span>
+            <span class="overview-value">Rs. <?php echo isset($sales) ? $sales : 0 ?></span>
           </div>
         </div>
       </div>
