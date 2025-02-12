@@ -41,6 +41,7 @@ body {
   background-color: crimson;
   width: 35px;
   height: 35px;
+  border-bottom-left-radius: 10px !important;
 
   display: flex;
   align-items: center;
@@ -65,13 +66,17 @@ body {
     overflow: hidden;
 
     border-radius: 8px;
-    border: 1px solid rgb(95, 91, 91);
   }
 
   img {
     width: inherit;
     height: inherit;
   }
+}
+
+.detail-box-left img:hover {
+  border: 1px solid rgb(95, 91, 91);
+  cursor: pointer;
 }
 
 .detail-box-right {
@@ -273,6 +278,8 @@ body {
 
   button {
     flex: 1;
+    font-size: 17px;
+    letter-spacing: 0.2px;
 
     background-color: var(--primary-color);
     border: none;
@@ -284,7 +291,7 @@ body {
 
     cursor: pointer;
 
-    font-size: 15px;
+    /* font-size: 15px; */
     font-weight: 600;
   }
 }

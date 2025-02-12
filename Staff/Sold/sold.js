@@ -14,9 +14,18 @@ startDate.max = todayDate();
 endDate.max = todayDate();
 endDate.min = startDate.value;
 
-listLimit.addEventListener("change", ()=>{
+listLimit.addEventListener("change", () => {
   console.log(listLimit.value);
   filterForm.submit();
+});
+
+listLimit.addEventListener("input", () => {
+  let value = parseInt(listLimit.value);
+  if (isNaN(value) || value < 0) {
+    listLimit.value = "";
+  } else {
+    listLimit.value = value;
+  }
 });
 
 startDate.addEventListener("change", () => {
@@ -43,7 +52,6 @@ endDate.addEventListener("change", () => {
   filterForm.submit();
 });
 
-
 const qtyCtrlBtns = document.querySelectorAll(".qty-ctrl-btn");
 const total = document.getElementById("total");
 const price = document.getElementById("price");
@@ -51,18 +59,19 @@ const qty = document.getElementById("qty");
 
 qtyCtrlBtns.forEach((btn, idx) => {
   btn.addEventListener("click", () => {
-    const input = btn.parentElement.querySelector('.qty-ctrl-inp');
+    const input = btn.parentElement.querySelector(".qty-ctrl-inp");
     let currentQty = parseInt(input.value);
 
     if (btn.dataset.action === "+") {
-        input.value = currentQty + 1;
+      input.value = currentQty + 1;
     } else if (btn.dataset.action === "-" && currentQty > 1) {
-        input.value = currentQty - 1;
+      input.value = currentQty - 1;
     }
     total.value = price.value * input.value;
   });
 });
-      
-price.addEventListener("input",()=>{
+
+price.addEventListener("input", () => {
   total.value = price.value * qty.value;
-})
+});
+

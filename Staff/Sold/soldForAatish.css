@@ -29,13 +29,20 @@ td {
   border-bottom: 1px solid #e0e0e0;
 }
 
+.caption {
+  padding-block: 13px !important;
+
+  border-radius: 7px;
+}
+
 th,
 .caption {
   background-color: #f8f9fa;
   font-weight: bold;
   color: #495057;
-  border-top: 2px solid #dee2e6;
-  border-bottom: 2px solid #dee2e6;
+  margin-bottom: 11px;
+
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 tr:last-child td {
@@ -148,4 +155,17 @@ input[type="number"]::-webkit-outer-spin-button {
 
 #listLimit {
   padding-left: 10px;
+
+  width: 4rem;
+}
+
+.search-button {
+  background-color: var(--selected-color) !important;
+  padding: 8px 22px !important;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.search-button:hover {
+  background-color: var(--selected-color) !important;
 }
