@@ -39,7 +39,7 @@ include 'sell.php';
         </div>
         <div class="main-heading-right">
           <!-- display that it is Staff -->
-          <span class="staff">Admin</span>
+          <span class="staff">staff</span>
           <p id="display-date"></p>
         </div>
       </div>
@@ -75,8 +75,11 @@ include 'sell.php';
             </thead>
             <tbody>
               <form method='POST' action=''>
-                <?php // load item request list
-                include 'collectionList.php';
+                <?php 
+                if (isset($message))
+                  echo "<tr><td colspan='7' style='color: #888;'>$message</td></tr>";
+                else
+                  include 'collectionList.php';
                 ?>
               </form>
             </tbody>

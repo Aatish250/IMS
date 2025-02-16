@@ -43,23 +43,29 @@ if (mysqli_num_rows($result) > 0) {
         <tr id='sellLi'>  
           <form method='POST' action=''>
             <td>{$row['item_id']}</td>
+
             <td>{$row['item_title']}</td>
+            
             <td>
               {$row['quantity']}
               <input type='number' id='maxQty' name='quantity' value={$row['quantity']} class='inp' readonly hidden>
-            </td>x
+            </td>
+
             <td>
               <input type='number' id='rate' value={$row['price']} class='inp'>
             </td>
+
             <td class='qty-ctrl'>
               <button class='qty-ctrl-btn minus-btn' data-action='-'>-</button>
               <input type='number' name='sell-qty' id='sellQty' class='qty-ctrl-inp' value={$row['collection_qty']}>
               <button class='qty-ctrl-btn plus-btn' data-action='+'>+</button>
             </td>
+
             <td>
               <input type='number' id='total' name='total' class='inp'>
             </td>
-            <td>
+
+            <td class='collection-cta'>
               <button type='submit' name='sell-item' value='{$row['item_id']}' class='sell-btn' id='sellBtn'>  
               <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor' class='size-6 icon'>
                 <path d='M12 7.5a2.25 2.25 0 1 0 0 4.5 2.25 2.25 0 0 0 0-4.5Z' />
