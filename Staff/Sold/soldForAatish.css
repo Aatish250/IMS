@@ -167,5 +167,5 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 .search-button:hover {
-  background-color: var(--selected-color) !important;
+  background-color: rgb(12, 216, 70) !important;
 }

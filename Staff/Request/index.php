@@ -39,7 +39,7 @@ include 'updateItem.php';
         </div>
         <div class="main-heading-right">
           <!-- display that it is Staff -->
-          <span class="staff">Admin</span>
+          <span class="staff">Staff</span>
           <p id="display-date"></p>
         </div>
       </div>
