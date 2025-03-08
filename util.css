@@ -196,37 +196,7 @@ header {
   margin-top: 0.3rem;
 }
 
-/* Flash Message */
 
-.flash-box {
-  position: absolute;
 
-  top: 7%;
-  left: 45%;
 
-  transform: translateY(-55%);
-
-  background-color: var(--battleship-gray);
-  border-radius: 5px;
-
-  padding: 1rem 1.5rem;
-
-  font-size: 16px;
-  font-weight: 600;
-  font-family: "Poppins";
-}
-
-.flash-box button {
-  background-color: transparent;
-  border: none;
-  outline: none;
-
-  padding-left: 10px;
-
-  cursor: pointer;
-
-  font-weight: 600;
-
-  color: whitesmoke;
-}
 /*global heading ends */

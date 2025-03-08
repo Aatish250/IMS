@@ -13,6 +13,59 @@
   <link rel="stylesheet" href="AddItem.css" />
 </head>
 
+<style>
+  .error-message {
+  color: #dc3545;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+  display: block;
+  font-weight: 500;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  background-color: rgba(220, 53, 69, 0.1);
+  border: 1px solid rgba(220, 53, 69, 0.2);
+  animation: fadeIn 0.3s ease-in;
+}
+
+/* Flash Message */
+.flash-box {
+  position: absolute;
+  top: 20px;
+  right: 0px;
+  background-color: rgb(224, 17, 207);
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  display: none;
+  animation: fadeIn 0.3s ease-in;
+  color: black;
+  width: fit-content;
+}
+
+.flash-box button {
+  background: transparent;
+  border: none;
+  color: white;
+  margin-left: 10px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+</style>
+
+
 <body>
   <!-- Side Bar start -->
   <?php
@@ -37,13 +90,13 @@
           </p>
         </div>
         <div class="main-heading-right">
-          <!-- display that it is admin -->
           <span class="staff">Admin</span>
           <p id="display-date"></p>
         </div>
       </div>
     </header>
 
+    <!-- Error message container positioned at top right -->
     <div id="flashBox" class="flash-box">
       <span id="flashMessage" class="flashMessage"></span>
       <button onclick="closeMessage()">&#9932;</button>
@@ -156,85 +209,14 @@
 
 
   <script src="../../Components/UpdateDate.js"></script>
-  <script src="add.js"></script>
   <script src="../../Components/flash_message.js"></script>
+  <script src="add.js"></script>
+  <script src="validation.js"></script>
   <script>
     // send php value here inside the function
     flashMessage("<?php if (isset($_GET['message']))
-      echo $_GET['message']; ?>", 5);
+      echo $_GET['message']; ?>", 2);
   </script>
 </body>
 
 </html>
-
-<!-- Add item Form Validation -->
-<?php
-
-  if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['item-submit'])) {
-
-    $title = $_POST['item-title'];
-    $description = $_POST['description'];
-    $price = $_POST['price'];
-    $quantity = $_POST['quantity'];
-
-    if (empty($title)) {
-      $error = "Title is required";
-    } elseif (empty($description)) {
-      $error = "Description is required";
-    } elseif (empty($price)) {
-      $error = "Price is required";
-    } elseif (empty($quantity)) {
-      $error = "Quantity is required";
-    } elseif ($price <= 0) {
-      $error = "Price should be greater than 0";
-    } elseif ($quantity <= 0) {
-      $error = "Quantity should be greater than 0";
-    } else {
-
-      $target_dir = "../../Images/item/";
-      $target_file = $target_dir . basename($_FILES["img"]["name"]);
-      $uploadOk = 1;
-      $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
-
-      // Check if image file is a actual image or fake image
-      $check = getimagesize($_FILES["img"]["tmp_name"]);
-      if ($check !== false) {
-        $uploadOk = 1;
-      } else {
-        $error = "File is not an image.";
-        $uploadOk = 0;
-      }
-
-      // Check if file already exists
-      if (file_exists($target_file)) {
-        $error = "Sorry, file already exists.";
-        $uploadOk = 0;
-      }
-
-      // Check file size
-      if ($_FILES["img"]["size"] > 500000) {
-        $error = "Sorry, your file is too large.";
-        $uploadOk = 0;
-      }
-
-      // Allow certain file formats
-      if ($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif") {
-        $error = "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
-        $uploadOk = 0;
-      }
-
-      // Check if $uploadOk is set to 0 by an error
-      if ($uploadOk == 0) {
-        $error = "Sorry, your file was not uploaded.";
-      // if everything is ok, try to upload file
-      } else {
-        if (move_uploaded_file($_FILES["img"]["tmp_name"], $target_file)) {
-          $success = "The file " . htmlspecialchars(basename($_FILES["img"]["name"])) . " has been uploaded.";
-          include("addBackend.php");
-        } else {
-          $error = "Sorry, there was an error uploading your file.";
-        }
-      }
-    }
-  }
-?>
