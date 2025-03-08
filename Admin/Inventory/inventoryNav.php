@@ -71,6 +71,16 @@
 </form>
 
 <script>
+    // Get search input element
+    const searchInput = document.getElementById("searchTitle");
+    // Add input validation for letters only when submitting
+    searchBar.addEventListener("submit", (e) => {
+    // Remove any non-letter characters from search input
+    searchInput.value = searchInput.value.replace(/[^a-zA-Z\s]/g, "");
+    });
+</script>
+
+<script>
     // Function to set the SVG color based on the selected radio button
 function setSvgColor() {
   const ascSvg = document.querySelector("label[for='sortAsc'] svg path");

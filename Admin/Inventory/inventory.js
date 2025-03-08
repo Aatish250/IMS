@@ -1,4 +1,4 @@
-searchBar = document.getElementById('filterForm');
+searchBar = document.getElementById("filterForm");
 searchBar.addEventListener("change", () => {
-    searchBar.submit();
-})
+  searchBar.submit();
+});
