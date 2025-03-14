@@ -20,7 +20,7 @@
 
 <form action="" method="GET" id="filterForm" class="query-box">
     <input type="text" name="title" placeholder="Search..." value="<?php if (isset($_GET['title']))
-                                                                        echo $_GET['title'] ?>" id="searchTitle">
+                                                                        echo $_GET['title'] ?>" id="searchTitle" pattern="[A-Za-z0-9\s]+" title="Only letters, numbers and spaces allowed" onkeypress="return /[A-Za-z0-9\s]/i.test(event.key)">
     <button type="submit" name="filter-btn">Filter</button>
     <select name="category-list">
         <option value="" hidden selected>Category</option>

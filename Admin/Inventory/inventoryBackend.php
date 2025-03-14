@@ -25,8 +25,6 @@ function show_full_inventory_filter_sql()
 }
 
 
-
-
 if (isset($_GET["title"]) || isset($_GET["category-list"]) || isset($_GET["tag-list"]) || isset($_GET["sort-by-list"]) || isset($_GET["sort"])) {
     // filter according to given inputs
     $sql = show_full_inventory_filter_sql();

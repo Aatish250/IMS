@@ -72,18 +72,17 @@ if (isset($_GET['item-edit'])) {
                     <!-- START: Upload Image Container -->
                      <div class="upload-container">
                         <div class="upload-box" id="uploadBox">
-                            <img src="<?php echo $img_src?>" alt="Image">
+                            <img src="<?php echo $img_src?>" alt="Image" id="preview-image">
                         </div>
                      </div>
                     <!-- END: Upload Image Container -->
                     <input type="text" name="relative_img_path" value="<?php echo $img_src ?>" hidden>
-                    <!-- <input type="file" name="new-file" id="" accept="image/*" class="FileInput"> -->
 
                     <!-- START: To Upload image File -->
                     <label for="file-upload" class="custom-file-upload">
                         Upload File
                     </label>
-                    <input id="file-upload" type="file" name="new-file" accept="image/*" class="FileInput"/>
+                    <input id="file-upload" type="file" name="new-file" accept="image/*" class="FileInput" onchange="previewImage(this)"/>
                     <!-- END: To Upload image File -->
                 </div>
                 <!-- END: Edit item left -->
@@ -146,7 +145,7 @@ if (isset($_GET['item-edit'])) {
 
                     <div class="edititem-cta">
                         <button class="add-btn" name="new-edit" value="<?php echo $item_id; ?>">
-                            Edit
+                            Save Changes
                         </button>
                         <button class="cancel" type="reset" name='cancel-id'>Cancel</button>
                     </div>
@@ -161,3 +160,18 @@ if (isset($_GET['item-edit'])) {
 
 <script src="edit.js"></script>
 <script src="../../Components/UpdateDate.js"></script>
+
+<!-- For Upload Image part -->
+<script>
+        function previewImage(input) {
+            if (input.files && input.files[0]) {
+                    var reader = new FileReader();
+                                
+                    reader.onload = function(e) {
+                        document.getElementById('preview-image').src = e.target.result;
+                 }
+                                
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+</script>

@@ -52,7 +52,7 @@ if (isset($_GET['item-edit'])) {
                     </p>
                 </div>
                 <div class="main-heading-right">
-                    <!-- display that it is admin -->
+
                     <span class="staff">Admin</span>
                     <p id="display-date"></p>
                 </div>
@@ -60,7 +60,7 @@ if (isset($_GET['item-edit'])) {
         </header>
 
         <section class="edititem-container">
-            <form action="<?php echo $_SERVER['HTTP_REFERER'] ?>" method="POST" enctype="multipart/form-data" class="edit-form">
+            <form action="<?php echo $_SERVER['HTTP_REFERER'] ?>" method="POST" enctype="multipart/form-data" class="edit-form" id="editItemForm">
 
                 <!-- START: Edititem container left section -->
                 <div class="edititem-left">
@@ -88,7 +88,7 @@ if (isset($_GET['item-edit'])) {
                     </div>
                     <input type="text" name="relative_img_path" value="<?php echo $img_src ?>" hidden>
                     
-                    <input type="file" name="new-file" id="" accept="image/*" style="cursor: pointer;">
+                    <input type="file" name="new-file" id="fileInput" accept="image/*" style="cursor: pointer;">
                     <br>
                     <!-- END: Upload Image container -->
                 </div>
@@ -99,44 +99,64 @@ if (isset($_GET['item-edit'])) {
                 <br>
                 <input type="file" name="new-file" id="" accept="image/*">
                 <br> -->
-                Title:
-                <input type="text" name="new-name" id="" value="<?php echo $title ?>">
-                <br>
-                Price:
-                <input type="number" name="new-price" id="" value="<?php echo $price ?>">
-                <br>
-                Quantity:
-                <button class='qty-ctrl-btn' data-action='-'>-</button>
-                <input type="number" name="new-quantity" id='qty' class='qty-ctrl-inp' value="<?php echo $quantity ?>">
-                <button class='qty-ctrl-btn plus-btn' data-action='+'>+</button>
-                <br>
-                Tag:
-                <select name="new-tag" id="">
-                    <option <?php echo (isset($tag) && $tag == "" ? "selected" : "") ?>>No Tag</option>
-                    <option <?php echo (isset($tag) && $tag == "Top Selling" ? "selected" : "") ?>>Top Selling
-                    </option>
-                    <option <?php echo (isset($tag) && $tag == "New" ? "selected" : "") ?>>New</option>
-                    <option <?php echo (isset($tag) && $tag == "Original" ? "selected" : "") ?>>Original</option>
-                </select>
-                <br>
-                Category:
-                <select name="new-category" id="">
-                    <?php
-                    $categories = mysqli_query($conn, "SELECT * FROM category");
-                    while ($c = mysqli_fetch_assoc($categories)) {
-                        echo "<option value='{$c['category_id']}'" . (($category_id == $c['category_id']) ? "selected" : "") . ">{$c['category']}</option>";
-                    } ?>
-                    ?>
-                </select>
-                <br>
-                Location:
-                <input type="text" name="new-location" id="" value="<?php echo $location ?>">
-                <br>
-                Description:
-                <textarea name="new-description" id=""><?php echo $description ?></textarea>
-                <br>
-                <button name="new-edit" value="<?php echo $item_id; ?>">Edit</button>
-
+                <div class="form-group">
+                    <label for="titleInput">Title:</label>
+                    <input type="text" name="new-name" id="titleInput" value="<?php echo $title ?>" pattern="[A-Za-z0-9\s]+" title="Only letters, numbers and spaces allowed">
+                    <span class="error-message" id="titleError"></span>
+                </div>
+                
+                <div class="form-group">
+                    <label for="priceInput">Price:</label>
+                    <input type="number" name="new-price" id="priceInput" value="<?php echo $price ?>" min="0" step="0.01" onkeydown="preventNegative(event)" onchange="removeNegative(this)">
+                    <span class="error-message" id="priceError"></span>
+                </div>
+                
+                <div class="form-group">
+                    <label for="qty">Quantity:</label>
+                    <div class="quantity-control">
+                        <button class='qty-ctrl-btn' data-action='-'>-</button>
+                        <input type="number" name="new-quantity" id='qty' class='qty-ctrl-inp' value="<?php echo $quantity ?>" min="0" onkeydown="preventNegative(event)" onchange="removeNegative(this)">
+                        <button class='qty-ctrl-btn plus-btn' data-action='+'>+</button>
+                    </div>
+                    <span class="error-message" id="quantityError"></span>
+                </div>
+                
+                <div class="form-group">
+                    <label for="tagSelect">Tag:</label>
+                    <select name="new-tag" id="tagSelect">
+                        <option <?php echo (isset($tag) && $tag == "" ? "selected" : "") ?>>No Tag</option>
+                        <option <?php echo (isset($tag) && $tag == "Top Selling" ? "selected" : "") ?>>Top Selling</option>
+                        <option <?php echo (isset($tag) && $tag == "New" ? "selected" : "") ?>>New</option>
+                        <option <?php echo (isset($tag) && $tag == "Original" ? "selected" : "") ?>>Original</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="categorySelect">Category:</label>
+                    <select name="new-category" id="categorySelect">
+                        <?php
+                        $categories = mysqli_query($conn, "SELECT * FROM category");
+                        while ($c = mysqli_fetch_assoc($categories)) {
+                            echo "<option value='{$c['category_id']}'" . (($category_id == $c['category_id']) ? "selected" : "") . ">{$c['category']}</option>";
+                        } ?>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="locationInput">Location:</label>
+                    <input type="text" name="new-location" id="locationInput" value="<?php echo $location ?>">
+                    <span class="error-message" id="locationError"></span>
+                </div>
+                
+                <div class="form-group">
+                    <label for="descriptionInput">Description:</label>
+                    <textarea name="new-description" id="descriptionInput"><?php echo $description ?></textarea>
+                    <span class="error-message" id="descriptionError"></span>
+                </div>
+                
+                <div class="form-group">
+                    <button type="submit" name="new-edit" value="<?php echo $item_id; ?>" class="submit-btn">Save Changes</button>
+                </div>
             </form>
         </section>
     </main>
@@ -144,3 +164,5 @@ if (isset($_GET['item-edit'])) {
 
 </body>
 <script src="edit.js"></script>
+<script src="../../Components/UpdateDate.js"></script>
+<script src="editValidation.js"></script>

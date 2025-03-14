@@ -14,7 +14,7 @@
 </head>
 
 <style>
-  .error-message {
+.error-message {
   color: #dc3545;
   font-size: 0.875rem;
   margin-top: 0.25rem;
