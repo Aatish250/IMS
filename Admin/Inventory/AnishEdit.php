@@ -1,10 +1,33 @@
 <link rel="stylesheet" href="edit.css">
 <link rel="stylesheet" href="../../util.css" />
 <link rel="stylesheet" href="../adminRoot.css" />
+<style>
+    .error-message {
+        color: #ff3333;
+        font-size: 0.8rem;
+        display: block;
+        margin-top: 5px;
+        font-weight: 500;
+        transition: opacity 0.3s ease;
+    }
+    
+    input:invalid + .error-message,
+    textarea:invalid + .error-message {
+        display: block;
+    }
+    
+    input:required:invalid,
+    textarea:required:invalid {
+        border: 2px solid #ff3333;
+    }
+    
+    .edititem-field {
+        margin-bottom: 20px;
+    }
+</style>
 
 <?php
 require "../../dbConn.php";
-// require "inventoryBackend.php";
 
 if (isset($_GET['item-edit'])) {
     echo "<a href='" . $_SERVER['HTTP_REFERER'] . "' class='close-btn'>&#x2715;</a>";
@@ -48,7 +71,6 @@ if (isset($_GET['item-edit'])) {
                     </p>
                 </div>
                 <div class="main-heading-right">
-                    <!-- display that it is admin -->
                     <span class="staff">Admin</span>
                     <p id="display-date"></p>
                 </div>
@@ -57,7 +79,7 @@ if (isset($_GET['item-edit'])) {
 
         <!-- START: Edit item container -->
         <section class="edititem-container">
-            <form action="<?php echo $_SERVER['HTTP_REFERER'] ?>" method="POST" enctype="multipart/form-data" class="edit-form">
+            <form action="<?php echo $_SERVER['HTTP_REFERER'] ?>" method="POST" enctype="multipart/form-data" class="edit-form" id="editItemForm" onsubmit="return validateForm()">
                 <!-- START: Edit item left -->
                 <div class="edititem-left">
                     <!-- START: Left Section heading and logo -->
@@ -93,7 +115,8 @@ if (isset($_GET['item-edit'])) {
                         <label class="edititem-title" for="title" id="title">
                             Title:
                         </label>
-                        <input type="text" name="new-name" id="" value="<?php echo $title ?>" required>
+                        <input type="text" name="new-name" id="itemTitle" value="<?php echo $title ?>" required>
+                        <span class="error-message" id="titleError"></span>
                     </div>
 
                     <div class="edititem-pq">
@@ -101,19 +124,19 @@ if (isset($_GET['item-edit'])) {
                             <label for="" class="price">Price:
                             </label>
                             <input required type="number" name="new-price" id="priceInput" inputmode="numeric" min="1" onkeydown="preventNegative(event)" oninput="removeNegative(this)" value="<?php echo $price ?>" required />
+                            <span class="error-message" id="priceError"></span>
                         </div>
                         <div class="edititem-field" id="quantityField">
-                            <label for="" class="quantity">Quantity:
-                            </label>
-                            <!-- <input required type="number" placeholder="Quantity..." name="quantity" id="quantityInput" min="1" onkeydown="preventNegative(event)" oninput="removeNegative(this)"/> -->
-                            <button class='qty-ctrl-btn' data-action='-'>-</button>
-                            <input type="number" name="new-quantity" id='qty' class='qty-ctrl-inp' value="<?php echo $quantity ?>">
-                            <button class='qty-ctrl-btn plus-btn' data-action='+'>+</button>
+                            <label for="" class="quantity">Quantity:</label>
+                            <button type="button" class='qty-ctrl-btn' data-action='-'>-</button>
+                            <input type="number" name="new-quantity" id='qty' class='qty-ctrl-inp' value="<?php echo $quantity ?>" min="1">
+                            <button type="button" class='qty-ctrl-btn plus-btn' data-action='+'>+</button>
+                            <span class="error-message" id="quantityError"></span>
                         </div>  
                     </div>
                     
                     <div class="dropdown-container">
-                        <select name="new-tag" id="" class="styled-select">
+                        <select name="new-tag" id="tagSelect" class="styled-select">
                             <option <?php echo (isset($tag) && $tag == "" ? "selected" : "") ?>>No Tag</option>
                             <option <?php echo (isset($tag) && $tag == "Top Selling" ? "selected" : "") ?>>Top Selling
                             </option>
@@ -121,7 +144,7 @@ if (isset($_GET['item-edit'])) {
                             <option <?php echo (isset($tag) && $tag == "Original" ? "selected" : "") ?>>Original</option>
                         </select>
 
-                        <select name="new-category" id="" class="styled-select">
+                        <select name="new-category" id="categorySelect" class="styled-select">
                             <?php
                                 $categories = mysqli_query($conn, "SELECT * FROM category");
                                 while ($c = mysqli_fetch_assoc($categories)) {
@@ -134,20 +157,22 @@ if (isset($_GET['item-edit'])) {
                     <div class="edititem-field">
                         <label class="edititem-location" for="location">Location:
                         </label>
-                        <input type="text" name="new-location" id="" value="<?php echo $location ?>" required>
+                        <input type="text" name="new-location" id="locationInput" value="<?php echo $location ?>" required>
+                        <span class="error-message" id="locationError"></span>
                     </div>
 
                     <div class="edititem-field">
                         <label for="description" class="edititem-description">Description:
                         </label>
                         <textarea type="text" name="new-description" id="description" required ><?php echo $description ?></textarea>
+                        <span class="error-message" id="descriptionError"></span>
                     </div>
 
                     <div class="edititem-cta">
                         <button class="add-btn" name="new-edit" value="<?php echo $item_id; ?>">
                             Save Changes
                         </button>
-                        <button class="cancel" type="reset" name='cancel-id'>Cancel</button>
+                        <button type="button" class="cancel" onclick="resetForm()" name='cancel-id'>Cancel</button>
                     </div>
                 </div>
                 <!-- END: Edit item right -->
@@ -160,18 +185,4 @@ if (isset($_GET['item-edit'])) {
 
 <script src="edit.js"></script>
 <script src="../../Components/UpdateDate.js"></script>
-
-<!-- For Upload Image part -->
-<script>
-        function previewImage(input) {
-            if (input.files && input.files[0]) {
-                    var reader = new FileReader();
-                                
-                    reader.onload = function(e) {
-                        document.getElementById('preview-image').src = e.target.result;
-                 }
-                                
-                reader.readAsDataURL(input.files[0]);
-            }
-        }
-</script>
+<script src="editValidation.js"></script>

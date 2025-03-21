@@ -4,6 +4,16 @@ body {
   overflow: hidden;
 }
 
+input:invalid,
+textarea:invalid {
+  border-color: #ff3333;
+}
+
+.edititem-field {
+  position: relative;
+  margin-bottom: 15px;
+}
+
 .close-btn {
   width: 30px;
   height: 30px;
