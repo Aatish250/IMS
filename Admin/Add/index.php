@@ -15,42 +15,60 @@
 
 <style>
 .error-message {
-  color: #dc3545;
-  font-size: 0.875rem;
-  margin-top: 0.25rem;
+  color: #ff3333;
+  font-size: 0.8rem;
   display: block;
+  margin-top: 5px;
   font-weight: 500;
-  padding: 0.25rem 0.5rem;
-  border-radius: 0.25rem;
-  background-color: rgba(220, 53, 69, 0.1);
-  border: 1px solid rgba(220, 53, 69, 0.2);
-  animation: fadeIn 0.3s ease-in;
+  transition: opacity 0.3s ease;
+}
+    
+input:invalid + .error-message,
+textarea:invalid + .error-message {
+  display: block;
+}
+    
+input:required:invalid:not(:placeholder-shown),
+textarea:required:invalid:not(:placeholder-shown) {
+  border: 2px solid #ff3333;
+}
+    
+input:focus:invalid,
+textarea:focus:invalid {
+  border: 2px solid #ff3333;
+}
+    
+
+.flash-box {
+  display: none;
+  position: fixed;
+  top: 20px;
+  right: 80px;
+  background-color: #fff;
+  padding: 10px 15px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  z-index: 100;
+  max-width: 300px;
+  animation: fadeIn 0.3s ease-in-out;
+  border-radius: 12px;
 }
 
-/* Flash Message */
-.flash-box {
-  position: absolute;
-  top: 20px;
-  right: 0px;
-  background-color: rgb(224, 17, 207);
-  color: white;
-  padding: 10px 15px;
-  border-radius: 5px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  z-index: 1000;
-  display: none;
-  animation: fadeIn 0.3s ease-in;
-  color: black;
-  width: fit-content;
+.flash-message {
+  color: #333;
+  font-size: 0.9rem;
+  margin-right: 10px;
 }
 
 .flash-box button {
-  background: transparent;
+  background: none;
   border: none;
-  color: white;
-  margin-left: 10px;
+  color: #888;
   cursor: pointer;
-  font-weight: bold;
+  font-size: 1rem;
+}
+
+.flash-box button:hover {
+  color: #333;
 }
 
 @keyframes fadeIn {
@@ -211,7 +229,7 @@
   <script src="../../Components/UpdateDate.js"></script>
   <script src="../../Components/flash_message.js"></script>
   <script src="add.js"></script>
-  <script src="validation.js"></script>
+  <script src="AddItemValidation.js"></script>
   <script>
     // send php value here inside the function
     flashMessage("<?php if (isset($_GET['message']))
