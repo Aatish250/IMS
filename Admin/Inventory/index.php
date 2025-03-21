@@ -15,6 +15,51 @@ require '../checkAdmin.php';
     <link rel="stylesheet" href="Inventory.css">
 </head>
 
+<style>
+.flash-box {
+  display: none;
+  position: fixed;
+  top: 20px;
+  right: 80px;
+  background-color: #fff;
+  padding: 10px 15px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  z-index: 100;
+  max-width: 300px;
+  animation: fadeIn 0.3s ease-in-out;
+  border-radius: 12px;
+}
+
+.flash-message {
+  color: #333;
+  font-size: 0.9rem;
+  margin-right: 10px;
+}
+
+.flash-box button {
+  background: none;
+  border: none;
+  color: #888;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.flash-box button:hover {
+  color: #333;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+</style>
+
 <body>
     <!-- Side Bar start -->
     <?php
@@ -39,7 +84,6 @@ require '../checkAdmin.php';
                     </p>
                 </div>
                 <div class="main-heading-right">
-                    <!-- display that it is admin -->
                     <span class="staff">Admin</span>
                     <p id="display-date"></p>
                 </div>
@@ -67,7 +111,7 @@ require '../checkAdmin.php';
     <script src="../../Components/flash_message.js"></script>
     
     <script>
-        flashMessage("<?php if (isset($message)) echo $message; ?>", 5);
+        flashMessage("<?php if (isset($message)) echo $message; ?>", 4);
     </script>
     
 </body>

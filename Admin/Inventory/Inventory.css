@@ -4,14 +4,7 @@ main {
   margin-right: 10vw;
 }
 
-/* flash message start */
-.flash-box {
-  display: none;
-}
-/* flash message end */
-
 /* nav function bar start */
-
 input[type="text"] {
   flex-grow: 1;
   padding: 8px;
@@ -80,11 +73,9 @@ label.sorts {
   display: flex;
   gap: 10px;
 }
-
 /* nav function bar end */
 
 /* card css starts */
-
 .card-wrapper {
   display: grid; /* Set the display to grid */
   grid-template-columns: repeat(
@@ -202,5 +193,4 @@ label.sorts {
   width: 16px;
   aspect-ratio: 1;
 }
-
 /* card css ends */
