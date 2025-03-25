@@ -37,7 +37,6 @@ input:focus:invalid,
 textarea:focus:invalid {
   border: 2px solid #ff3333;
 }
-    
 
 .flash-box {
   display: none;
@@ -48,7 +47,7 @@ textarea:focus:invalid {
   padding: 10px 15px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
   z-index: 100;
-  max-width: 300px;
+  width: max-content;
   animation: fadeIn 0.3s ease-in-out;
   border-radius: 12px;
 }
@@ -177,7 +176,7 @@ textarea:focus:invalid {
           <div class="dropdown-container">
             <select class="styled-select" name="tag" required>
               <option value="" disabled selected>Tag</option>
-              <option value="">No Tag</option>
+              <option >No Tag</option> <!--Initially there was value = " " -->
               <option>New</option>
               <option>Top Selling</option>
               <option>Original</option>
