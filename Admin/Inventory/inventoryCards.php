@@ -35,7 +35,7 @@
     $result = mysqli_query($conn, $sql);
     while ($row = mysqli_fetch_assoc($result)) {
         echo "<div class='card' id='{$row['item_id']}'>
-            <a href='AnishEdit.php?item-edit={$row['item_id']}'>
+            <a href='Edit.php?item-edit={$row['item_id']}'>
                 <img src='" . ($row['item_image'] ? $row['item_image'] : "../../Images/testimg/585-KB.png") . "' alt=''>
             </a>
 

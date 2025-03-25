@@ -94,7 +94,7 @@ if (isset($_GET['item-edit'])) {
                     <!-- START: Upload Image Container -->
                      <div class="upload-container">
                         <div class="upload-box" id="uploadBox">
-                            <img src="<?php echo $img_src?>" alt="Image" id="preview-image">
+                            <img src="<?php echo $img_src?>" alt="Image" id="preview-image" >
                         </div>
                      </div>
                     <!-- END: Upload Image Container -->
