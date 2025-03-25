@@ -17,7 +17,7 @@
 
 
 <form action="" method="GET" id="filterForm" class="query-box">
-    <input type="text" name="title" placeholder="Search..." value="<?php if (isset($_GET['title']))
+    <input type="text" name="title" placeholder="Name Search..." value="<?php if (isset($_GET['title']))
         echo $_GET['title'] ?>" id="searchTitle">
         <button type="submit" name="filter-btn">Filter</button>
         <select name="category-list">
