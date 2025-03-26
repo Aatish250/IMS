@@ -58,9 +58,9 @@ function validateForm() {
       showError(fileInput, "Please select a valid image file (JPG, PNG, GIF)");
       isValid = false;
     }
-    // Check file size (max 5MB)
-    if (file.size > 5 * 1024 * 1024) {
-      showError(fileInput, "Image size should be less than 5MB");
+    // Check file size (max 10MB)
+    if (file.size > 10 * 1024 * 1024) {
+      showError(fileInput, "Image size should be less than 10MB");
       isValid = false;
     }
   }
@@ -81,7 +81,13 @@ function validateForm() {
 }
 
 // Show error message below input
+/**
+ * Shows an error message below an input field
+ * @param {HTMLElement} input - The input element to show error for
+ * @param {string} message - The error message to display
+ */
 function showError(input, message) {
+  // Check if error div already exists, otherwise create new one
   const errorDiv = input.nextElementSibling?.classList.contains("error-message")
     ? input.nextElementSibling
     : document.createElement("div");
@@ -92,27 +98,35 @@ function showError(input, message) {
   errorDiv.style.marginTop = "5px";
   errorDiv.textContent = message;
 
+  // Insert error div after input if it doesn't exist
   if (!input.nextElementSibling?.classList.contains("error-message")) {
     input.parentNode.insertBefore(errorDiv, input.nextSibling);
   }
 
-  // Remove error after 3 seconds
+  // Remove error message after 3 seconds
   setTimeout(() => {
     errorDiv.remove();
   }, 3000);
 }
 
-// Add form submit handler
+/**
+ * Form submission handler
+ * Prevents form submission if validation fails
+ */
 document.querySelector(".add-form").addEventListener("submit", function (e) {
   if (!validateForm()) {
-    e.preventDefault();
+    e.preventDefault(); // Prevent form submission
   }
 });
 
-// Add input event listeners to clear errors on input
+/**
+ * Clear error messages when user starts typing
+ * Adds input listeners to all form fields
+ */
 const inputs = document.querySelectorAll("input, textarea, select");
 inputs.forEach((input) => {
   input.addEventListener("input", function () {
+    // Find and remove error message if it exists
     const errorDiv = this.nextElementSibling;
     if (errorDiv?.classList.contains("error-message")) {
       errorDiv.remove();
