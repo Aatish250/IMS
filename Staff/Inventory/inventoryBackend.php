@@ -3,28 +3,45 @@
 $message = isset($_GET['message']) ? $_GET['message'] : '';
 
 
-// ----------------------- on database & page load --------------------------
+// ----------------------- on database & page load (SQLs)--------------------------
 
-// function to set the sql query for searching
-function show_full_inventory_filter_sql()
-{
+///function to get limit sql
+function get_sql_limit(){
+    $page = isset($_GET['page']) ? $_GET['page'] : 1;
+    $listLimit = isset($_GET['listLimit']) ? $_GET['listLimit'] : 25;
+    $page_start = ($page - 1) * $listLimit;
+    $limitSql = " LIMIT $page_start, $listLimit";
+    return $limitSql;
+}
+
+// function to get the filter queries
+function get_where_clause_filters(){
     $search_title = isset($_GET['title']) ? $_GET['title'] : "";
     $search_category_id = isset($_GET['category-list']) ? $_GET['category-list'] : "";
     $search_tag = isset($_GET['tag-list']) ? $_GET['tag-list'] : "";
     $search_sort_by = isset($_GET['sort-by-list']) ? $_GET['sort-by-list'] : "";
     $search_sort = isset($_GET['sort']) ? $_GET['sort'] : "";
-
+    
     $findCategory = ($search_category_id !== "") ? "AND category_id = {$search_category_id}" : "";
     $findTag = ($search_tag !== "") ? "AND tag = '{$search_tag}'" : "";
-
+    
     $search_sort_by = ($search_sort_by == "") ? "item_title" : $search_sort_by;
     $search_sort = ($search_sort_by == "" ? "ASC" : $search_sort);
 
+    $filter = " WHERE item_title LIKE '%{$search_title}%' {$findCategory} {$findTag} ORDER BY {$search_sort_by} {$search_sort}";
+    return $filter;
+}
+
+// function to set select SQL query
+function show_full_inventory_filter_sql()
+{
+
     $sql = "SELECT item_id, item_title, price, quantity, category_id, category, item_image, tag 
-    FROM full_inventory
-    WHERE item_title LIKE '%{$search_title}%' {$findCategory} {$findTag} ORDER BY {$search_sort_by} {$search_sort}";
+    FROM full_inventory" . get_where_clause_filters() . get_sql_limit();
     return $sql;
 }
+
+
 
 $sql = show_full_inventory_filter_sql(); // for search query on page load
 

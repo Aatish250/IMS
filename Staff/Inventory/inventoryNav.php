@@ -66,7 +66,8 @@
             </svg>
         </label>
         <!-- END: descending sort -->
-        <button type="button" onclick="window.location.href='inventory.php'" style="font-size: 20px; font-weight: 800;padding: 0 5px;margin-left: 5px">&#x21bb;</button>
+        <button type="button" onclick="window.location.reload();" style="font-size: 20px; font-weight: 800;padding: 0 5px;margin-left: 5px">&#x21bb;</button>
+        <input type="number" name="listLimit" id="listLimit" class="data-limit" value="<?php echo (int) ((isset($_GET['listLimit']) ? $_GET['listLimit'] : 25)) ?>">
     </div>
     <!-- END: sort -->
 </form>
