@@ -20,7 +20,7 @@
 
 <form action="" method="GET" id="filterForm" class="query-box">
     <input type="text" name="title" placeholder="Search by Name..." value="<?php if (isset($_GET['title']))
-                                                                        echo $_GET['title'] ?>" id="searchTitle" pattern="[A-Za-z0-9\s]+" title="Only letters, numbers and spaces allowed" onkeypress="return /[A-Za-z0-9\s]/i.test(event.key)">
+    echo $_GET['title'] ?>" id="searchTitle" pattern="[A-Za-z0-9\s]+" title="Only letters, numbers and spaces allowed" onkeypress="return /[A-Za-z0-9\s]/i.test(event.key)">
     <button type="submit" name="filter-btn">Filter</button>
     <select name="category-list">
         <option value="" hidden selected>Category</option>
@@ -67,6 +67,8 @@
             </svg>
         </label>
         <!-- END: descending sort -->
+        <button type="button" onclick="window.location.reload();" style="font-size: 20px; font-weight: 800;padding: 0 5px;margin-left: 5px">&#x21bb;</button>
+        <input type="number" name="listLimit" id="listLimit" class="data-limit" value="<?php echo (int) ((isset($_GET['listLimit']) ? $_GET['listLimit'] : 25)) ?>">
     </div>
 </form>
 

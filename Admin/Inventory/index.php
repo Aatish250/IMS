@@ -13,6 +13,7 @@ require '../checkAdmin.php';
     <link rel="stylesheet" href="../../util.css" />
     <link rel="stylesheet" href="../adminRoot.css" />
     <link rel="stylesheet" href="Inventory.css">
+    <link rel="stylesheet" href="../../Components/pagination.css">
 </head>
 
 <style>
@@ -102,6 +103,12 @@ require '../checkAdmin.php';
             include("inventoryBackend.php");
             include 'inventoryCards.php';
             ?>
+        </section>
+        <section>
+            <?php // for pegination
+            include 'pagination.php';
+            ?>
+            <br>
         </section>
     </main>
 
