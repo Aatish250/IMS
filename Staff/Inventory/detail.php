@@ -35,16 +35,6 @@ require "../../dbConn.php";
                 $result = mysqli_query($conn, "SELECT * FROM full_inventory WHERE item_id = " . $_GET['id']);
                 if (mysqli_num_rows($result) > 0) {
                     while ($row = mysqli_fetch_assoc($result)) {
-                        // echo "id: " . $row['item_id'] . "<br>";
-                        // echo "<img width='350px' src='" . $row['item_image'] . "'><br>";
-                        // echo "Title: " . $row['item_title'] . "<br>";
-                        // echo "Price: " . $row['price'] . "<br>";
-                        // echo "Quantity: " . $row['quantity'] . "<br>";
-                        // echo "Description: " . $row['description'] . "<br>";
-                        // echo "Tag: " . $row['tag'] . "<br>";
-                        // echo "Category: " . $row['category'] . "<br>";
-                        // echo "Location: " . $row['location'] . "<br>";
-
                         echo "
                         
                         <div class='detail-box'>
@@ -84,7 +74,7 @@ require "../../dbConn.php";
                                                     <span class='quantity'>{$row['quantity']} in stock</span>
                                                 </span>
                                                 <span class='location'>
-                                                    <img src='../../Images/icons/cart.svg' alt='Location'> 
+                                                    <img src='../../Images/icons/location.svg' alt='Location'> 
                                                     <span class='location-text'>{$row['location']}</span>
                                                 </span>
                                             </div>
@@ -93,8 +83,10 @@ require "../../dbConn.php";
                                                     <button class='qty-ctrl-btn minus-btn' data-action='-'>-</button>
                                                     <input type='number' name='qty' id='qty' class='qty-ctrl-inp' value=1 readonly>
                                                     <button class='qty-ctrl-btn plus-btn' data-action='+'>+</button>
-                                                </div>
-                                                <button class='request' name='req-item' value={$row['item_id']}>Request Item</button>
+                                                </div>   
+                                                    <button class='request' name='req-item' value={$row['item_id']}>
+                                                        <img src='../../Images/icons/requestItem.svg' alt='request item'>
+                                                    Request Item</button>
                                             </div>
                                             <div class='sell-info'>
                                                 <div class='qty-info'>
@@ -102,12 +94,16 @@ require "../../dbConn.php";
                                                         . ($row['quantity'] > 0 ?
                                                         "Rs. <input type='number' id='total' name='total' value='{$row['price']}' readonly>
                                                 </div>
-                                                    <button name='sell-item' value={$row['item_id']}>Sell Directly</button>"
+                                                    <button name='sell-item' value={$row['item_id']}>
+                                                        <img src='../../Images/icons/dollorWhite.svg' alt='sell item logo'>
+                                                    Sell Directly</button>"
                                                     : "Please Request no stock left") .
                                                 "
                                             </div>
                                             <div class='collection-info'>
-                                                <button class='add-collection' name='add-collection' value='{$row['item_id']}'>Add to collection</button>
+                                                <button class='add-collection' name='add-collection' value='{$row['item_id']}'>
+                                                    <img src='../../Images/icons/cart.svg' alt='cart logo' style='filter: brightness(0) invert(1)'>
+                                                Add to collection</button>
                                                 
                                             </div>
                                             

@@ -88,6 +88,7 @@ label.sorts {
 /* card css starts */
 .card-wrapper {
   display: grid;
+  place-items: center;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   padding-top: 15px;
   justify-items: center;
@@ -105,12 +106,11 @@ label.sorts {
   padding: 15px;
 }
 
-.card a > img {
+.card img {
   width: 250px;
   height: 250px;
   object-fit: cover;
   border-radius: 5px;
-  cursor: pointer;
 }
 
 .card-content {
