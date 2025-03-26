@@ -33,11 +33,6 @@
         echo "no sql found <br><hr>";
     // $sql = "SELECT item_id, item_title, item_image, category, price, quantity, tag FROM full_inventory";
     $result = mysqli_query($conn, $sql);
-    while ($row = mysqli_fetch_assoc($result)) {
-        echo "<div class='card' id='{$row['item_id']}'>
-            <a href='Edit.php?item-edit={$row['item_id']}'>
-                <img src='" . ($row['item_image'] ? $row['item_image'] : "../../Images/testimg/585-KB.png") . "' alt=''>
-            </a>
 
     // if no data found
     if(!mysqli_num_rows($result))
