@@ -26,7 +26,7 @@
 .date-separator {
   margin: 0 5px;
 }
-
+/* 
 .search-button {
   padding: 10px 18px;
   background-color: var(--primary-color);
@@ -38,4 +38,34 @@
   cursor: pointer;
 
   font-weight: 600;
+}
+
+.search-button:hover {
+  background-color: #9c29ca;
+} */
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.pagination a {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+  border: 1px solid #ddd;
+  margin: 0 4px;
+}
+
+.pagination a.active {
+  background-color: var(--primary-color);
+  color: white;
+  border: 1px solid #9c29ca;
+}
+
+.pagination a:hover:not(.active) {
+  background-color: #ddd;
 }

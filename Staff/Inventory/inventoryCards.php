@@ -25,9 +25,9 @@ include("inventoryBackend.php");
     else 
         while ($row = mysqli_fetch_assoc($result)) {
             echo "<div class='card' id='{$row['item_id']}'>
-                <a href='#'>
+               
                     <img src='" . ($row['item_image'] ? $row['item_image'] : "../../Images/testimg/585-KB.png") . "' alt=''>
-                </a>
+                
                 " . (($row['tag']) ? "<div class='tag'>{$row['tag']}</div>" : "") . "
                 <div class='card-content'>
                     <h3>{$row['item_title']}</h3>
