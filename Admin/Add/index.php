@@ -107,7 +107,7 @@ textarea:focus:invalid {
           </p>
         </div>
         <div class="main-heading-right">
-          <span class="staff">Admin</span>
+          <span class="staff"><?php echo $_SESSION['username']; ?></span>
           <p id="display-date"></p>
         </div>
       </div>

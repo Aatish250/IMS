@@ -42,7 +42,7 @@ require '../checkStaff.php';
                 </div>
                 <div class="main-heading-right">
                     <!-- display that it is staff -->
-                    <span class="staff">Staff</span>
+                    <span class="staff"><?php echo $_SESSION['username']; ?></span>
                     <p id="display-date"></p>
                 </div>
             </div>

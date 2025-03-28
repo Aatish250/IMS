@@ -39,7 +39,7 @@ include 'sell.php';
         </div>
         <div class="main-heading-right">
           <!-- display that it is Staff -->
-          <span class="staff">staff</span>
+          <span class="staff"><?php echo $_SESSION['username']; ?></span>
           <p id="display-date"></p>
         </div>
       </div>
