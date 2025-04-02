@@ -14,6 +14,8 @@ require '../checkStaff.php';
     <link rel="stylesheet" href="../../util.css" />
     <link rel="stylesheet" href="../staffRoot.css" />
     <link rel="stylesheet" href="inventory.css">
+    <!-- bottom is linked to component css -->
+    <link rel="stylesheet" href="../../Components/inventoryNav.css">
     <link rel="stylesheet" href="../../Components/pagination.css">
 </head>
 
@@ -49,7 +51,7 @@ require '../checkStaff.php';
         </header>
 
         <section>
-            <?php include 'inventoryNav.php';
+            <?php include '../../Components/inventoryNav.php';
             ?>
 
             <div id="flashBox" class="flash-box">

@@ -48,7 +48,7 @@ if (mysqli_num_rows($result) > 0) {
             
             <td>
               {$row['quantity']}
-              <input type='number' id='maxQty' name='quantity' value={$row['quantity']} class='inp' readonly hidden>
+              <input type='number' id='maxQty' name='quantity' value={$row['quantity']} class='inp' readonly hidden/>
             </td>
 
             <td>
@@ -81,7 +81,7 @@ if (mysqli_num_rows($result) > 0) {
                 </svg>
 
               </button>
-              <input type='number' name='qty' id='new-qty' value='{$row['collection_qty']}'hidden />
+              <input type='number' name='qty' id='new-qty' value='{$row['collection_qty']}' hidden/>
             </td>
           </form>
         </tr>
