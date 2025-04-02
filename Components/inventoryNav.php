@@ -1,21 +1,3 @@
-<!-- 1. make a kind of nav bar which contains
-- search according to (name)
-- show by (tag)
-- show by (category)
-- sort by (price)
-- sort button asce or desc
-2. make a auto wrapping card caontainer consitsing of item cards which auto fits according to avaliable width and auto wraps to next line when width is not enough
-3. each item card contains
-- item image
-- item name
-- item price
-- item quantity
-- item tag
-- item category
-- edit button
-- delete button -->
-
-
 <form action="" method="GET" id="filterForm" class="query-box">
     <input type="text" name="title" placeholder="Search by Name..." value="<?php if (isset($_GET['title']))
     echo $_GET['title'] ?>" id="searchTitle" pattern="[A-Za-z0-9\s]+" title="Only letters, numbers and spaces allowed" onkeypress="return /[A-Za-z0-9\s]/i.test(event.key)">
