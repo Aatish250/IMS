@@ -73,7 +73,6 @@ require '../checkStaff.php';
             <br>
         </section>
     </main>
-
     <!-- main content ends -->
 </body>
 <script src="inventory.js"></script>
