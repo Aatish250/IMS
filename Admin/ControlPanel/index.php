@@ -1,6 +1,3 @@
-<!-- Setting up al the form action on top of page to make the data changed first then display on html -->
-<!-- Going from bottom to top because top section have mreo displays then bottom section -->
-
 <?php include 'controlpanelBackend.php' ?>
 
 <!DOCTYPE html>
@@ -13,9 +10,54 @@
   <link rel="stylesheet" href="../../util.css" />
   <link rel="stylesheet" href="../adminRoot.css" />
   <link rel="stylesheet" href="../ControlPanel/main.css">
-  <!-- <link rel="stylesheet" href="../ControlPanel/Aatish.css"> -->
   <link rel="stylesheet" href="../ControlPanel/controlpanel.css">
 </head>
+
+<style>
+.flash-box {
+  display: none;
+  position: fixed;
+  top: 40px;
+  right: 80px;
+  background-color: #fff;
+  padding: 10px 15px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  z-index: 100;
+  width: max-content;
+  animation: fadeIn 0.3s ease-in-out;
+  border-radius: 12px;
+}
+
+.flashMessage {
+  color: #333;
+  font-size: 0.9rem;
+  margin-right: 10px;
+  font-weight: 200;
+}
+
+.flash-box button {
+  background: none;
+  border: none;
+  color: #888;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.flash-box button:hover {
+  color: red;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+</style>
 
 <body>
 
@@ -137,6 +179,7 @@
 </body>
 <script src="../../Components/UpdateDate.js"></script>
 <script src="../../Components/flash_message.js"></script>
+<script src="controlPanelValidation.js"></script>
 <script>
   //send php value here inside the function
   flashMessage("<?php if (isset($_GET['message'])) echo $_GET['message']; ?>", 3);

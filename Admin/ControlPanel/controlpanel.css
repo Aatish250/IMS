@@ -172,31 +172,6 @@ tr:nth-child(even) {
   padding: 0.7rem !important;
 }
 
-.flash-box {
-  width: fit-content;
-  position: fixed;
-  top: 7%;
-  z-index: 999;
-  right: -100%;
-  transform: translateY(-55%);
-  background-color: white;
-  border-radius: 5px;
-  padding: 1rem 1.5rem;
-  font-size: 16px;
-  font-weight: 600;
-  font-family: "Poppins";
-}
-
-.flash-box button {
-  background-color: transparent;
-  border: none;
-  outline: none;
-  padding-left: 10px;
-  cursor: pointer;
-  font-weight: 600;
-  color: black;
-}
-
 #add-category-section form input {
   margin-top: 0.4rem;
 }
