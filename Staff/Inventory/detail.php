@@ -88,26 +88,29 @@ require "../../dbConn.php";
                                                         <img src='../../Images/icons/requestItem.svg' alt='request item'>
                                                     Request Item</button>
                                             </div>
-                                            <div class='sell-info'>
-                                                <div class='qty-info'>
+                                            
                                                 "
-                                                        . ($row['quantity'] > 0 ?
-                                                        "Rs. <input type='number' id='total' name='total' value='{$row['price']}' readonly>
+                                            . ($row['quantity'] > 0 ?
+                                            "<div class='sell-info'>
+                                                <div class='qty-info'>
+                                                        Rs. <input type='number' id='total' name='total' value='{$row['price']}' readonly>
                                                 </div>
                                                     <button name='sell-item' value={$row['item_id']}>
                                                         <img src='../../Images/icons/dollorWhite.svg' alt='sell item logo'>
-                                                    Sell Directly</button>"
-                                                    : "Please Request no stock left") .
-                                                "
+                                                        Sell Directly
+                                                    </button>
                                             </div>
                                             <div class='collection-info'>
                                                 <button class='add-collection' name='add-collection' value='{$row['item_id']}'>
                                                     <img src='../../Images/icons/cart.svg' alt='cart logo' style='filter: brightness(0) invert(1)'>
-                                                Add to collection</button>
-                                                
-                                            </div>
-                                            
-                                        </form>
+                                                    Add to collection
+                                                </button>
+                                            </div>"
+                                            : "<div class='sell-info'>
+                                                <div class='qty-info'>
+                                                    Please Request no stock left
+                                                </div>") .
+                                        "</form>
                                     </div>
                                 </div>
                             </div>
