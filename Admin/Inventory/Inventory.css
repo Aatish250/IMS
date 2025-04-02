@@ -4,17 +4,26 @@ main {
   margin-right: 10vw;
 }
 
-
-
 /* card css starts */
 .card-wrapper {
-  display: grid; /* Set the display to grid */
-  grid-template-columns: repeat(
-    auto-fill,
-    minmax(300px, 1fr)
-  ); /* Create four equal columns */
-  padding-top: 15px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  margin-top: 15px;
   justify-items: center;
+  width: 100%;
+}
+
+.no-items {
+  width: max-content;
+  padding: 20px 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.no-items span {
+  color: #333;
 }
 
 .card {
