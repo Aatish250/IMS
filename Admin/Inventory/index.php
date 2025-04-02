@@ -13,6 +13,7 @@ require '../checkAdmin.php';
     <link rel="stylesheet" href="../../util.css" />
     <link rel="stylesheet" href="../adminRoot.css" />
     <link rel="stylesheet" href="Inventory.css">
+    <link rel="stylesheet" href="../../Components/inventoryNav.css">
     <link rel="stylesheet" href="../../Components/pagination.css">
 </head>
 
@@ -91,7 +92,7 @@ require '../checkAdmin.php';
             </div>
         </header>
         <section>
-            <?php include 'inventoryNav.php';
+            <?php include '../../Components/inventoryNav.php';
             ?>
         </section>
         <div id="flashBox" class="flash-box">
