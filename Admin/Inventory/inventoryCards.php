@@ -1,33 +1,5 @@
-<?php
-?>
-
-
-<!-- <link rel="stylesheet" href="card.css"> -->
 
 <div class="card-wrapper">
-
-<!-- Demo card -->
-    <!-- <div class="card">
-        <img src="../../Images/testimg/585-KB.png" alt="">
-        <div class="tag">Top Selling</div>
-        <div class="card-content">
-            <h3>Type C Earphone</h3>
-            <div class="inv-details">
-                <div class="price">Rs. 1099</div>
-                <div class="category">Category</div>
-            </div>
-            <div class="quantity">23 in stock</div>
-        </div>
-        <div class="menu">
-            &#8942;
-            <div class="menu-buttons">
-                <button>Edit</button>
-                <button>Delete</button>
-            </div>
-        </div>
-        
-    </div> -->
-   
     <?php
     if (!isset($sql))
         echo "no sql found <br><hr>";
@@ -37,9 +9,9 @@
     // if no data found
     if(!mysqli_num_rows($result))
         echo "
-            <div style='color:grey;'>
-                - - -- --- No Items found in Inventory --- -- - -
-            </div>";
+    <div class='no-items'>
+        <span>- - -- --- No Items found in Inventory --- -- - -</span>
+    </div>";
     // if data found
     else 
         while ($row = mysqli_fetch_assoc($result)) {
@@ -74,14 +46,3 @@
     ?>
 
 </div>
-
-<!-- <div class='menu'>&#8942;  
-    <div>
-        <form action='edit.php' method='GET' class='menu-buttons'>
-            <button type='submit' name='item-edit' value='{$row['item_id']}'>Edit</button>
-        </form>
-        <form action=''>
-            <button type='submit' name='item-delete' value='{$row['item_id']}'>Delete</button>
-        </form>
-    </div>
-</div> -->

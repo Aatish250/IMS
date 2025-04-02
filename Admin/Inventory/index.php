@@ -106,7 +106,7 @@ require '../checkAdmin.php';
             ?>
         </section>
         <section>
-            <?php // for pegination
+            <?php // for pagination
             include 'pagination.php';
             ?>
             <br>

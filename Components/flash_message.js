@@ -1,20 +1,3 @@
-// function flashMessage(message, second) {
-//   var msg = document.getElementById("flashMessage");
-//   if (message != "") {
-//     msg.classList.add("flash-message");
-//     msg.textContent = message;
-//     msg.style.display = "block";
-//     setTimeout(() => {
-//       msg.classList.remove("flash-message");
-//       msg.style.display = "none";
-//     }, second * 1000);
-//   }
-// }
-
-// flashMessage("Flash Message Test");
-
-// box = document.getElementById("flashBox");
-// box.style.display = "none";
 function flashMessage(message, second) {
   let msg = document.getElementById("flashMessage");
   let box = document.getElementById("flashBox");
