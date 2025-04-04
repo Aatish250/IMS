@@ -10,8 +10,6 @@ function previewImage(input) {
     reader.readAsDataURL(input.files[0]);
   }
 }
-
-// Function to clear error message after a delay
 function clearErrorAfterDelay(errorElement, delay = 2000) {
   setTimeout(() => {
     errorElement.textContent = "";
@@ -21,10 +19,9 @@ function clearErrorAfterDelay(errorElement, delay = 2000) {
 function validateForm() {
   let isValid = true;
 
-  // Validate title (alphanumeric with spaces)
   const title = document.getElementById("itemTitle").value.trim();
   const titleError = document.getElementById("titleError");
-  if (!title || !/^[a-zA-Z0-9\s]+$/.test(title)) {
+  if (!title || !/^[a-zA-Z0-9\s-]+$/.test(title)) {
     titleError.textContent =
       "Title must contain only letters, numbers, and spaces";
     clearErrorAfterDelay(titleError);
@@ -37,7 +34,6 @@ function validateForm() {
     titleError.textContent = "";
   }
 
-  // Validate price (positive number)
   const price = document.getElementById("priceInput").value;
   const priceError = document.getElementById("priceError");
   if (!price || price <= 0) {
@@ -48,7 +44,6 @@ function validateForm() {
     priceError.textContent = "";
   }
 
-  // Validate quantity (positive integer)
   const quantity = document.getElementById("qty").value;
   const quantityError = document.getElementById("quantityError");
   if (!quantity || quantity < 0 || !Number.isInteger(parseFloat(quantity))) {
@@ -59,11 +54,8 @@ function validateForm() {
     quantityError.textContent = "";
   }
 
-  // Validate location (proper address format)
   const location = document.getElementById("locationInput").value.trim();
   const locationError = document.getElementById("locationError");
-  // Address validation: at least street number/name and city
-  // Example: "123 Main St, City" or similar format
   const addressRegex = /^[a-zA-Z0-9\s,.-]{5,}$/;
   if (!location) {
     locationError.textContent = "Location cannot be empty";
@@ -77,7 +69,6 @@ function validateForm() {
     locationError.textContent = "";
   }
 
-  // Validate description (10-50 characters)
   const description = document.getElementById("description").value.trim();
   const descriptionError = document.getElementById("descriptionError");
   if (!description) {
@@ -88,10 +79,6 @@ function validateForm() {
     descriptionError.textContent = "Description must be at least 10 characters";
     clearErrorAfterDelay(descriptionError);
     isValid = false;
-  } else if (description.length > 50) {
-    descriptionError.textContent = "Description cannot exceed 50 characters";
-    clearErrorAfterDelay(descriptionError);
-    isValid = false;
   } else {
     descriptionError.textContent = "";
   }
@@ -99,11 +86,11 @@ function validateForm() {
   return isValid;
 }
 
-function resetForm() {
-  document.getElementById("editItemForm").reset();
-  // Clear all error messages
-  const errorElements = document.getElementsByClassName("error-message");
-  for (let i = 0; i < errorElements.length; i++) {
-    errorElements[i].textContent = "";
-  }
-}
+// function resetForm() {
+//   document.getElementById("editItemForm").reset();
+//   // Clear all error messages
+//   const errorElements = document.getElementsByClassName("error-message");
+//   for (let i = 0; i < errorElements.length; i++) {
+//     errorElements[i].textContent = "";
+//   }
+// }

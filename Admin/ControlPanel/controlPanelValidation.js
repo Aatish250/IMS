@@ -1,14 +1,11 @@
 document.addEventListener("DOMContentLoaded", function () {
   // Staff elements
-  const staffForm = document.querySelector("#add-staff-section form");
   const usernameInput = document.getElementById("username");
   const passwordInput = document.getElementById("password");
 
   // Category elements
-  const categoryForm = document.querySelector("#add-category-section form");
   const categoryInput = document.getElementById("category");
 
-  // Defining validation patterns
   const patterns = {
     username: {
       regex: /^[a-zA-Z0-9_]{3,20}$/,
@@ -38,7 +35,6 @@ document.addEventListener("DOMContentLoaded", function () {
     return isValid;
   }
 
-  // Add input event listeners for real-time validation
   usernameInput.addEventListener("input", function () {
     validateInput(this, "username");
   });
@@ -49,50 +45,5 @@ document.addEventListener("DOMContentLoaded", function () {
 
   categoryInput.addEventListener("input", function () {
     validateInput(this, "category");
-  });
-
-  // Staff form submission validation
-  staffForm.addEventListener("submit", function (e) {
-    const username = usernameInput.value.trim();
-    const password = passwordInput.value;
-
-    // Check if fields are empty
-    if (!username || !password) {
-      e.preventDefault();
-      flashMessage("Please fill in all fields", 3);
-      return;
-    }
-
-    // Validate username and password
-    if (!validateInput(usernameInput, "username")) {
-      e.preventDefault();
-      flashMessage("Invalid username format", 3);
-      return;
-    }
-
-    if (!validateInput(passwordInput, "password")) {
-      e.preventDefault();
-      flashMessage("Invalid password format", 3);
-      return;
-    }
-  });
-
-  // Category form submission validation
-  categoryForm.addEventListener("submit", function (e) {
-    const category = categoryInput.value.trim();
-
-    // Check if category field is empty
-    if (!category) {
-      e.preventDefault();
-      flashMessage("Please enter a category name", 3);
-      return;
-    }
-
-    // Validate category
-    if (!validateInput(categoryInput, "category")) {
-      e.preventDefault();
-      flashMessage("Invalid category format", 3);
-      return;
-    }
   });
 });
