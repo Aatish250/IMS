@@ -17,6 +17,7 @@ require '../checkStaff.php';
     <!-- bottom is linked to component css -->
     <link rel="stylesheet" href="../../Components/inventoryNav.css">
     <link rel="stylesheet" href="../../Components/pagination.css">
+    <link rel="stylesheet" href="flashMsg.css">
 </head>
 
 <body>
@@ -75,11 +76,17 @@ require '../checkStaff.php';
     </main>
     <!-- main content ends -->
 </body>
-<script src="inventory.js"></script>
+<script src="inventoryValidation.js"></script>
 <script src="../../Components/flash_message.js"></script>
 <script src="../../Components/UpdateDate.js"></script>
 <script>
     flashMessage("<?php if (isset($message)) echo $message; ?>", 3);
+</script>
+<script>
+    searchBar = document.getElementById('filterForm');
+    searchBar.addEventListener("change", () => {
+        searchBar.submit();
+    })
 </script>
 
 </html>

@@ -114,7 +114,12 @@ require '../checkAdmin.php';
     </main>
 
     <!-- main content ends -->
-    <script src="inventory.js"></script>
+    <script>
+      searchBar = document.getElementById("filterForm");
+      searchBar.addEventListener("change", () => {
+        searchBar.submit();
+      });
+    </script>
     <script src="../../Components/UpdateDate.js"></script>
     <script src="../../Components/flash_message.js"></script>
     

@@ -1,6 +1,12 @@
 <form action="" method="GET" id="filterForm" class="query-box">
     <input type="text" name="title" placeholder="Search by Name..." value="<?php if (isset($_GET['title']))
-    echo $_GET['title'] ?>" id="searchTitle" pattern="[A-Za-z0-9\s]+" title="Only letters, numbers and spaces allowed" onkeypress="return /[A-Za-z0-9\s]/i.test(event.key)">
+    echo $_GET['title'] ?>" id="searchTitle" pattern="[A-Za-z0-9\s\-]+" title="Only letters, numbers, spaces and hyphens allowed" onkeypress="return /[A-Za-z0-9\s\-]/i.test(event.key)">
+     <!-- *  It adds input validation through:
+     *    - pattern attribute: restricts input to letters, numbers, spaces and hyphens using regex [A-Za-z0-9\s\-]+
+     *    - title attribute: provides a tooltip explaining the allowed characters when validation fails
+     *    - onkeypress event: prevents typing characters that don't match the pattern by testing each keystroke
+     *      against the same regex pattern and only allowing the keystroke if it returns true
+    -->
     <button type="submit" name="filter-btn">Filter</button>
     <select name="category-list">
         <option value="" hidden selected>Category</option>
@@ -58,39 +64,35 @@
 </form>
 
 <script>
-    // Get search input element
     const searchInput = document.getElementById("searchTitle");
-    // Add input validation for letters only when submitting
     searchBar.addEventListener("submit", (e) => {
-    // Remove any non-letter characters from search input
-    searchInput.value = searchInput.value.replace(/[^a-zA-Z\s]/g, "");
+        searchInput.value = searchInput.value.replace(/[^a-zA-Z\s]/g, "");
     });
 </script>
 
 <script>
     // Function to set the SVG color based on the selected radio button
-function setSvgColor() {
-  const ascSvg = document.querySelector("label[for='sortAsc'] svg path");
-  const descSvg = document.querySelector("label[for='sortDesc'] svg path");
+    function setSvgColor() {
+    const ascSvg = document.querySelector("label[for='sortAsc'] svg path");
+    const descSvg = document.querySelector("label[for='sortDesc'] svg path");
 
-  const isCheckedAsc = document.getElementById("sortAsc").checked;
-  const isCheckedDesc = document.getElementById("sortDesc").checked;
+    const isCheckedAsc = document.getElementById("sortAsc").checked;
+    const isCheckedDesc = document.getElementById("sortDesc").checked;
 
-  if (isCheckedAsc) {
-    ascSvg.style.fill = "var(--accent-clr)";
-    ascSvg.style.stroke = "var(--accent-clr)";
-    descSvg.style.fill = "black";
-    descSvg.style.stroke = "black";
-  } else if (isCheckedDesc) {
-    descSvg.style.fill = "var(--accent-clr)";
-    descSvg.style.stroke = "var(--accent-clr)";
-    ascSvg.style.fill = "black";
-    ascSvg.style.stroke = "black";
-  }
-}
-// Run the function on page load and when radio button state changes
-document.addEventListener("DOMContentLoaded", setSvgColor);
-document.getElementById("sortAsc").addEventListener("change", setSvgColor);
-document.getElementById("sortDesc").addEventListener("change", setSvgColor);
+    if (isCheckedAsc) {
+        ascSvg.style.fill = "var(--accent-clr)";
+        ascSvg.style.stroke = "var(--accent-clr)";
+        descSvg.style.fill = "black";
+        descSvg.style.stroke = "black";
+    } else if (isCheckedDesc) {
+        descSvg.style.fill = "var(--accent-clr)";
+        descSvg.style.stroke = "var(--accent-clr)";
+        ascSvg.style.fill = "black";
+        ascSvg.style.stroke = "black";
+    }
+    }
 
+    document.addEventListener("DOMContentLoaded", setSvgColor);
+    document.getElementById("sortAsc").addEventListener("change", setSvgColor);
+    document.getElementById("sortDesc").addEventListener("change", setSvgColor);
 </script>

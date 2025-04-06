@@ -19,5 +19,4 @@ function updateDate() {
   display.textContent = fullDate;
 }
 updateDate();
-// Update the date every minute
 setInterval(updateDate, 60000);

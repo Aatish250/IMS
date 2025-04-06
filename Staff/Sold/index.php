@@ -12,8 +12,7 @@ include '../../dbConn.php';
     <title>Sold Items</title>
     <link rel="stylesheet" href="../../util.css" />
     <link rel="stylesheet" href="../staffRoot.css" />
-    <link rel="stylesheet" href="soldForAatish.css">
-    <link rel="stylesheet" href="datepickerFormAatish.css">
+    <link rel="stylesheet" href="soldItem.css">
     <link rel="stylesheet" href="../../Components/pagination.css">
 </head>
 
@@ -83,17 +82,8 @@ include '../../dbConn.php';
                 </span>
                 <form action="" method="GET" class="date-range-form" id="filterForm">
                     <small>Show List:</small>
-                    <!-- <select name="listLimit" id="listLimit" class="data-limit">
-                        <option value=10 <?php //echo (isset($_GET['listLimit']) && $_GET['listLimit'] == 10 ? "selected" : "") ?>>10</option>
-                        <option value=15 <?php //echo (isset($_GET['listLimit']) && $_GET['listLimit'] == 15 ? "selected" : "") ?>>15</option>
-                        <option value=20 <?php //echo (isset($_GET['listLimit']) && $_GET['listLimit'] == 20 ? "selected" : "") ?>>20</option>
-                        <option value=25 <?php //echo (isset($_GET['listLimit']) && $_GET['listLimit'] == 25 ? "selected" : "") ?>>25</option>
-                        <option value=30 <?php //echo (isset($_GET['listLimit']) && $_GET['listLimit'] == 30 ? "selected" : "") ?>>30</option>
-                        <option value=35 <?php //echo (isset($_GET['listLimit']) && $_GET['listLimit'] == 35 ? "selected" : "") ?>>35</option>
-                        <option value=40 <?php //echo (isset($_GET['listLimit']) && $_GET['listLimit'] == 40 ? "selected" : "") ?>>40</option>
-                    </select> -->
-                    <input type="number" name="listLimit" id="listLimit" class="data-limit"
-                        value="<?php echo (int) ((isset($_GET['listLimit']) ? $_GET['listLimit'] : 10)) ?>">
+                    <input type="number" name="listLimit" id="listLimit" class="data-limit" min="1"
+                        value="<?php echo max(1, (int) ((isset($_GET['listLimit']) ? $_GET['listLimit'] : 10))) ?>">
                     <div class="date-input-container">
                         <input type="date" name="startDate" id="startDate" class="date-input"
                             value="<?php echo isset($_GET['startDate']) ? $_GET['startDate'] : ''; ?>">
@@ -101,7 +91,6 @@ include '../../dbConn.php';
                         <input type="date" name="endDate" id="endDate" class="date-input"
                             value="<?php echo isset($_GET['endDate']) ? $_GET['endDate'] : ''; ?>">
                     </div>
-                    <button type="submit" class="search-button">Search</button>
                 </form>
             </div>
             <table>

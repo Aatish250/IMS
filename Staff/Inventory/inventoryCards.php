@@ -1,28 +1,25 @@
 
 <?php
 include("inventoryBackend.php");
-?>
 
-
-<!-- <link rel="stylesheet" href="card.css"> -->
-
-<div class="card-wrapper">
-
-
-    <?php
-    if (!isset($sql))
-        echo "no sql found <br><hr>";
+if (!isset($sql))
+    echo "no sql found <br><hr>";
     // $sql = "SELECT item_id, item_title, item_image, category, price, quantity, tag FROM full_inventory";
     $result = mysqli_query($conn, $sql);
 
     // if no data found
     if(!mysqli_num_rows($result))
         echo "
-            <div style='color:grey;'>
-                - - -- --- No Items found in Inventory --- -- - -
-            </div>";
+    <div class='no-items'>
+        <span >
+            - - -- --- No Items found in Inventory --- -- - -
+        </span>
+    </div>";
+?>
+
+<div class="card-wrapper">
+    <?php
     // if data found
-    else 
         while ($row = mysqli_fetch_assoc($result)) {
             echo "<div class='card' id='{$row['item_id']}'>
                
@@ -53,7 +50,6 @@ include("inventoryBackend.php");
                 </div>
             </div>";
         }
-    // $message = "check";
     ?>
 
 </div>
