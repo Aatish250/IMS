@@ -52,7 +52,7 @@ if (mysqli_num_rows($result) > 0) {
             </td>
 
             <td>
-              <input type='number' id='rate' value={$row['price']} class='inp'>
+              <input type='number' id='rate' value={$row['price']} class='inp' readonly>
             </td>
 
             <td class='qty-ctrl'>
@@ -62,7 +62,7 @@ if (mysqli_num_rows($result) > 0) {
             </td>
 
             <td>
-              <input type='number' id='total' name='total' class='inp'>
+              <input type='number' id='total' name='total' class='inp' readonly>
             </td>
 
             <td class='collection-cta'>

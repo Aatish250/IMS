@@ -1,4 +1,4 @@
-* {
+/* * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -11,8 +11,6 @@ main {
   margin-right: 10vw;
 }
 
-
-/* overview css start */
 .overview-block {
   display: flex;
   justify-content: space-around;
@@ -62,10 +60,6 @@ main {
   color: var(--primary-color);
 }
 
-/* overview css ends */
-
-
-
 .itemrequest-wrapper {
   background-color: #ffffffc4;
   width: 100%;
@@ -82,7 +76,6 @@ main {
   max-height: 300px;
   position: relative;
   overflow-y: auto;
-  /* Hide scrollbar for Chrome, Safari and Opera */
   &::-webkit-scrollbar {
     display: none;
   }
@@ -233,7 +226,6 @@ form {
   max-height: 300px;
   position: relative;
   overflow-y: auto;
-  /* Hide scrollbar for Chrome, Safari and Opera */
   &::-webkit-scrollbar {
     display: none;
   }
@@ -258,9 +250,6 @@ h3 span {
   height: 2.7rem;
 }
 
-
-/* flash message css */
-
 .flash-box {
   background-color: rgb(255, 138, 138);
 }
@@ -272,4 +261,4 @@ h3 span {
 
 .flash-box button {
   background-color: red;
-}
+} */

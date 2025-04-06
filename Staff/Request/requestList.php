@@ -47,7 +47,7 @@ if (mysqli_num_rows($result) > 0) {
           <td>{$row['request_qty']}</td>
           <td class='qty-ctrl'>
             <button class='qty-ctrl-btn minus-btn' data-action='-'>-</button>
-            <input type='number' id='old-qty' class='qty-ctrl-inp' value='{$row['request_qty']}' />
+            <input type='number' readonly id='old-qty' class='qty-ctrl-inp' value='{$row['request_qty']}' />
             <button class='qty-ctrl-btn plus-btn' data-action='+'>+</button>
           </td>
           <td>

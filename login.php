@@ -1,9 +1,8 @@
 <?php
 
 include 'dbConn.php';
-session_start(); // Start the session at the beginning
+session_start(); 
 
-// Initialize message variable
 $message = "";
 
 // ------ Login logic ----------

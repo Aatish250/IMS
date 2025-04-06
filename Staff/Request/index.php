@@ -2,8 +2,6 @@
 require '../../dbConn.php';
 require '../checkStaff.php';
 
-
-// executes item request logics
 include 'updateItem.php';
 ?>
 
@@ -76,7 +74,7 @@ include 'updateItem.php';
               </tr>
             </thead>
             <tbody>
-              <?php // load item request list
+              <?php
               include 'requestList.php';
               ?>
             </tbody>
