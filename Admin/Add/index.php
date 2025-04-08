@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="../../util.css" />
   <link rel="stylesheet" href="../adminRoot.css" />
   <link rel="stylesheet" href="AddItem.css" />
+  <link rel="stylesheet" href="../../Components/flashMessage.css">
 </head>
 
 <style>
@@ -36,49 +37,6 @@ textarea:required:invalid:not(:placeholder-shown) {
 input:focus:invalid,
 textarea:focus:invalid {
   border: 2px solid #ff3333;
-}
-
-.flash-box {
-  display: none;
-  position: fixed;
-  top: 20px;
-  right: 80px;
-  background-color: #fff;
-  padding: 10px 15px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-  z-index: 100;
-  width: max-content;
-  animation: fadeIn 0.3s ease-in-out;
-  border-radius: 12px;
-}
-
-.flash-message {
-  color: #333;
-  font-size: 0.9rem;
-  margin-right: 10px;
-}
-
-.flash-box button {
-  background: none;
-  border: none;
-  color: #888;
-  cursor: pointer;
-  font-size: 1rem;
-}
-
-.flash-box button:hover {
-  color: #333;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 </style>
 

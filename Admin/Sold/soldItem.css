@@ -1,0 +1,148 @@
+main {
+  width: 80%;
+  margin: 5vh;
+  margin-right: 10vw;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  font-size: 14px;
+}
+
+th,
+td {
+  padding: 10px 14px;
+  text-align: center;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+th,
+.caption {
+  background-color: #f8f9fa;
+  font-weight: bold;
+  color: #495057;
+  border-top: 2px solid #dee2e6;
+  border-bottom: 2px solid #dee2e6;
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
+
+input {
+  outline: none;
+}
+
+input[type="date"] {
+  cursor: pointer;
+}
+
+.qty-ctrl-btn {
+  /* display: block; */
+  background-color: var(--primary-color);
+  color: #fff;
+  cursor: pointer;
+  padding: 7px 10px;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+  margin: 5px 0;
+  border-radius: 5px 0 0 5px;
+}
+
+.qty-ctrl-btn:hover {
+  background-color: #9c29ca;
+}
+
+.plus-btn {
+  border-radius: 0 5px 5px 0;
+}
+
+.sell-form {
+  background-color: #fff;
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  margin: 8px 0;
+  gap: 20px;
+  color: #6c6d7c;
+}
+
+.sell-form div {
+  display: flex;
+  align-items: center;
+}
+
+.sell-form div:first-child {
+  width: 100%;
+}
+
+.sell-form input {
+  width: 80px;
+  margin: 5px 5px 5px 10px;
+  padding: 8px 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  text-align: center;
+
+  padding-inline: 10px;
+  text-align: left;
+}
+
+.sell-form input[type="text"] {
+  width: 100%;
+}
+
+.sell-form input[type="date"] {
+  width: max-content;
+}
+
+.sell-form input:focus {
+  border: 1px solid var(--primary-color);
+}
+
+#qty {
+  margin: 0;
+  border-radius: 0;
+  width: 45px;
+  text-align: center;
+}
+
+.add-btn {
+  background: var(--primary-color);
+  color: #fff;
+  font-weight: 600;
+  text-align: center !important;
+
+  cursor: pointer;
+}
+
+.add-btn:hover {
+  background-color: #9c29ca;
+}
+
+input[type="number"] {
+  -webkit-appearance: none;
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+/* Remove the spin buttons specifically for WebKit browsers */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+}

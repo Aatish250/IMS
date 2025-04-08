@@ -1,6 +1,4 @@
-
-<div class="card-wrapper">
-    <?php
+<?php
     if (!isset($sql))
         echo "no sql found <br><hr>";
     // $sql = "SELECT item_id, item_title, item_image, category, price, quantity, tag FROM full_inventory";
@@ -12,8 +10,15 @@
     <div class='no-items'>
         <span>- - -- --- No Items found in Inventory --- -- - -</span>
     </div>";
-    // if data found
-    else 
+?>
+
+<div class="card-wrapper">
+    <?php
+    if (!isset($sql))
+        echo "no sql found <br><hr>";
+    // $sql = "SELECT item_id, item_title, item_image, category, price, quantity, tag FROM full_inventory";
+    $result = mysqli_query($conn, $sql);
+    // if data found 
         while ($row = mysqli_fetch_assoc($result)) {
             echo "<div class='card' id='{$row['item_id']}'>
                 <a href='Edit.php?item-edit={$row['item_id']}'>

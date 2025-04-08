@@ -17,6 +17,7 @@ include 'sell.php';
   <link rel="stylesheet" href="../../util.css" />
   <link rel="stylesheet" href="../staffRoot.css" />
   <link rel="stylesheet" href="collection.css" />
+  <link rel="stylesheet" href="../../Components/flashMessage.css">
 </head>
 
 
@@ -46,7 +47,7 @@ include 'sell.php';
     </header>
 
     <div id="flashBox" class="flash-box">
-      <span id="flashMessage" class="flashMessage"></span>
+      <span id="flashMessage" class="flash-message"></span>
       <button onclick="closeMessage()">&#9932;</button>
     </div>
 

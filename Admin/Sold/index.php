@@ -12,7 +12,7 @@ include '../../dbConn.php';
     <title>Sold Items</title>
     <link rel="stylesheet" href="../../util.css" />
     <link rel="stylesheet" href="../adminRoot.css" />
-    <link rel="stylesheet" href="soldForAatish.css">
+    <link rel="stylesheet" href="soldItem.css">
     <link rel="stylesheet" href="datepickerFormAatish.css">
     <link rel="stylesheet" href="../../Components/pagination.css">
 </head>

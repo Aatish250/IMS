@@ -17,7 +17,7 @@ require '../checkStaff.php';
     <!-- bottom is linked to component css -->
     <link rel="stylesheet" href="../../Components/inventoryNav.css">
     <link rel="stylesheet" href="../../Components/pagination.css">
-    <link rel="stylesheet" href="flashMsg.css">
+    <link rel="stylesheet" href="../../Components/flashMessage.css">
 </head>
 
 <body>

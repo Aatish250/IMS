@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+<l>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Control Panel</title>
@@ -11,53 +11,8 @@
   <link rel="stylesheet" href="../adminRoot.css" />
   <link rel="stylesheet" href="../ControlPanel/main.css">
   <link rel="stylesheet" href="../ControlPanel/controlpanel.css">
-</head>
-
-<style>
-.flash-box {
-  display: none;
-  position: fixed;
-  top: 40px;
-  right: 80px;
-  background-color: #fff;
-  padding: 10px 15px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-  z-index: 100;
-  width: max-content;
-  animation: fadeIn 0.3s ease-in-out;
-  border-radius: 12px;
-}
-
-.flashMessage {
-  color: #333;
-  font-size: 0.9rem;
-  margin-right: 10px;
-  font-weight: 200;
-}
-
-.flash-box button {
-  background: none;
-  border: none;
-  color: #888;
-  cursor: pointer;
-  font-size: 1rem;
-}
-
-.flash-box button:hover {
-  color: red;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-</style>
+  <link rel="stylesheet" href="../../Components/flashMessage.css">
+</l>
 
 <body>
 
@@ -93,7 +48,7 @@
     </header>
 
     <div id="flashBox" class="flash-box">
-      <span id="flashMessage" class="flashMessage"></span>
+      <span id="flashMessage" class="flash-message"></span>
       <button onclick="closeMessage()">&#9932;</button>
     </div>
 

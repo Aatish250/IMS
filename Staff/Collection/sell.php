@@ -56,11 +56,3 @@ if (isset($_POST['sell-item'])) {
         }
     }
 }
-
-
-
-// item_id
-// item_title
-// price
-// quantity
-// cart_qty
