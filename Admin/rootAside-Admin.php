@@ -55,7 +55,7 @@
             </svg>
 
             </svg>
-            Sold Item
+            Order List
           </a>
         </li>
         <li class="list-row">

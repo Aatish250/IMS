@@ -39,7 +39,7 @@ if (mysqli_num_rows($result) > 0) {
     </tfoot>  
     ";
 } else {
-  echo "<tr><td colspan='7' style='color: #888;'> -------------- --- -- - No Sales Today - -- --- -------------- </td></tr>";
+  echo "<tr><td colspan='7' style='color: #888;'> -------------- --- -- - No Order Today - -- --- -------------- </td></tr>";
 }
 ?>
 

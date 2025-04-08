@@ -9,7 +9,7 @@ include '../../dbConn.php';
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sold Items</title>
+    <title>Order List</title>
     <link rel="stylesheet" href="../../util.css" />
     <link rel="stylesheet" href="../adminRoot.css" />
     <link rel="stylesheet" href="soldItem.css">
@@ -32,7 +32,7 @@ include '../../dbConn.php';
             <!-- heading of main content beside sidebar -->
             <div class="main-heading">
                 <div class="main-heading-left">
-                    <h1>Sold Items List</h1>
+                    <h1>Order List</h1>
                     <p>
                         <?php
                         $result = mysqli_query($conn, "SELECT SUM(sold_total) as total FROM sold where sold_date = CURDATE()");
@@ -77,7 +77,7 @@ include '../../dbConn.php';
 
             <div class="caption">
                 <span class="title">
-                    Sales
+                    Orders
                 </span>
                 <form action="" method="GET" class="date-range-form" id="filterForm">
                     <small>Show List:</small>

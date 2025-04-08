@@ -41,7 +41,7 @@ if (mysqli_num_rows($result) > 0) {
                 </tr>";
     }
 } else
-    echo "<tr><td colspan='6'>No sales today</td></tr>";
+    echo "<tr><td colspan='6'>No order</td></tr>";
 
 // table footer
 echo "

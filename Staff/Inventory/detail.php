@@ -97,13 +97,13 @@ require "../../dbConn.php";
                                                 </div>
                                                     <button name='sell-item' value={$row['item_id']}>
                                                         <img src='../../Images/icons/dollorWhite.svg' alt='sell item logo'>
-                                                        Sell Directly
+                                                        Send Order Directly
                                                     </button>
                                             </div>
                                             <div class='collection-info'>
                                                 <button class='add-collection' name='add-collection' value='{$row['item_id']}'>
                                                     <img src='../../Images/icons/cart.svg' alt='cart logo' style='filter: brightness(0) invert(1)'>
-                                                    Add to collection
+                                                    Add to order collection
                                                 </button>
                                             </div>"
                                             : "<div class='sell-info'>
