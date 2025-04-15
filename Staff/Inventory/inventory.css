@@ -140,3 +140,54 @@ a {
   color: #fff;
 }
 /* card css ends */
+
+
+
+
+/* list css start */
+
+.list td:nth-child(2) {
+  width: 100%;
+  text-align: left;
+}
+.list td:nth-child(1), .list td:nth-child(3), .list td:nth-child(4) {
+  width: 30px;
+}
+.list td:nth-child(5) {
+  width: 170px;
+}
+.list td:nth-child(6) {
+  width: 80px;
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: 2rem 0 1.2rem 0;
+  opacity: .7;
+  border: none;
+}
+.list td:nth-child(7) {
+  display: flex;
+  justify-content: space-around;
+}
+
+.list form button {
+  background: var(--primary-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: none;
+  border-radius: 5px;
+  padding-inline: .6rem;
+  padding-block: 8px;
+  cursor: pointer;
+  color: white;
+  font-size: 14px;
+  opacity: .7;
+}
+.list form button:hover {
+  opacity: 1;
+}
+.list form button img {
+  padding-right: 5px;
+}
+
+/* list css end */

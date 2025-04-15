@@ -4,38 +4,12 @@ main {
   margin-right: 10vw;
 }
 
-table {
-  width: 100%;
-  border-collapse: collapse;
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-  overflow: hidden;
-  font-size: 14px;
-}
-
-th,
-td {
-  padding: 10px 14px;
-  text-align: center;
-  border-bottom: 1px solid #e0e0e0;
-}
-
-th,
 .caption {
   background-color: #f8f9fa;
   font-weight: bold;
   color: #495057;
   border-top: 2px solid #dee2e6;
   border-bottom: 2px solid #dee2e6;
-}
-
-tr:last-child td {
-  border-bottom: none;
-}
-
-tr:nth-child(even) {
-  background-color: #f8f9fa;
 }
 
 input {

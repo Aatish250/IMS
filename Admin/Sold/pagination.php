@@ -1,5 +1,5 @@
 <?php
-
+// this function is used to change the data in the list
 function set_url_limit_filters($page, $listLimit){
         
     if (isset($_GET['startDate']) && isset($_GET['endDate'])) {
@@ -14,8 +14,9 @@ function set_url_limit_filters($page, $listLimit){
     return $filter;
 }
 
-$sql = "SELECT COUNT(*) AS total_row FROM sold WHERE sold_date BETWEEN '$startDate' AND '$endDate'";
-$listLimit = isset($_GET['listLimit']) ? (int) $_GET['listLimit'] : 10;
+// this sql is usde to fetch data from dtabase accroding to where clused
+// $sql = "SELECT COUNT(*) AS total_row FROM sold WHERE sold_date BETWEEN '$startDate' AND '$endDate'";
+// $listLimit = isset($_GET['listLimit']) ? (int) $_GET['listLimit'] : 10;
 
 require '../../Components/pagination.php';
 

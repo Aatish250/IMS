@@ -13,7 +13,7 @@
         return $filter;
     }
 
-    $sql = "SELECT COUNT(*) AS total_row FROM sold WHERE sold_date BETWEEN '$startDate' AND '$endDate'";
+    $countSql = "SELECT COUNT(*) AS total_row FROM sold WHERE sold_date BETWEEN '$startDate' AND '$endDate'";
     $listLimit = isset($_GET['listLimit']) ? (int) $_GET['listLimit'] : 10;
 
     require '../../Components/pagination.php';

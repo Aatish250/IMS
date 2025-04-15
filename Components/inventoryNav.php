@@ -38,7 +38,7 @@
     <label for="listLimit" class="listLimt">
        Show Items:
    </label>
-   <input type="number" name="listLimit" id="listLimit" class="data-limit" value="<?php echo (int) ((isset($_GET['listLimit']) ? $_GET['listLimit'] : 25)) ?>">
+   <input type="number" name="listLimit" id="listLimit" class="data-limit" value="<?php echo (int) ((isset($_GET['listLimit']) ? $_GET['listLimit'] : 20)) ?>">
    <!-- END: List listLimit -->
     <div class="sorting">
         <!-- START: ascending sort -->

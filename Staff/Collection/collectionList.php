@@ -1,5 +1,6 @@
 <?php
 
+
 $result = mysqli_query($conn, "SELECT * FROM view_collection_list");
 if (mysqli_num_rows($result) > 0) {
   while ($row = mysqli_fetch_assoc($result)) {

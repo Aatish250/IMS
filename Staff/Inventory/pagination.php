@@ -13,8 +13,8 @@
         return $filter;
     }
 
-    $listLimit = isset($_GET['listLimit']) ? $_GET['listLimit'] : 25;
-    $sql = "SELECT Count(*) as total_row from full_inventory" . get_where_clause_filters();
+    $listLimit = isset($_GET['listLimit']) ? $_GET['listLimit'] : 20;
+    $countSql = "SELECT Count(*) as total_row from full_inventory" . get_where_clause_filters();
     
     require '../../Components/pagination.php';
 ?>    

@@ -8,7 +8,7 @@ $message = isset($_GET['message']) ? $_GET['message'] : '';
 ///function to get limit sql
 function get_sql_limit(){
     $page = isset($_GET['page']) ? $_GET['page'] : 1;
-    $listLimit = isset($_GET['listLimit']) ? $_GET['listLimit'] : 25;
+    $listLimit = isset($_GET['listLimit']) ? $_GET['listLimit'] :20;
     $page_start = ($page - 1) * $listLimit;
     $limitSql = " LIMIT $page_start, $listLimit";
     return $limitSql;

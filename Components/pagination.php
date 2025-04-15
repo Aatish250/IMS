@@ -1,6 +1,6 @@
 <?php
-$result = mysqli_query($conn, $sql);
-    $row = mysqli_fetch_assoc($result);
+$countResult = mysqli_query($conn, $countSql);
+    $row = mysqli_fetch_assoc($countResult);
 
     $page = isset($_GET['page']) ? $_GET['page'] : 1;
     // if ($listLimit < 1) $listLimit = 1;

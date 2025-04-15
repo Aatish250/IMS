@@ -16,6 +16,7 @@ require '../checkStaff.php';
     <link rel="stylesheet" href="inventory.css">
     <!-- bottom is linked to component css -->
     <link rel="stylesheet" href="../../Components/inventoryNav.css">
+    <link rel="stylesheet" href="../../Components/global_plain_list.css">
     <link rel="stylesheet" href="../../Components/pagination.css">
     <link rel="stylesheet" href="../../Components/flashMessage.css">
 </head>
@@ -63,9 +64,13 @@ require '../checkStaff.php';
         
         <section>
             <?php
-            include 'inventoryCards.php';
-            // include 'inventoryBackend.php';
+            include 'inventoryBackend.php';
+            // include 'inventoryCards.php';
             ?>
+        </section>
+        
+        <section>
+            <?php include 'inventoryList.php'; ?>
         </section>
         <section>
             <?php // for pegination

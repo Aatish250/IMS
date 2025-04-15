@@ -13,6 +13,7 @@ include '../../dbConn.php';
     <link rel="stylesheet" href="../../util.css" />
     <link rel="stylesheet" href="../adminRoot.css" />
     <link rel="stylesheet" href="soldItem.css">
+    <link rel="stylesheet" href="../../Components/global_plain_list.css">
     <link rel="stylesheet" href="datepickerFormAatish.css">
     <link rel="stylesheet" href="../../Components/pagination.css">
 </head>
@@ -73,7 +74,7 @@ include '../../dbConn.php';
         </section>
 
         <!-- soldTable of dtabase starts -->
-        <section>
+        <section class="list">
 
             <div class="caption">
                 <span class="title">

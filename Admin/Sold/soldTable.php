@@ -11,18 +11,21 @@ if (isset($_GET['startDate']) && isset($_GET['endDate'])) {
 // Start table body
 echo "<tbody>";
 
-$sql = "SELECT COUNT(*) as total_count, SUM(sold_total) as total_sum FROM sold where sold_date BETWEEN '$startDate' AND '$endDate'";
-$result = mysqli_query($conn, $sql);
-$summary = mysqli_fetch_assoc($result);
+// get total counts ( Pagination COnfiguration  START )
+$countSql = "SELECT COUNT(*) as total_row, SUM(sold_total) as total_sum FROM sold where sold_date BETWEEN '$startDate' AND '$endDate'";
+$countResult = mysqli_query($conn, $countSql);
+$count = mysqli_fetch_assoc($countResult);
 
-$total_count = $summary['total_count'];
-$total_sum = $summary['total_sum'];
+$total_row = $count['total_row'];
+$total_sum = $count['total_sum'];
 
-$results_per_page = (isset($_GET['listLimit']) ? $_GET['listLimit'] : 10);
+$listLimit = (isset($_GET['listLimit']) ? $_GET['listLimit'] : 10);
 $page = isset($_GET['page']) ? $_GET['page'] : 1;
-$start_from = ($page - 1) * $results_per_page;
+$start_from = ($page - 1) * $listLimit;
+// ( Pagination Config END )
 
-$sql = "SELECT * FROM sold where sold_date BETWEEN '$startDate' AND '$endDate' LIMIT $start_from, $results_per_page";
+// get data form database
+$sql = "SELECT * FROM sold where sold_date BETWEEN '$startDate' AND '$endDate' LIMIT $start_from, $listLimit";
 $result = mysqli_query($conn, $sql);
 
 if (mysqli_num_rows($result) > 0) {
@@ -50,7 +53,7 @@ echo "
             <tr class='total-row'>
                 <td colspan='3'></td>
                 <td><strong>Total</strong></td>
-                <td><strong>" . $total_count . "</strong></td>
+                <td><strong>" . $total_row . "</strong></td>
                 <td><strong>Rs. " . number_format($total_sum, 2) . "</strong></td>
             </tr>
         </tfoot>

@@ -14,6 +14,7 @@ require '../checkAdmin.php';
     <link rel="stylesheet" href="../adminRoot.css" />
     <link rel="stylesheet" href="Inventory.css">
     <link rel="stylesheet" href="../../Components/inventoryNav.css">
+    <link rel="stylesheet" href="../../Components/global_plain_list.css">
     <link rel="stylesheet" href="../../Components/pagination.css">
     <link rel="stylesheet" href="../../Components/flashMessage.css">
 </head>
@@ -55,10 +56,16 @@ require '../checkAdmin.php';
             <span id="flashMessage" class="flash-message"></span>
             <button onclick="closeMessage()">&#9932;</button>
         </div>
+        <?php
+        include("inventoryBackend.php");
+        ?>
+        <section>
+            <?php include 'inventoryList.php'; ?>
+        </section>
+        
         <section>
             <?php
-            include("inventoryBackend.php");
-            include 'inventoryCards.php';
+            //include 'inventoryCards.php';
             ?>
         </section>
         <section>
