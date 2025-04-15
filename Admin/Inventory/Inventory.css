@@ -139,6 +139,9 @@ main {
 
 
 /* list css start */
+.list td:nth-child(1){
+  color: grey;
+}
 
 .list td:nth-child(2) {
   width: 100%;
@@ -148,14 +151,16 @@ main {
   width: 30px;
 }
 .list td:nth-child(5) {
+  color: grey;
   width: 170px;
 }
 .list td:nth-child(6) {
-  /* width: 80px;
+  width: 80px;
   background-color: var(--primary-color);
   color: white;
   border-radius: 2rem 0 1.2rem 0;
-  opacity: .7; */
+  opacity: .7;
+  font-weight: bold;
 }
 .list td:nth-child(7) {
   display: flex;
